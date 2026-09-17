@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: m015_Edit_cf_m_body
+  m_Shader: {fileID: -6465566751694194690, guid: f5212d8b9c9a4aa1a6240da327ea00b8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    KKBridgeChannels: Nail color (multiplied)|Nipple base|Nipple base 2|Nipple shine|Nipple
+      rim
+    KKBridgeSourceMaterial: Edit cf_m_body
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DarkBase:
+        m_Texture: {fileID: 2800000, guid: 138fc3a964164fb7980ddd0fa0ea0dd8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DarkWeight0:
+        m_Texture: {fileID: 2800000, guid: 333c6be1b95647a8acefcf7efa31dd13, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DarkWeight1:
+        m_Texture: {fileID: 2800000, guid: 50aa36c87ed140a78901ab2070bbdf34, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DarkWeight2:
+        m_Texture: {fileID: 2800000, guid: d32c64468f3c41ff8f166e79aee391a9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DarkWeight3:
+        m_Texture: {fileID: 2800000, guid: 879253bbe8e8474da7c574ea1bbaf39a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DarkWeight4:
+        m_Texture: {fileID: 2800000, guid: 84b2123c3aa844ae813fa8650b3cae75, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightBase:
+        m_Texture: {fileID: 2800000, guid: 907c828d189f44009ec63d850696af43, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightWeight0:
+        m_Texture: {fileID: 2800000, guid: 4d5ebe3b12f942b18f38b7041e8e44f2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightWeight1:
+        m_Texture: {fileID: 2800000, guid: d204b255d9ef4fbda2ee3c0f6e915379, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightWeight2:
+        m_Texture: {fileID: 2800000, guid: 883e843795af44d1bf9cb02b014cf754, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightWeight3:
+        m_Texture: {fileID: 2800000, guid: 227654e051e74a50bec9a31f0bc7e1f5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightWeight4:
+        m_Texture: {fileID: 2800000, guid: c259d0db4a7f4447a92aacc42d52fb9d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Opacity:
+        m_Texture: {fileID: 2800000, guid: 2f15d578073744ea8125de33ad0d1dcf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BridgePreview: 0
+    - _Cull: 0
+    - _Cutoff: 0.5
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Softness: 0.05
+    - _Threshold: 0
+    m_Colors:
+    - _BridgeDarkColor0: {r: 0.93857354, g: 0.61279535, b: 0.60101485, a: 1}
+    - _BridgeDarkColor1: {r: 0.7954381, g: 0.51340497, b: 0.42820054, a: 1}
+    - _BridgeDarkColor2: {r: 0.7763469, g: 0, b: 0, a: 1}
+    - _BridgeDarkColor3: {r: 0.8361352, g: 0.5172135, b: 0.41533574, a: 1.5}
+    - _BridgeDarkColor4: {r: 0.54616505, g: 0.33789003, b: 0.2730052, a: 1}
+    - _BridgeLightColor0: {r: 0.99999654, g: 0.89944124, b: 0.93814206, a: 1}
+    - _BridgeLightColor1: {r: 1, g: 0.72202736, b: 0.72202736, a: 1}
+    - _BridgeLightColor2: {r: 0.9546872, g: 0, b: 0.3491902, a: 1}
+    - _BridgeLightColor3: {r: 1, g: 0.9063318, b: 0.9063318, a: 1}
+    - _BridgeLightColor4: {r: 1, g: 0.3178004, b: 0.33950627, a: 1}
+    - _BridgeUV: {r: 1, g: 1, b: -0, a: -0}
+    - _ShadowTint: {r: 0.77970624, g: 0.5657284, b: 0.6012434, a: 1}
+    - _SkinTint: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &3691339655777520080
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Editor::UnityEditor.Rendering.Universal.AssetVersion
+  version: 10
