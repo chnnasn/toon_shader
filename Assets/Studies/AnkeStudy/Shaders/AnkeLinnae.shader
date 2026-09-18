@@ -35,6 +35,7 @@ _Cutoff("Cutoff",Float)=0.3
 [Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend("Src blend", Float) = 1
 [Enum(UnityEngine.Rendering.BlendMode)] _DstBlend("Dst blend", Float) = 0
 [Enum(Off,0,On,1)] _ZWrite("ZWrite", Float) = 1
+[Enum(UnityEngine.Rendering.CompareFunction)] _ZTest("ZTest", Float) = 4
 _BaseAlpha("Base alpha (blend mode)",Range(0,1))=1
 _Cull("Cull",Float)=0
 _BridgePreview("BridgePreview",Float)=0
@@ -64,6 +65,7 @@ SubShader{Tags{"RenderPipeline"="UniversalPipeline" "RenderType"="Transparent" "
 Pass{ Name "Forward" Tags{"LightMode"="UniversalForward"} Cull [_Cull]
 Blend [_SrcBlend] [_DstBlend]
 ZWrite [_ZWrite]
+ZTest [_ZTest]
 HLSLPROGRAM
 #pragma vertex vert
 #pragma fragment frag
@@ -136,7 +138,7 @@ CBUFFER_END
 struct A{float4 p:POSITION;float3 n:NORMAL;float2 uv:TEXCOORD0;};
 struct V{float4 p:SV_POSITION;float3 ws:TEXCOORD0;float3 n:TEXCOORD1;float2 uv:TEXCOORD2;};
 V vert(A a){V o;o.ws=TransformObjectToWorld(a.p.xyz);o.p=TransformWorldToHClip(o.ws);o.n=TransformObjectToWorldNormal(a.n);o.uv=a.uv;return o;}
-half4 frag(V i):SV_Target{
+half4 frag(V i,bool isFrontFace:SV_IsFrontFace):SV_Target{
 float2 uv=i.uv*_BridgeUV.xy+_BridgeUV.zw;
 float alpha=SAMPLE_TEXTURE2D(_Opacity,sampler_Opacity,uv).r;
 #ifndef _ALPHAMODE_BLEND
@@ -164,14 +166,11 @@ light*=lerp(1.0.xxx,_NeckLightCorrection.rgb,neckBlend);
 dark*=lerp(1.0.xxx,_NeckDarkCorrection.rgb,neckBlend);
 float faceWeight=_Face*smoothstep(.012,.055,headHeight);
 float3 shadowTint=clamp(dark/max(light,.025),.15,1.3)*_ShadowTint.rgb;
-LinnaeLighting_float(float4(light,alpha),i.ws,normalize(i.n),GetWorldSpaceNormalizeViewDir(i.ws),uv,_Tint,float4(shadowTint,1),_Threshold,_Softness,_Roughness,_Metallic,_SpecularStrength,_RimStrength,_Hair,faceWeight,_Skin,1,1,_DebugMode,_EnvironmentStrength,_Eye,_HeadForward,_HeadRight,UnityBuildTexture2DStructNoScaleNoTexelSize(_FaceSDF),_UseFaceSDF,_HairShadowStrength,_HeadOrigin,_HeadUp,col,outAlpha);
+float3 shadingNormal=normalize(isFrontFace?i.n:-i.n);
+LinnaeLighting_float(float4(light,alpha),i.ws,shadingNormal,GetWorldSpaceNormalizeViewDir(i.ws),uv,_Tint,float4(shadowTint,1),_Threshold,_Softness,_Roughness,_Metallic,_SpecularStrength,_RimStrength,_Hair,faceWeight,_Skin,1,1,_DebugMode,_EnvironmentStrength,_Eye,_HeadForward,_HeadRight,UnityBuildTexture2DStructNoScaleNoTexelSize(_FaceSDF),_UseFaceSDF,_HairShadowStrength,_HeadOrigin,_HeadUp,col,outAlpha);
 if(_BridgePreview>.5)col=(_BridgePreview>1.5?dark:light)*_Tint.rgb;
 #ifdef _ALPHAMODE_BLEND
-// Gauze: the per-material alpha supplies the continuous translucency that the
-// single _Opacity mask (built for lace cutout) cannot express on its own.
-// Keep the mask's white lace opaque while lifting its black fabric region to
-// the configured gauze alpha instead of multiplying that region back to zero.
-outAlpha=max(outAlpha,saturate(_BaseAlpha));
+outAlpha*=saturate(_BaseAlpha);
 #endif
 return half4(col,outAlpha);
 }
