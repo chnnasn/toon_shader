@@ -14,6 +14,8 @@
 
 `Anke/Linnae Layered` 在分层颜色合成后直接调用 `LinnaeLighting.hlsl`；场景复用 LinnaeURP、RenderGraph 头发投影和屏幕描边。Shader 包含透明裁切、ShadowCaster、DepthOnly。脸部绑定 DEF-Head，使用 Linnae 的头部空间 SDF；这是复用参考风格，不是安可原作的专用脸部 SDF。
 
+两套丝袜材质的透明度已经编码在 Opacity 贴图中，因此固定采用 Alpha Blend、`SrcAlpha/OneMinusSrcAlpha`、关闭 ZWrite、Render Queue 3000，并保持 `Base Alpha = 1`，避免再次衰减细密网纹。菜单 `Tools/Anke Study/Repair Hosiery Transparency` 可恢复这组设置，`Validate Hosiery Transparency` 用于检查两套丝袜是否被错误重置成 Cutout。蕾丝、内裤和鞋仍使用 Alpha Cutout，以保留清晰的镂空边缘。
+
 保持 FBX 的 T Pose 和 132 个表情 BlendShape，未生成动画。相机上的 LinnaeStudyControls 可调光照和调试模式；LinnaeCharacterPipeline 可切换脸部 SDF、头发投影和描边。
 
 菜单 `Tools/Anke Study/Validate and Capture` 检查材质、Shader 和骨骼，并将预览和报告输出到 `Tools/AnkePreviews`。`Build Showcase` 会重建生成材质、角色预制体和场景中的角色，覆盖这些生成对象上的手工修改。
