@@ -1,0 +1,451 @@
+{
+  "m_Name": "pupil01",
+  "m_Shader": {
+    "m_FileID": 1,
+    "m_PathID": -1955305616549392799
+  },
+  "m_ValidKeywords": [],
+  "m_InvalidKeywords": [
+    "_DEBUG_NONE"
+  ],
+  "m_LightmapFlags": 4,
+  "m_EnableInstancingVariants": false,
+  "m_DoubleSidedGI": false,
+  "m_CustomRenderQueue": -1,
+  "stringTagMap": [],
+  "disabledShaderPasses": [],
+  "m_SavedProperties": {
+    "m_TexEnvs": [
+      {
+        "Key": "_DepthTex",
+        "Value": {
+          "m_Texture": {
+            "m_FileID": 7,
+            "m_PathID": 7707339621033133201
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "Key": "_MainTex",
+        "Value": {
+          "m_Texture": {
+            "m_FileID": 0,
+            "m_PathID": 2942829704542236835
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "Key": "_MatCapTex",
+        "Value": {
+          "m_Texture": {
+            "m_FileID": 8,
+            "m_PathID": 3329147502127917049
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "Key": "_NormalMap",
+        "Value": {
+          "m_Texture": {
+            "m_FileID": 9,
+            "m_PathID": 795311572081372562
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      },
+      {
+        "Key": "_RampMap",
+        "Value": {
+          "m_Texture": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "m_Scale": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "m_Offset": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        }
+      }
+    ],
+    "m_Ints": [],
+    "m_Floats": [
+      {
+        "Key": "_AcceptIndirectLightColor",
+        "Value": 0.899999976
+      },
+      {
+        "Key": "_AcceptIndirectLightSpec",
+        "Value": 1.0
+      },
+      {
+        "Key": "_AcceptMainLightColor",
+        "Value": 1.0
+      },
+      {
+        "Key": "_AcceptShadow",
+        "Value": 0.5
+      },
+      {
+        "Key": "_AlphaClip",
+        "Value": 0.0
+      },
+      {
+        "Key": "_AlphaToMask",
+        "Value": 0.0
+      },
+      {
+        "Key": "_BaseSettingGroup",
+        "Value": 0.0
+      },
+      {
+        "Key": "_Blend",
+        "Value": 0.0
+      },
+      {
+        "Key": "_BlendAlphaDst",
+        "Value": 0.0
+      },
+      {
+        "Key": "_BlendAlphaSrc",
+        "Value": 1.0
+      },
+      {
+        "Key": "_BlendModePreserveSpecular",
+        "Value": 1.0
+      },
+      {
+        "Key": "_BumpScale",
+        "Value": 1.0
+      },
+      {
+        "Key": "_CharSaturation",
+        "Value": 0.0
+      },
+      {
+        "Key": "_ClearCoatMask",
+        "Value": 0.0
+      },
+      {
+        "Key": "_ClearCoatSmoothness",
+        "Value": 0.0
+      },
+      {
+        "Key": "_ConcealLerp",
+        "Value": 0.0
+      },
+      {
+        "Key": "_CorneaParallax",
+        "Value": 0.0
+      },
+      {
+        "Key": "_Cull",
+        "Value": 2.0
+      },
+      {
+        "Key": "_Cutoff",
+        "Value": 0.5
+      },
+      {
+        "Key": "_DetailAlbedoMapScale",
+        "Value": 1.0
+      },
+      {
+        "Key": "_DetailNormalMapScale",
+        "Value": 1.0
+      },
+      {
+        "Key": "_DstBlend",
+        "Value": 0.0
+      },
+      {
+        "Key": "_DstBlendAlpha",
+        "Value": 0.0
+      },
+      {
+        "Key": "_EnvironmentReflections",
+        "Value": 1.0
+      },
+      {
+        "Key": "_FillLightIntensity",
+        "Value": 0.200000003
+      },
+      {
+        "Key": "_GlobalSettingGroup",
+        "Value": 0.0
+      },
+      {
+        "Key": "_GlossMapScale",
+        "Value": 1.0
+      },
+      {
+        "Key": "_Glossiness",
+        "Value": 0.141421348
+      },
+      {
+        "Key": "_GlossyReflections",
+        "Value": 1.0
+      },
+      {
+        "Key": "_HeightScale",
+        "Value": -0.0599999987
+      },
+      {
+        "Key": "_HolographicIntensity",
+        "Value": 0.0
+      },
+      {
+        "Key": "_HolographicWidth",
+        "Value": 200.0
+      },
+      {
+        "Key": "_Intensity",
+        "Value": 1.0
+      },
+      {
+        "Key": "_LightIntensityMultiplier",
+        "Value": 1.0
+      },
+      {
+        "Key": "_LightingSettingGroup",
+        "Value": 0.0
+      },
+      {
+        "Key": "_MainLightColorSaturation",
+        "Value": 1.0
+      },
+      {
+        "Key": "_MaskColor1",
+        "Value": 0.273999989
+      },
+      {
+        "Key": "_MaskColor2",
+        "Value": 0.763999999
+      },
+      {
+        "Key": "_MatCapPow",
+        "Value": 4.25
+      },
+      {
+        "Key": "_MatCapSettingGroup",
+        "Value": 0.0
+      },
+      {
+        "Key": "_MaxLayer",
+        "Value": 32.0
+      },
+      {
+        "Key": "_Metallic",
+        "Value": 0.0
+      },
+      {
+        "Key": "_MinLayer",
+        "Value": 8.0
+      },
+      {
+        "Key": "_Mode",
+        "Value": 0.0
+      },
+      {
+        "Key": "_NormalScale",
+        "Value": 3.1099999
+      },
+      {
+        "Key": "_OcclusionStrength",
+        "Value": 1.0
+      },
+      {
+        "Key": "_Parallax",
+        "Value": 0.0199999996
+      },
+      {
+        "Key": "_ParallaxSettingGroup",
+        "Value": 0.0
+      },
+      {
+        "Key": "_PointLightAttenuation",
+        "Value": 1.0
+      },
+      {
+        "Key": "_PointLightColor",
+        "Value": 1.0
+      },
+      {
+        "Key": "_PointLightColorSaturation",
+        "Value": 1.0
+      },
+      {
+        "Key": "_PointLightIgnoreNormal",
+        "Value": 0.0
+      },
+      {
+        "Key": "_QueueOffset",
+        "Value": 0.0
+      },
+      {
+        "Key": "_ReceiveShadows",
+        "Value": 1.0
+      },
+      {
+        "Key": "_ShadowBiasDistance",
+        "Value": 0.100000001
+      },
+      {
+        "Key": "_ShadowIntensity",
+        "Value": 0.25
+      },
+      {
+        "Key": "_Smoothness",
+        "Value": 0.141421348
+      },
+      {
+        "Key": "_SmoothnessTextureChannel",
+        "Value": 0.0
+      },
+      {
+        "Key": "_SpecularHighlights",
+        "Value": 1.0
+      },
+      {
+        "Key": "_SpecularIntensity",
+        "Value": 1.09000003
+      },
+      {
+        "Key": "_SpecularParallax",
+        "Value": 0.0
+      },
+      {
+        "Key": "_SrcBlend",
+        "Value": 1.0
+      },
+      {
+        "Key": "_SrcBlendAlpha",
+        "Value": 1.0
+      },
+      {
+        "Key": "_StencilRefE",
+        "Value": 204.0
+      },
+      {
+        "Key": "_StencilSettingGroup",
+        "Value": 0.0
+      },
+      {
+        "Key": "_Surface",
+        "Value": 0.0
+      },
+      {
+        "Key": "_UVSec",
+        "Value": 0.0
+      },
+      {
+        "Key": "_WorkflowMode",
+        "Value": 1.0
+      },
+      {
+        "Key": "_ZWrite",
+        "Value": 1.0
+      }
+    ],
+    "m_Colors": [
+      {
+        "Key": "_BaseColor",
+        "Value": {
+          "r": 0.924528301,
+          "g": 0.924528301,
+          "b": 0.924528301,
+          "a": 1.0
+        }
+      },
+      {
+        "Key": "_Color",
+        "Value": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        }
+      },
+      {
+        "Key": "_EmissionColor",
+        "Value": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 1.0
+        }
+      },
+      {
+        "Key": "_FinalTint",
+        "Value": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        }
+      },
+      {
+        "Key": "_HolographicColor",
+        "Value": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 1.0
+        }
+      },
+      {
+        "Key": "_MatColor",
+        "Value": {
+          "r": 1.0,
+          "g": 0.944737613,
+          "b": 0.73113209,
+          "a": 1.0
+        }
+      },
+      {
+        "Key": "_SpecColor",
+        "Value": {
+          "r": 0.199999958,
+          "g": 0.199999958,
+          "b": 0.199999958,
+          "a": 1.0
+        }
+      }
+    ]
+  },
+  "m_BuildTextureStacks": []
+}

@@ -1,0 +1,3637 @@
+{
+  "success": true,
+  "assetPath": "Assets/Studies/WuchangStudy/Shaders/WuchangSurface.shadergraph",
+  "nodes": [
+    {
+      "nodeId": "87e14aa3e82244d6b62a9667549ec7a4",
+      "id": "87e14aa3e82244d6b62a9667549ec7a4",
+      "type": "BlockNode",
+      "name": "VertexDescription.Position",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Position(3)",
+          "direction": "input",
+          "valueType": "Vector3",
+          "concreteValueType": "Vector3",
+          "isConnected": false,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "35a444d9e2cd49168b02e16e380abdf6",
+      "id": "35a444d9e2cd49168b02e16e380abdf6",
+      "type": "BlockNode",
+      "name": "VertexDescription.Normal",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Normal(3)",
+          "direction": "input",
+          "valueType": "Vector3",
+          "concreteValueType": "Vector3",
+          "isConnected": false,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "3383aa05ed624c70844e8fab3ea40fed",
+      "id": "3383aa05ed624c70844e8fab3ea40fed",
+      "type": "BlockNode",
+      "name": "VertexDescription.Tangent",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Tangent(3)",
+          "direction": "input",
+          "valueType": "Vector3",
+          "concreteValueType": "Vector3",
+          "isConnected": false,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "dcc12a158b734252a657e6f8b89c89ac",
+      "id": "dcc12a158b734252a657e6f8b89c89ac",
+      "type": "BlockNode",
+      "name": "SurfaceDescription.BaseColor",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Base Color(3)",
+          "direction": "input",
+          "valueType": "Vector3",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0
+          }
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "488c88a8befb42f39d3c10851f33d312",
+      "id": "488c88a8befb42f39d3c10851f33d312",
+      "type": "BlockNode",
+      "name": "SurfaceDescription.Alpha",
+      "position": {
+        "x": 251.333313,
+        "y": 408.6666,
+        "width": 199.999939,
+        "height": 42.666687
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Alpha(1)",
+          "direction": "input",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": 1.0
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "d64d44d8d6d24180b3769621d8e679b9",
+      "id": "d64d44d8d6d24180b3769621d8e679b9",
+      "type": "BlockNode",
+      "name": "SurfaceDescription.AlphaClipThreshold",
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Alpha Clip Threshold(1)",
+          "direction": "input",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": 0.5
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "5d5757d77c574401b143895ff2276488",
+      "id": "5d5757d77c574401b143895ff2276488",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -1500.0,
+        "y": -650.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Base texture(T2)",
+          "direction": "output",
+          "valueType": "Texture2D",
+          "concreteValueType": "Texture2D",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_BaseMap"
+      }
+    },
+    {
+      "nodeId": "176670d0f69e4fc0b97a674afff85871",
+      "id": "176670d0f69e4fc0b97a674afff85871",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -1500.0,
+        "y": -450.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Base tint(4)",
+          "direction": "output",
+          "valueType": "Vector4",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_BaseColor"
+      }
+    },
+    {
+      "nodeId": "7fe2b0cbbf2a42d1ba46516ad8cf6112",
+      "id": "7fe2b0cbbf2a42d1ba46516ad8cf6112",
+      "type": "SampleTexture2DNode",
+      "name": "Sample Texture 2D",
+      "position": {
+        "x": -1280.0,
+        "y": -650.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 8,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "RGBA(4)",
+          "direction": "output",
+          "valueType": "Vector4",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 1,
+          "displayName": "Texture(T2)",
+          "direction": "input",
+          "valueType": "Texture2D",
+          "concreteValueType": "Texture2D",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 2,
+          "displayName": "UV(2)",
+          "direction": "input",
+          "valueType": "Vector2",
+          "concreteValueType": "Vector2",
+          "isConnected": false,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        },
+        {
+          "slotId": 3,
+          "displayName": "Sampler(SS)",
+          "direction": "input",
+          "valueType": "SamplerState",
+          "concreteValueType": "SamplerState",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 4,
+          "displayName": "R(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 5,
+          "displayName": "G(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 6,
+          "displayName": "B(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 7,
+          "displayName": "A(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "4991d639e1c64d39a5e556b829894126",
+      "id": "4991d639e1c64d39a5e556b829894126",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": -1020.0,
+        "y": -650.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(4)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(4)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(4)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "1c8ed198d52549e0b522b9c0c9271f12",
+      "id": "1c8ed198d52549e0b522b9c0c9271f12",
+      "type": "NormalVectorNode",
+      "name": "Normal Vector",
+      "position": {
+        "x": -1500.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Out(3)",
+          "direction": "output",
+          "valueType": "Vector3",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "space": "World"
+      }
+    },
+    {
+      "nodeId": "6daa66181adc488d85812826b065ba06",
+      "id": "6daa66181adc488d85812826b065ba06",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -1500.0,
+        "y": 150.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Light direction WS(4)",
+          "direction": "output",
+          "valueType": "Vector4",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_StudyLightDirection"
+      }
+    },
+    {
+      "nodeId": "650281d134874426a0b3f50c62f380c4",
+      "id": "650281d134874426a0b3f50c62f380c4",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": -1250.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(3)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(3)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(3)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "db6161a200594fba9537ffe60c6f2fed",
+      "id": "db6161a200594fba9537ffe60c6f2fed",
+      "type": "SplitNode",
+      "name": "Split",
+      "position": {
+        "x": -1070.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 5,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(3)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "R(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 2,
+          "displayName": "G(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 3,
+          "displayName": "B(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 4,
+          "displayName": "A(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "82a29b827a30424394bd8f963fc80675",
+      "id": "82a29b827a30424394bd8f963fc80675",
+      "type": "AddNode",
+      "name": "Add",
+      "position": {
+        "x": -890.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "760c5606851142c4880953185349a00a",
+      "id": "760c5606851142c4880953185349a00a",
+      "type": "AddNode",
+      "name": "Add",
+      "position": {
+        "x": -710.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "4300789b283a410f86e560ce05c12618",
+      "id": "4300789b283a410f86e560ce05c12618",
+      "type": "RemapNode",
+      "name": "Remap",
+      "position": {
+        "x": -500.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 4,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": -1.0,
+            "y": -1.0,
+            "z": -1.0,
+            "w": -1.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "In Min Max(2)",
+          "direction": "input",
+          "valueType": "Vector2",
+          "concreteValueType": "Vector2",
+          "isConnected": false,
+          "defaultValue": {
+            "x": -1.0,
+            "y": 1.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out Min Max(2)",
+          "direction": "input",
+          "valueType": "Vector2",
+          "concreteValueType": "Vector2",
+          "isConnected": false,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 1.0
+          }
+        },
+        {
+          "slotId": 3,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "132d86dd6fc246e59860a36e67cbb84b",
+      "id": "132d86dd6fc246e59860a36e67cbb84b",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -500.0,
+        "y": 250.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Toon threshold range XY(4)",
+          "direction": "output",
+          "valueType": "Vector4",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_ShadowRange"
+      }
+    },
+    {
+      "nodeId": "8d19088de00f45b6971b33291d3948a3",
+      "id": "8d19088de00f45b6971b33291d3948a3",
+      "type": "RemapNode",
+      "name": "Remap",
+      "position": {
+        "x": -280.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 4,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": -1.0,
+            "y": -1.0,
+            "z": -1.0,
+            "w": -1.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "In Min Max(2)",
+          "direction": "input",
+          "valueType": "Vector2",
+          "concreteValueType": "Vector2",
+          "isConnected": true,
+          "defaultValue": {
+            "x": -1.0,
+            "y": 1.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out Min Max(2)",
+          "direction": "input",
+          "valueType": "Vector2",
+          "concreteValueType": "Vector2",
+          "isConnected": false,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 1.0
+          }
+        },
+        {
+          "slotId": 3,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "bcdece4eaead4b6681161d300ee15017",
+      "id": "bcdece4eaead4b6681161d300ee15017",
+      "type": "SaturateNode",
+      "name": "Saturate",
+      "position": {
+        "x": -70.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 2,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "bcdf2e825784412d89f4ab2bcc84d13f",
+      "id": "bcdf2e825784412d89f4ab2bcc84d13f",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -70.0,
+        "y": 220.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Shadow tint(4)",
+          "direction": "output",
+          "valueType": "Vector4",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_ShadowColor"
+      }
+    },
+    {
+      "nodeId": "1495c152e6484876b81b665a9fc1af95",
+      "id": "1495c152e6484876b81b665a9fc1af95",
+      "type": "LerpNode",
+      "name": "Lerp",
+      "position": {
+        "x": 160.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 4,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(4)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(4)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": false,
+          "defaultValue": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "T(4)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 3,
+          "displayName": "Out(4)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "f82b160909cb4092961c169d07f2bf62",
+      "id": "f82b160909cb4092961c169d07f2bf62",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -500.0,
+        "y": 450.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Original ramp texture(T2)",
+          "direction": "output",
+          "valueType": "Texture2D",
+          "concreteValueType": "Texture2D",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_RampMap"
+      }
+    },
+    {
+      "nodeId": "5001bc84bf5341c2ae739e501fa4b132",
+      "id": "5001bc84bf5341c2ae739e501fa4b132",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -500.0,
+        "y": 600.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Original ramp row(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_RampRow"
+      }
+    },
+    {
+      "nodeId": "f2dc828791714c9aa29c581c00b05c62",
+      "id": "f2dc828791714c9aa29c581c00b05c62",
+      "type": "CombineNode",
+      "name": "Combine",
+      "position": {
+        "x": -260.0,
+        "y": 420.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 7,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "R(1)",
+          "direction": "input",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": 0.0
+        },
+        {
+          "slotId": 1,
+          "displayName": "G(1)",
+          "direction": "input",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": 0.0
+        },
+        {
+          "slotId": 2,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": 0.0
+        },
+        {
+          "slotId": 3,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": 0.0
+        },
+        {
+          "slotId": 4,
+          "displayName": "RGBA(4)",
+          "direction": "output",
+          "valueType": "Vector4",
+          "concreteValueType": "Vector4",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 5,
+          "displayName": "RGB(3)",
+          "direction": "output",
+          "valueType": "Vector3",
+          "concreteValueType": "Vector3",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 6,
+          "displayName": "RG(2)",
+          "direction": "output",
+          "valueType": "Vector2",
+          "concreteValueType": "Vector2",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "1abcaf4004da4b1c981918eab00d6d36",
+      "id": "1abcaf4004da4b1c981918eab00d6d36",
+      "type": "SampleTexture2DNode",
+      "name": "Sample Texture 2D",
+      "position": {
+        "x": 0.0,
+        "y": 440.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 8,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "RGBA(4)",
+          "direction": "output",
+          "valueType": "Vector4",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 1,
+          "displayName": "Texture(T2)",
+          "direction": "input",
+          "valueType": "Texture2D",
+          "concreteValueType": "Texture2D",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 2,
+          "displayName": "UV(2)",
+          "direction": "input",
+          "valueType": "Vector2",
+          "concreteValueType": "Vector2",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0
+          }
+        },
+        {
+          "slotId": 3,
+          "displayName": "Sampler(SS)",
+          "direction": "input",
+          "valueType": "SamplerState",
+          "concreteValueType": "SamplerState",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 4,
+          "displayName": "R(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 5,
+          "displayName": "G(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 6,
+          "displayName": "B(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        },
+        {
+          "slotId": 7,
+          "displayName": "A(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "0d6fa51b65064a0b85af43672efe27a2",
+      "id": "0d6fa51b65064a0b85af43672efe27a2",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": 220.0,
+        "y": 600.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Original ramp blend(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_RampStrength"
+      }
+    },
+    {
+      "nodeId": "089cc49e5e124c35b824200d243adfca",
+      "id": "089cc49e5e124c35b824200d243adfca",
+      "type": "LerpNode",
+      "name": "Lerp",
+      "position": {
+        "x": 430.0,
+        "y": 0.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 4,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(4)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(4)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "T(4)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 3,
+          "displayName": "Out(4)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "d670e9baed7a475e81d0c84b15924294",
+      "id": "d670e9baed7a475e81d0c84b15924294",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": 650.0,
+        "y": -450.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(4)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(4)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(4)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "6fc07a12a4ca422b873b4993c92e41fc",
+      "id": "6fc07a12a4ca422b873b4993c92e41fc",
+      "type": "ViewDirectionNode",
+      "name": "View Direction",
+      "position": {
+        "x": -1500.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Out(3)",
+          "direction": "output",
+          "valueType": "Vector3",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "space": "World"
+      }
+    },
+    {
+      "nodeId": "b57402add8d641b193c6a5030a51cf23",
+      "id": "b57402add8d641b193c6a5030a51cf23",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": -1250.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(3)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(3)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(3)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "81819ba9cea0463aa8d2dd0115baabae",
+      "id": "81819ba9cea0463aa8d2dd0115baabae",
+      "type": "SplitNode",
+      "name": "Split",
+      "position": {
+        "x": -1070.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 5,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(3)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "R(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 2,
+          "displayName": "G(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 3,
+          "displayName": "B(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 4,
+          "displayName": "A(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "12ebfab5b834465abb99fd01c636b8f1",
+      "id": "12ebfab5b834465abb99fd01c636b8f1",
+      "type": "AddNode",
+      "name": "Add",
+      "position": {
+        "x": -890.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "d89415ff4cb848329c7465e32ce9ecec",
+      "id": "d89415ff4cb848329c7465e32ce9ecec",
+      "type": "AddNode",
+      "name": "Add",
+      "position": {
+        "x": -710.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "0cc5272b699f4245a861ff5d8a1365f7",
+      "id": "0cc5272b699f4245a861ff5d8a1365f7",
+      "type": "SaturateNode",
+      "name": "Saturate",
+      "position": {
+        "x": -500.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 2,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "0b47c6988c404da79ab99d54358925ec",
+      "id": "0b47c6988c404da79ab99d54358925ec",
+      "type": "OneMinusNode",
+      "name": "One Minus",
+      "position": {
+        "x": -280.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 2,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "c6f87ba7954d4f09947432c340af6fc0",
+      "id": "c6f87ba7954d4f09947432c340af6fc0",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": -60.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "ed7c1e1753ff492bbe3d8e3d255d0357",
+      "id": "ed7c1e1753ff492bbe3d8e3d255d0357",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": 160.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "3623dd79aca44f3d840094d318dda952",
+      "id": "3623dd79aca44f3d840094d318dda952",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": 160.0,
+        "y": 1080.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Rim intensity(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_RimStrength"
+      }
+    },
+    {
+      "nodeId": "d0017c419e8c46c6a4c12eb8be017399",
+      "id": "d0017c419e8c46c6a4c12eb8be017399",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": 430.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "fce8e69cdc0345d0a34a67f9eed5c1f3",
+      "id": "fce8e69cdc0345d0a34a67f9eed5c1f3",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -1500.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Half vector WS(4)",
+          "direction": "output",
+          "valueType": "Vector4",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_HalfVector"
+      }
+    },
+    {
+      "nodeId": "5f0a7deabc1e47a09243714858e99ce0",
+      "id": "5f0a7deabc1e47a09243714858e99ce0",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": -1250.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(3)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(3)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(3)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "e5b2eed109de4c17af1fed37ff90be03",
+      "id": "e5b2eed109de4c17af1fed37ff90be03",
+      "type": "SplitNode",
+      "name": "Split",
+      "position": {
+        "x": -1070.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 5,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(3)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector3",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "R(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 2,
+          "displayName": "G(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 3,
+          "displayName": "B(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        },
+        {
+          "slotId": 4,
+          "displayName": "A(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": false,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "886bf61d6f924164bd3a9ca6e78965e7",
+      "id": "886bf61d6f924164bd3a9ca6e78965e7",
+      "type": "AddNode",
+      "name": "Add",
+      "position": {
+        "x": -890.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "f264b7bb488e4027ac5fc3e69ce544ee",
+      "id": "f264b7bb488e4027ac5fc3e69ce544ee",
+      "type": "AddNode",
+      "name": "Add",
+      "position": {
+        "x": -710.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "e1464ad786d34bb69cd5bc0856da6585",
+      "id": "e1464ad786d34bb69cd5bc0856da6585",
+      "type": "SaturateNode",
+      "name": "Saturate",
+      "position": {
+        "x": -500.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 2,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "In(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "332dfa255bb64a368476a97be7efb502",
+      "id": "332dfa255bb64a368476a97be7efb502",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": -280.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "eae8f83ca7064839a46026537053f516",
+      "id": "eae8f83ca7064839a46026537053f516",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": -90.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "f6b800e9a3bd41a0a11f8072bb2cb859",
+      "id": "f6b800e9a3bd41a0a11f8072bb2cb859",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": 100.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "616e9a071dca4a8fac0f428d72e76e7e",
+      "id": "616e9a071dca4a8fac0f428d72e76e7e",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": 290.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "a2ee735b4e6b42ef908c47b56bf2a3db",
+      "id": "a2ee735b4e6b42ef908c47b56bf2a3db",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": 400.0,
+        "y": 1500.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Specular intensity(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_SpecStrength"
+      }
+    },
+    {
+      "nodeId": "3c149b53c52e490c97c690387435e388",
+      "id": "3c149b53c52e490c97c690387435e388",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": 600.0,
+        "y": 1300.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "b49f4f2c50084b11b0d91c5eac02b4d5",
+      "id": "b49f4f2c50084b11b0d91c5eac02b4d5",
+      "type": "AddNode",
+      "name": "Add",
+      "position": {
+        "x": 850.0,
+        "y": 850.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "79a265a7b1bc4eef89d2e226f134b552",
+      "id": "79a265a7b1bc4eef89d2e226f134b552",
+      "type": "AddNode",
+      "name": "Add",
+      "position": {
+        "x": 1100.0,
+        "y": -450.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(4)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(4)",
+          "direction": "input",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0,
+            "w": 0.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(4)",
+          "direction": "output",
+          "valueType": "DynamicVector",
+          "concreteValueType": "Vector4",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    },
+    {
+      "nodeId": "22ec5c3e5d04451ab31d2cdef02823b1",
+      "id": "22ec5c3e5d04451ab31d2cdef02823b1",
+      "type": "PropertyNode",
+      "name": "Property",
+      "position": {
+        "x": -1050.0,
+        "y": -200.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 1,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "Opacity(1)",
+          "direction": "output",
+          "valueType": "Vector1",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {
+        "propertyReferenceName": "_Opacity"
+      }
+    },
+    {
+      "nodeId": "75b6fa13006b4a3e941e63e6cb5aa18e",
+      "id": "75b6fa13006b4a3e941e63e6cb5aa18e",
+      "type": "MultiplyNode",
+      "name": "Multiply",
+      "position": {
+        "x": -800.0,
+        "y": -350.0,
+        "width": 0.0,
+        "height": 0.0
+      },
+      "slotCount": 3,
+      "slots": [
+        {
+          "slotId": 0,
+          "displayName": "A(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 0.0,
+            "m01": 0.0,
+            "m02": 0.0,
+            "m03": 0.0,
+            "m10": 0.0,
+            "m11": 0.0,
+            "m12": 0.0,
+            "m13": 0.0,
+            "m20": 0.0,
+            "m21": 0.0,
+            "m22": 0.0,
+            "m23": 0.0,
+            "m30": 0.0,
+            "m31": 0.0,
+            "m32": 0.0,
+            "m33": 0.0
+          }
+        },
+        {
+          "slotId": 1,
+          "displayName": "B(1)",
+          "direction": "input",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": {
+            "m00": 2.0,
+            "m01": 2.0,
+            "m02": 2.0,
+            "m03": 2.0,
+            "m10": 2.0,
+            "m11": 2.0,
+            "m12": 2.0,
+            "m13": 2.0,
+            "m20": 2.0,
+            "m21": 2.0,
+            "m22": 2.0,
+            "m23": 2.0,
+            "m30": 2.0,
+            "m31": 2.0,
+            "m32": 2.0,
+            "m33": 2.0
+          }
+        },
+        {
+          "slotId": 2,
+          "displayName": "Out(1)",
+          "direction": "output",
+          "valueType": "Dynamic",
+          "concreteValueType": "Vector1",
+          "isConnected": true,
+          "defaultValue": null
+        }
+      ],
+      "settings": {}
+    }
+  ],
+  "edges": [
+    {
+      "outputNodeId": "089cc49e5e124c35b824200d243adfca",
+      "outputNode": "Lerp",
+      "outputSlotId": 3,
+      "inputNodeId": "d670e9baed7a475e81d0c84b15924294",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "0b47c6988c404da79ab99d54358925ec",
+      "outputNode": "One Minus",
+      "outputSlotId": 1,
+      "inputNodeId": "c6f87ba7954d4f09947432c340af6fc0",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "0b47c6988c404da79ab99d54358925ec",
+      "outputNode": "One Minus",
+      "outputSlotId": 1,
+      "inputNodeId": "c6f87ba7954d4f09947432c340af6fc0",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "0cc5272b699f4245a861ff5d8a1365f7",
+      "outputNode": "Saturate",
+      "outputSlotId": 1,
+      "inputNodeId": "0b47c6988c404da79ab99d54358925ec",
+      "inputNode": "One Minus",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "0d6fa51b65064a0b85af43672efe27a2",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "089cc49e5e124c35b824200d243adfca",
+      "inputNode": "Lerp",
+      "inputSlotId": 2
+    },
+    {
+      "outputNodeId": "12ebfab5b834465abb99fd01c636b8f1",
+      "outputNode": "Add",
+      "outputSlotId": 2,
+      "inputNodeId": "d89415ff4cb848329c7465e32ce9ecec",
+      "inputNode": "Add",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "132d86dd6fc246e59860a36e67cbb84b",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "8d19088de00f45b6971b33291d3948a3",
+      "inputNode": "Remap",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "1495c152e6484876b81b665a9fc1af95",
+      "outputNode": "Lerp",
+      "outputSlotId": 3,
+      "inputNodeId": "089cc49e5e124c35b824200d243adfca",
+      "inputNode": "Lerp",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "176670d0f69e4fc0b97a674afff85871",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "4991d639e1c64d39a5e556b829894126",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "1abcaf4004da4b1c981918eab00d6d36",
+      "outputNode": "Sample Texture 2D",
+      "outputSlotId": 0,
+      "inputNodeId": "089cc49e5e124c35b824200d243adfca",
+      "inputNode": "Lerp",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "1c8ed198d52549e0b522b9c0c9271f12",
+      "outputNode": "Normal Vector",
+      "outputSlotId": 0,
+      "inputNodeId": "5f0a7deabc1e47a09243714858e99ce0",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "1c8ed198d52549e0b522b9c0c9271f12",
+      "outputNode": "Normal Vector",
+      "outputSlotId": 0,
+      "inputNodeId": "650281d134874426a0b3f50c62f380c4",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "1c8ed198d52549e0b522b9c0c9271f12",
+      "outputNode": "Normal Vector",
+      "outputSlotId": 0,
+      "inputNodeId": "b57402add8d641b193c6a5030a51cf23",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "22ec5c3e5d04451ab31d2cdef02823b1",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "75b6fa13006b4a3e941e63e6cb5aa18e",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "332dfa255bb64a368476a97be7efb502",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "eae8f83ca7064839a46026537053f516",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "332dfa255bb64a368476a97be7efb502",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "eae8f83ca7064839a46026537053f516",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "3623dd79aca44f3d840094d318dda952",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "d0017c419e8c46c6a4c12eb8be017399",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "3c149b53c52e490c97c690387435e388",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "b49f4f2c50084b11b0d91c5eac02b4d5",
+      "inputNode": "Add",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "4300789b283a410f86e560ce05c12618",
+      "outputNode": "Remap",
+      "outputSlotId": 3,
+      "inputNodeId": "8d19088de00f45b6971b33291d3948a3",
+      "inputNode": "Remap",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "4300789b283a410f86e560ce05c12618",
+      "outputNode": "Remap",
+      "outputSlotId": 3,
+      "inputNodeId": "f2dc828791714c9aa29c581c00b05c62",
+      "inputNode": "Combine",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "4991d639e1c64d39a5e556b829894126",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "d670e9baed7a475e81d0c84b15924294",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "5001bc84bf5341c2ae739e501fa4b132",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "f2dc828791714c9aa29c581c00b05c62",
+      "inputNode": "Combine",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "5d5757d77c574401b143895ff2276488",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "7fe2b0cbbf2a42d1ba46516ad8cf6112",
+      "inputNode": "Sample Texture 2D",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "5f0a7deabc1e47a09243714858e99ce0",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "e5b2eed109de4c17af1fed37ff90be03",
+      "inputNode": "Split",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "616e9a071dca4a8fac0f428d72e76e7e",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "3c149b53c52e490c97c690387435e388",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "650281d134874426a0b3f50c62f380c4",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "db6161a200594fba9537ffe60c6f2fed",
+      "inputNode": "Split",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "6daa66181adc488d85812826b065ba06",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "650281d134874426a0b3f50c62f380c4",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "6fc07a12a4ca422b873b4993c92e41fc",
+      "outputNode": "View Direction",
+      "outputSlotId": 0,
+      "inputNodeId": "b57402add8d641b193c6a5030a51cf23",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "75b6fa13006b4a3e941e63e6cb5aa18e",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "488c88a8befb42f39d3c10851f33d312",
+      "inputNode": "SurfaceDescription.Alpha",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "760c5606851142c4880953185349a00a",
+      "outputNode": "Add",
+      "outputSlotId": 2,
+      "inputNodeId": "4300789b283a410f86e560ce05c12618",
+      "inputNode": "Remap",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "79a265a7b1bc4eef89d2e226f134b552",
+      "outputNode": "Add",
+      "outputSlotId": 2,
+      "inputNodeId": "dcc12a158b734252a657e6f8b89c89ac",
+      "inputNode": "SurfaceDescription.BaseColor",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "7fe2b0cbbf2a42d1ba46516ad8cf6112",
+      "outputNode": "Sample Texture 2D",
+      "outputSlotId": 0,
+      "inputNodeId": "4991d639e1c64d39a5e556b829894126",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "7fe2b0cbbf2a42d1ba46516ad8cf6112",
+      "outputNode": "Sample Texture 2D",
+      "outputSlotId": 7,
+      "inputNodeId": "75b6fa13006b4a3e941e63e6cb5aa18e",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "81819ba9cea0463aa8d2dd0115baabae",
+      "outputNode": "Split",
+      "outputSlotId": 1,
+      "inputNodeId": "12ebfab5b834465abb99fd01c636b8f1",
+      "inputNode": "Add",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "81819ba9cea0463aa8d2dd0115baabae",
+      "outputNode": "Split",
+      "outputSlotId": 2,
+      "inputNodeId": "12ebfab5b834465abb99fd01c636b8f1",
+      "inputNode": "Add",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "81819ba9cea0463aa8d2dd0115baabae",
+      "outputNode": "Split",
+      "outputSlotId": 3,
+      "inputNodeId": "d89415ff4cb848329c7465e32ce9ecec",
+      "inputNode": "Add",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "82a29b827a30424394bd8f963fc80675",
+      "outputNode": "Add",
+      "outputSlotId": 2,
+      "inputNodeId": "760c5606851142c4880953185349a00a",
+      "inputNode": "Add",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "886bf61d6f924164bd3a9ca6e78965e7",
+      "outputNode": "Add",
+      "outputSlotId": 2,
+      "inputNodeId": "f264b7bb488e4027ac5fc3e69ce544ee",
+      "inputNode": "Add",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "8d19088de00f45b6971b33291d3948a3",
+      "outputNode": "Remap",
+      "outputSlotId": 3,
+      "inputNodeId": "bcdece4eaead4b6681161d300ee15017",
+      "inputNode": "Saturate",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "a2ee735b4e6b42ef908c47b56bf2a3db",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "3c149b53c52e490c97c690387435e388",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "b49f4f2c50084b11b0d91c5eac02b4d5",
+      "outputNode": "Add",
+      "outputSlotId": 2,
+      "inputNodeId": "79a265a7b1bc4eef89d2e226f134b552",
+      "inputNode": "Add",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "b57402add8d641b193c6a5030a51cf23",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "81819ba9cea0463aa8d2dd0115baabae",
+      "inputNode": "Split",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "bcdece4eaead4b6681161d300ee15017",
+      "outputNode": "Saturate",
+      "outputSlotId": 1,
+      "inputNodeId": "1495c152e6484876b81b665a9fc1af95",
+      "inputNode": "Lerp",
+      "inputSlotId": 2
+    },
+    {
+      "outputNodeId": "bcdf2e825784412d89f4ab2bcc84d13f",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "1495c152e6484876b81b665a9fc1af95",
+      "inputNode": "Lerp",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "c6f87ba7954d4f09947432c340af6fc0",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "ed7c1e1753ff492bbe3d8e3d255d0357",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "c6f87ba7954d4f09947432c340af6fc0",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "ed7c1e1753ff492bbe3d8e3d255d0357",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "d0017c419e8c46c6a4c12eb8be017399",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "b49f4f2c50084b11b0d91c5eac02b4d5",
+      "inputNode": "Add",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "d670e9baed7a475e81d0c84b15924294",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "79a265a7b1bc4eef89d2e226f134b552",
+      "inputNode": "Add",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "d89415ff4cb848329c7465e32ce9ecec",
+      "outputNode": "Add",
+      "outputSlotId": 2,
+      "inputNodeId": "0cc5272b699f4245a861ff5d8a1365f7",
+      "inputNode": "Saturate",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "db6161a200594fba9537ffe60c6f2fed",
+      "outputNode": "Split",
+      "outputSlotId": 1,
+      "inputNodeId": "82a29b827a30424394bd8f963fc80675",
+      "inputNode": "Add",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "db6161a200594fba9537ffe60c6f2fed",
+      "outputNode": "Split",
+      "outputSlotId": 2,
+      "inputNodeId": "82a29b827a30424394bd8f963fc80675",
+      "inputNode": "Add",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "db6161a200594fba9537ffe60c6f2fed",
+      "outputNode": "Split",
+      "outputSlotId": 3,
+      "inputNodeId": "760c5606851142c4880953185349a00a",
+      "inputNode": "Add",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "e1464ad786d34bb69cd5bc0856da6585",
+      "outputNode": "Saturate",
+      "outputSlotId": 1,
+      "inputNodeId": "332dfa255bb64a368476a97be7efb502",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "e1464ad786d34bb69cd5bc0856da6585",
+      "outputNode": "Saturate",
+      "outputSlotId": 1,
+      "inputNodeId": "332dfa255bb64a368476a97be7efb502",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "e5b2eed109de4c17af1fed37ff90be03",
+      "outputNode": "Split",
+      "outputSlotId": 1,
+      "inputNodeId": "886bf61d6f924164bd3a9ca6e78965e7",
+      "inputNode": "Add",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "e5b2eed109de4c17af1fed37ff90be03",
+      "outputNode": "Split",
+      "outputSlotId": 2,
+      "inputNodeId": "886bf61d6f924164bd3a9ca6e78965e7",
+      "inputNode": "Add",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "e5b2eed109de4c17af1fed37ff90be03",
+      "outputNode": "Split",
+      "outputSlotId": 3,
+      "inputNodeId": "f264b7bb488e4027ac5fc3e69ce544ee",
+      "inputNode": "Add",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "eae8f83ca7064839a46026537053f516",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "f6b800e9a3bd41a0a11f8072bb2cb859",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "eae8f83ca7064839a46026537053f516",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "f6b800e9a3bd41a0a11f8072bb2cb859",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "ed7c1e1753ff492bbe3d8e3d255d0357",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "d0017c419e8c46c6a4c12eb8be017399",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "f264b7bb488e4027ac5fc3e69ce544ee",
+      "outputNode": "Add",
+      "outputSlotId": 2,
+      "inputNodeId": "e1464ad786d34bb69cd5bc0856da6585",
+      "inputNode": "Saturate",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "f2dc828791714c9aa29c581c00b05c62",
+      "outputNode": "Combine",
+      "outputSlotId": 6,
+      "inputNodeId": "1abcaf4004da4b1c981918eab00d6d36",
+      "inputNode": "Sample Texture 2D",
+      "inputSlotId": 2
+    },
+    {
+      "outputNodeId": "f6b800e9a3bd41a0a11f8072bb2cb859",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "616e9a071dca4a8fac0f428d72e76e7e",
+      "inputNode": "Multiply",
+      "inputSlotId": 0
+    },
+    {
+      "outputNodeId": "f6b800e9a3bd41a0a11f8072bb2cb859",
+      "outputNode": "Multiply",
+      "outputSlotId": 2,
+      "inputNodeId": "616e9a071dca4a8fac0f428d72e76e7e",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "f82b160909cb4092961c169d07f2bf62",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "1abcaf4004da4b1c981918eab00d6d36",
+      "inputNode": "Sample Texture 2D",
+      "inputSlotId": 1
+    },
+    {
+      "outputNodeId": "fce8e69cdc0345d0a34a67f9eed5c1f3",
+      "outputNode": "Property",
+      "outputSlotId": 0,
+      "inputNodeId": "5f0a7deabc1e47a09243714858e99ce0",
+      "inputNode": "Multiply",
+      "inputSlotId": 1
+    }
+  ],
+  "properties": [
+    {
+      "id": "228fb9e7042b47f3b46dd99bb8c122d8",
+      "type": "Texture2D",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+      "displayName": "Base Map",
+      "referenceName": "_Base_Map",
+      "exposed": true,
+      "hidden": false,
+      "guid": "be05d3cb-5e79-41cb-9f1b-12dc211b360c",
+      "value": {
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":10300,\"guid\":\"0000000000000000f000000000000000\",\"type\":0}}",
+        "m_Guid": ""
+      }
+    },
+    {
+      "id": "26bd8a5352d241c2b5e426d3db745d4a",
+      "type": "Texture2D",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+      "displayName": "Base texture",
+      "referenceName": "_BaseMap",
+      "exposed": true,
+      "hidden": false,
+      "guid": "7fdd623a-7098-44ba-9f32-1f4755439ffa",
+      "value": {
+        "m_SerializedTexture": "",
+        "m_Guid": ""
+      }
+    },
+    {
+      "id": "4b26116b36634c08b2fb79ba98e09f53",
+      "type": "Color",
+      "fullType": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+      "displayName": "Base tint",
+      "referenceName": "_BaseColor",
+      "exposed": true,
+      "hidden": false,
+      "guid": "6148f701-31a9-47cf-ad10-85baac8b1603",
+      "value": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      }
+    },
+    {
+      "id": "87d61ba2422144c093b8787ebf0d8e77",
+      "type": "Texture2D",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+      "displayName": "Original ramp texture",
+      "referenceName": "_RampMap",
+      "exposed": true,
+      "hidden": false,
+      "guid": "a1f9bb5e-e5c0-44cc-96b2-b8ac8f12939a",
+      "value": {
+        "m_SerializedTexture": "",
+        "m_Guid": ""
+      }
+    },
+    {
+      "id": "885826544c554213bed483afdc5214f1",
+      "type": "Vector4",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Vector4ShaderProperty",
+      "displayName": "Light direction WS",
+      "referenceName": "_StudyLightDirection",
+      "exposed": true,
+      "hidden": false,
+      "guid": "dd0662d7-0c1c-4568-9e9e-d2b14b05def3",
+      "value": {
+        "x": -0.3499999940395355,
+        "y": 0.550000011920929,
+        "z": -0.7599999904632568,
+        "w": 0.0
+      }
+    },
+    {
+      "id": "71ef9856ae6e4ed8b1c6ca286945be58",
+      "type": "Vector4",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Vector4ShaderProperty",
+      "displayName": "Half vector WS",
+      "referenceName": "_HalfVector",
+      "exposed": true,
+      "hidden": false,
+      "guid": "53a0dcfd-c183-4352-97e4-249cda7e0428",
+      "value": {
+        "x": -0.18000000715255737,
+        "y": 0.2800000011920929,
+        "z": -0.9399999976158142,
+        "w": 0.0
+      }
+    },
+    {
+      "id": "90ee5bf5d5184c3da121351d2cc8d0eb",
+      "type": "Color",
+      "fullType": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+      "displayName": "Shadow tint",
+      "referenceName": "_ShadowColor",
+      "exposed": true,
+      "hidden": false,
+      "guid": "a0764d56-e109-43d9-8c27-1f0ecd3b39d8",
+      "value": {
+        "r": 0.6000000238418579,
+        "g": 0.5199999809265137,
+        "b": 0.6000000238418579,
+        "a": 1.0
+      }
+    },
+    {
+      "id": "90a8883bb8ed492ebca6f8d7072b90ec",
+      "type": "Vector4",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Vector4ShaderProperty",
+      "displayName": "Toon threshold range XY",
+      "referenceName": "_ShadowRange",
+      "exposed": true,
+      "hidden": false,
+      "guid": "eaa0d8a6-afd6-4bcb-bc28-5c2ab08e67d6",
+      "value": {
+        "x": 0.30000001192092896,
+        "y": 0.6200000047683716,
+        "z": 0.0,
+        "w": 0.0
+      }
+    },
+    {
+      "id": "9b7a38997f7c446fa5e03dcb3a964f48",
+      "type": "Vector1",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+      "displayName": "Original ramp blend",
+      "referenceName": "_RampStrength",
+      "exposed": true,
+      "hidden": false,
+      "guid": "8e5e013f-6dd6-484e-99b4-5c19deaaa09c",
+      "value": 0.11999999731779099
+    },
+    {
+      "id": "fbcf31bb62c244d6896ba6e61e36e03d",
+      "type": "Vector1",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+      "displayName": "Original ramp row",
+      "referenceName": "_RampRow",
+      "exposed": true,
+      "hidden": false,
+      "guid": "5b7b71a1-93af-44ab-9c03-b4d4f2302492",
+      "value": 0.949999988079071
+    },
+    {
+      "id": "26cd83cd3654459bbbe3c56fbe006503",
+      "type": "Vector1",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+      "displayName": "Specular intensity",
+      "referenceName": "_SpecStrength",
+      "exposed": true,
+      "hidden": false,
+      "guid": "64925b9b-71f7-4154-858f-7b9f687d5501",
+      "value": 0.07999999821186066
+    },
+    {
+      "id": "00765478127b4742a5b489b18253a147",
+      "type": "Vector1",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+      "displayName": "Rim intensity",
+      "referenceName": "_RimStrength",
+      "exposed": true,
+      "hidden": false,
+      "guid": "2054df6c-9834-49fa-baa0-cd30a800fef7",
+      "value": 0.10000000149011612
+    },
+    {
+      "id": "f2107b838e9043eeb661e0c3489fbbc9",
+      "type": "Vector1",
+      "fullType": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+      "displayName": "Opacity",
+      "referenceName": "_Opacity",
+      "exposed": true,
+      "hidden": false,
+      "guid": "bbf84c3a-8e86-440b-bf1b-d6c801cb6fb0",
+      "value": 1.0
+    }
+  ],
+  "keywords": []
+}
