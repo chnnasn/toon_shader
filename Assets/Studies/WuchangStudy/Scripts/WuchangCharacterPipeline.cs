@@ -19,6 +19,7 @@ public sealed class WuchangCharacterPipeline : MonoBehaviour
     public Transform headReference;
     public float reflectionPlaneY;
     public bool preDepth = true;
+    public bool outline = true;
     public bool stencilHairShadow = true;
     public bool reflection = true;
     [Range(0f, 1f)] public float reflectionStrength = 0.08f;
@@ -26,6 +27,7 @@ public sealed class WuchangCharacterPipeline : MonoBehaviour
     [Range(-0.02f, 0.02f)] public float globalHairShadowOffsetY;
 
     public readonly List<Draw> preDepthDraws = new();
+    public readonly List<Draw> outlineDraws = new();
     public readonly List<Draw> hairShadowDraws = new();
     public readonly List<Draw> faceShadowDraws = new();
     public readonly List<Draw> reflectionDraws = new();
@@ -43,6 +45,7 @@ public sealed class WuchangCharacterPipeline : MonoBehaviour
     public void Rebuild()
     {
         preDepthDraws.Clear();
+        outlineDraws.Clear();
         hairShadowDraws.Clear();
         faceShadowDraws.Clear();
         reflectionDraws.Clear();
@@ -60,6 +63,7 @@ public sealed class WuchangCharacterPipeline : MonoBehaviour
                 if (!material || material.shader.name != "AetherGazer/Wuchang Character Reconstructed")
                     continue;
                 AddIfEnabled(preDepthDraws, renderer, material, slot, "PreDepth");
+                AddIfEnabled(outlineDraws, renderer, material, slot, "Outline");
                 AddIfEnabled(hairShadowDraws, renderer, material, slot, "CharHairShadow");
                 AddIfEnabled(faceShadowDraws, renderer, material, slot, "CharFaceShadow");
                 AddIfEnabled(reflectionDraws, renderer, material, slot, "Reflection");

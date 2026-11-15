@@ -8,8 +8,7 @@
 
 - Unity：`6000.4.7f1`。
 - Universal Render Pipeline / Shader Graph：`17.4.0`。
-- 本次阅读时 Git 工作区没有已列出的文件改动；本文件是新增学习材料。
-- 结论以当前 `Assets/Studies` 实现为准。各 README 中已经明确标出的“独立重建”“研究假设”和“未恢复部分”，不能表述成原游戏的确定实现。
+- 阅读入口以当前 `Assets/Studies` 实现和各 Study README 为准。
 
 ## 前置基础
 
@@ -29,11 +28,11 @@
 
 读完能回答：二次元角色为什么仍然受真实灯光影响，却能得到清晰、可控的明暗块？
 
-主链：场景 Directional Light → URP 获取主光与阴影 → `N·L`/Half-Lambert → `smoothstep` 形成软阈值色阶 → 明暗色插值 → 高光、环境光和边缘光补充 → Shader Graph 通过 Emission 输出自定义光照。
+主链：场景 Directional Light → URP 获取主光与阴影 → `N·L`/Half-Lambert → `smoothstep` 形成软阈值色阶 → 明暗色插值 → 高光、环境光和边缘光补充 → Forward Pass 或 Shader Graph Emission 输出自定义光照。
 
-1. 必读 `Assets/Studies/ClukayStudy/Shaders/ClukayLighting.hlsl` 的 `ClukayLighting_float`：输入颜色、法线、RMO 与世界空间数据；下一步计算主光与 Half-Lambert；输出基础 NPR 颜色和 Alpha。
+1. 必读 `Assets/Studies/ClukayStudy/Shaders/ClukayCharacterCommon.hlsl` 的 `EvaluateLegacyClukaySurface`，跟踪颜色、法线、RMO 与世界空间数据如何经过主光与 Half-Lambert 计算，得到基础 NPR 颜色和 Alpha。
 2. 必读 `Assets/Studies/LinnaeStudy/Shaders/LinnaeLighting.hlsl` 的 `LinnaeLighting_float`：输入材质分类开关；下一步在同一函数中选择脸、发、皮肤、眼睛分支；输出统一的角色颜色。
-3. 选读各 `.shadergraph`：确认纹理和材质参数如何送进 Custom Function，以及自定义结果如何接到 Master Stack。
+3. 选读 Clukay 的教学 Graph，逐组跟踪表面计算，再对照 Linnae 的 Graph 观察纹理与参数如何送入 Custom Function 并接到 Master Stack。
 
 重要分支：脸部会弱化几何阴影；头发会把普通高光替换成发丝亮带；金属减少漫反射；眼睛更接近稳定的贴图色。
 
@@ -62,12 +61,12 @@
 
 读完能回答：卡通明暗、金属反射、布料光泽和头发亮带为什么可以共存，而不会互相重复计光？
 
-主链：法线/RMO → 导数切线基重建法线 → NPR 漫反射色阶 → GGX 直接高光 → 发丝双瓣高光/布料 sheen → 球谐间接漫反射与反射探针 → Rim → Emission 输出。
+主链：法线/RMO → 导数切线基重建法线 → NPR 漫反射色阶 → GGX 直接高光 → 发丝双瓣高光/布料 sheen → 球谐间接漫反射与反射探针 → Rim → 最终颜色输出。
 
-1. 必读 `Assets/Studies/ClukayStudy/Hybrid/Shaders/ClukayHybridLighting.hlsl` 的 `ClukayHybridLight`：输入一盏灯及材质参数；下一步分别算 GGX、高光、卡通漫反射、皮肤包裹光和 sheen；输出单灯贡献。
-2. 必读同文件的 `ClukayLighting_float`：输入主光、附加光、环境数据；下一步累加各灯并调用 URP 环境 BRDF；输出完整混合光照。
-3. 对照 `Assets/Studies/ClukayStudy/Shaders/ClukayLighting.hlsl`：观察较早版本如何使用简化高光、柔化脸部几何阴影，以及为什么它不应被称为脸部 SDF。
-4. 进阶读 `Assets/Studies/ClukayStudy/Wardrobe/Shaders/GF2SourceBRDF.hlsl` 的 `GF2MainBRDF`、`GF2DiffuseRamp`、`GF2EnvironmentBRDF`：观察 Ramp 如何分别塑造漫反射、高光和环境响应。
+1. 必读 `Assets/Studies/ClukayStudy/Shaders/ClukayCharacterCommon.hlsl` 的 `ClukayHybridLight`，跟踪单盏灯的 GGX、卡通漫反射、皮肤包裹光与 sheen 贡献。
+2. 必读同文件的 `EvaluateClukaySurface`，查看主光、附加光与环境 BRDF 如何组合成完整混合光照。
+3. 对照同文件的 `EvaluateLegacyClukaySurface`，观察简化高光和脸部几何阴影柔化的实现。
+4. 进阶读 `Assets/Studies/ClukayStudy/OriginalShader/GF2SourceBRDF.hlsl` 的 `GF2MainBRDF`、`GF2DiffuseRamp`、`GF2EnvironmentBRDF`，观察 Ramp 如何分别塑造漫反射、高光和环境响应。
 5. 必读 `Assets/Studies/LiinoStudy/Shaders/LiinoLighting.hlsl` 的 `LiinoHybridLight` 与 `LiinoLighting_float`：它继承混合框架，再加入 SDF、湿润、雨滴、浸水和丝袜颜色变化。
 
 重要分支：金属区令漫反射趋零；头发以 UV 导出的发丝方向取代各向同性 GGX；透明覆盖率加入 Fresnel，但仍受透明排序约束。
@@ -117,10 +116,10 @@
 
 主链：全局 Wetness/Rain/WaterHeight → UV 哈希雨滴 + 世界高度浸水遮罩 → 合并为 wet 权重 → Base Color 变暗、粗糙度降低、法线强度减弱、高光增强、sheen 减弱 → 丝袜在干湿颜色间插值 → 输出可调试的动态材质状态。
 
-1. 必读 `Assets/Studies/LiinoStudy/Scripts/LiinoWetnessControls.cs`：输入运行时 UI/Inspector 参数；下一步写入角色材质实例；输出可交互湿润状态。
+1. 必读 `Assets/Studies/LiinoStudy/Scripts/LiinoWetnessControls.cs`，跟踪 UI / Inspector 参数如何通过 MaterialPropertyBlock 传入 Renderer，形成可交互湿润状态。
 2. 必读 `Assets/Studies/LiinoStudy/Shaders/LiinoLighting.hlsl` 中 `drop`、`water`、`wet` 的计算：输入 UV、世界高度和表面朝上程度；下一步合成局部遮罩；输出湿润权重。
 3. 继续读同文件的法线、`rough`、`base`、`SpecularStrength`、`Sheen` 分支：输入湿润权重；下一步联动多个材质维度；输出比“颜色覆盖层”更可信的湿表面响应。
-4. 选读 `Assets/Studies/LiinoStudy/README.md` 的证据与推断边界：确认哪些参数名来自源材质，哪些算法属于独立重建。
+4. 选读 `Assets/Studies/LiinoStudy/README.md` 的材质参数与当前展示范围，核对通道约定、干湿控制和雨滴表现。
 
 重要分支：雨滴是黏附 UV 的静态程序图案，不包含流动、蒸发、碰撞积水；WaterHeight 使用世界空间，因此能产生统一水位线。
 
@@ -130,6 +129,6 @@
 
 ## 推荐总阅读顺序
 
-`ClukayLighting.hlsl`（最小 NPR 基线） → `ClukayHybridLighting.hlsl`（NPR+PBR） → `LiinoLighting.hlsl`（动态湿润扩展） → `LinnaeLighting.hlsl`（角色专用脸部/头发） → `LinnaeCharacterRenderFeature.cs`（跨物体渲染通道） → `KKBP_01.hlsl` 与 `AnkeLinnae.shader`（美术分层颜色的保留和复用）。
+`ClukayCharacterCommon.hlsl` 中的 `EvaluateLegacyClukaySurface`（NPR 基线） → 同文件的 `EvaluateClukaySurface`（NPR + PBR） → `LiinoLighting.hlsl`（湿润扩展） → `LinnaeLighting.hlsl`（脸部与头发光照） → `LinnaeCharacterRenderFeature.cs`（跨物体渲染通道） → `KKBP_01.hlsl` 与 `AnkeLinnae.shader`（分层颜色的保留和复用）。
 
 这条顺序先建立光照模型，再看角色特化，最后看不同资产生产方式如何接入同一套渲染框架。

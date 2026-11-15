@@ -1,17 +1,32 @@
-# 黛烟展示场景
+# Daiyan · 黛烟分层材质与穿搭展示
 
-唯一场景：`DaiyanShowcase.unity`。
+以亮暗基底和颜色遮罩构建角色表面，结合服装显隐、蒙皮描边与灯光控制，展示材质层次和部件组织。
 
-使用用户认可的 `黛烟_20260917_214911_182513/黛烟_20260917_214911_182513.fbx`，材质、纹理与 Shader Graph 均使用同一导出包内的资源。未重新转换或改写该 FBX。
+## 展示入口
 
-`Prefabs/Daiyan.prefab` 为当前展示角色；`Prefabs/DaiyanBody.prefab` 保留该 FBX 的身体、头发和骨架。
+打开场景并进入 Play，右侧面板可切换旗袍、内衣、丝袜与内裤、鞋子和耳饰，也可旋转模型、调整主光方位与俯仰。丝袜与内裤共用网格，使用同一个开关。[DaiyanShowcase 场景](Scenes/DaiyanShowcase.unity)
 
-穿脱界面按源模型实际网格组织：外衣·旗袍、内衣、丝袜与内裤、鞋子、耳饰。源 FBX 将丝袜与内裤放在同一网格，故使用一个开关；身体与头发始终保留。
+## 技术实现
 
-旧的 Models、Materials、Textures、Shaders 中不再被引用的资源及旧转换脚本已直接删除。依赖审计结果：`Tools/Daiyan/approved_deleted_assets.txt`。新导出包及其他场景依赖保持完整。
+- 材质分别构建亮面和暗面的颜色层，通过权重遮罩、材质颜色与 Toon 阈值组合出最终表面。
+- 身体 Shader 在颈部 UV 区域渐变调整亮面和暗面色彩，衔接脸部与身体。
+- 使用相同网格、骨骼与表情数据建立外扩描边层，并按法线朝向筛选轮廓。脸部、身体、头发和衣物使用不同宽度。
+- `DaiyanOutlineSync` 同步部件可见性和 BlendShape，服装切换后表面与轮廓保持一致。
+- `DaiyanPipelineScope` 管理专用 URP 配置的启用与恢复，交互面板由 UGUI 与 Input System 驱动。
 
-保留原展示环境、相机和旋转/灯光控制。更换验证菜单位于 Tools/Daiyan Study；编辑器辅助脚本为 Editor/DaiyanApproved.cs。
+## 核心文件
 
-描边已恢复：Outline 目录保存专用描边 Shader 和材质，参考可露凯的外扩背面轮廓方式，复用认可 FBX 的网格、骨骼和形态键。脸部 0.2mm、身体 0.3mm、头发/衣物 0.45mm；眼球与面部细节不额外描边。DaiyanOutlineSync 同步穿脱可见性和表情，原始表面材质不变。
+| 文件 | 职责 |
+| --- | --- |
+| [Daiyan.prefab](Prefabs/Daiyan.prefab) | 完整展示角色 |
+| [DaiyanBody.prefab](Prefabs/DaiyanBody.prefab) | 身体、头发和骨架 |
+| [KKBP_01.hlsl](SourceArt/Character/Shaders/KKBP_01.hlsl) | 亮暗颜色层与颈部校色 |
+| [DaiyanOutline.shader](Shaders/DaiyanOutline.shader) | 外扩描边与 Alpha 裁切 |
+| [DaiyanOutlineSync.cs](Scripts/DaiyanOutlineSync.cs) | 描边显隐与表情同步 |
+| [DaiyanWardrobeUI.cs](Scripts/DaiyanWardrobeUI.cs) | 穿搭面板、转台和灯光交互 |
 
-颈部接缝：KKBP_01.hlsl 在身体 UV 顶部颈部区域渐变校准亮面/暗面颜色，以匹配脸部接缝采样值，不改动 FBX 或其他部位。描边按法线朝向筛选背面，避免混合面绕序导致黑块。
+角色模型、表面材质和纹理集中于 `SourceArt/Character`。描边材质位于 `Materials/Outline`，场景管线资产位于 `Rendering`。
+
+## 当前展示范围
+
+此 Study 聚焦静态穿搭、分层材质和轮廓表现。服装开关遵循模型现有的网格分组，可通过 Inspector 调整部件绑定、材质颜色和描边宽度。

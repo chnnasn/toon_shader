@@ -23,6 +23,7 @@ float4 _StockingFalloffColor;
 float4 _StockingAbsorptionColor;
 float4 _StockingTiling;
 float4 _ReflectionTint;
+float4 _OutlineColor;
 float _RampStrength;
 float _RampRow;
 float _SpecStrength;
@@ -48,6 +49,9 @@ float _HairShadowOffsetX;
 float _HairShadowOffsetY;
 float _HairShadowDepthBias;
 float _HairTransmissionStrength;
+float _OutlineWidth;
+float _OutlineIntensity;
+float _OutlineZBias;
 CBUFFER_END
 
 float4 _WuchangHeadForwardWS;
@@ -100,6 +104,21 @@ WuchangVaryings WuchangHairShadowVert(WuchangAttributes input)
     // Original values are authored as clip-space fringe offsets.
     output.positionCS.xy += float2(_HairShadowOffsetX, _HairShadowOffsetY) * output.positionCS.w;
     output.positionCS.z += _HairShadowDepthBias * output.positionCS.w;
+    return output;
+}
+
+WuchangVaryings WuchangOutlineVert(WuchangAttributes input)
+{
+    WuchangVaryings output = WuchangVert(input);
+    float3 normalVS = TransformWorldToViewDir(output.normalWS, true);
+    float2 projectedNormal = normalize(normalVS.xy + 1e-5);
+    output.positionCS.xy += projectedNormal * (2.0 / _ScaledScreenParams.xy) *
+        _OutlineWidth * _OutlineIntensity * output.positionCS.w;
+    #if UNITY_REVERSED_Z
+        output.positionCS.z -= _OutlineZBias * output.positionCS.w;
+    #else
+        output.positionCS.z += _OutlineZBias * output.positionCS.w;
+    #endif
     return output;
 }
 
@@ -256,6 +275,14 @@ half4 WuchangHairTransmissionFrag(WuchangVaryings input) : SV_Target
     half3 viewDirWS = SafeNormalize(GetWorldSpaceViewDir(input.positionWS));
     half fresnel = pow(saturate(1.0h - dot(SafeNormalize(input.normalWS), viewDirWS)), 3.0h);
     return half4(baseSample.rgb, mask * fresnel * _HairTransmissionStrength);
+}
+
+half4 WuchangOutlineFrag(WuchangVaryings input) : SV_Target
+{
+    clip(_OutlineIntensity - 0.01);
+    half alpha = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, input.uv).a * _BaseColor.a;
+    WuchangAlphaClip(alpha);
+    return half4(_OutlineColor.rgb, _OutlineColor.a * alpha);
 }
 
 half4 WuchangReflectionFrag(WuchangVaryings input) : SV_Target

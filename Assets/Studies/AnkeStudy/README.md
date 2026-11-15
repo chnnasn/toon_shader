@@ -1,25 +1,37 @@
-# 安可展示
+# Anke · 安可换装与分层着色
 
-打开 `AnkeShowcase.unity`。此角色只有一个展示场景，Build Settings 也只启用该场景。DaiyanStudy、LinnaeStudy 等参考资源保留。
+围绕同一角色骨架组织两套服装，将亮暗颜色层、角色光照、透明丝袜与换装显隐整合到可交互展示场景中。
 
-现在两套服装同时保存在该场景/预制体中，共享唯一素体和骨架。运行后使用左上角“第一套 / 第二套”切换；下方开关可单独隐藏服装。编辑模式可调整 Anke 对象上的 AnkeWardrobe 的 Selected Outfit 和各 Part 的 Visible。默认第二套全套显示。
+## 展示入口
 
-已修复隐藏网格的描边残影：LinnaeCharacterRenderFeature 在绘制头发深度和描边前检查 Renderer.enabled、activeInHierarchy 和 forceRenderingOff。切换套装或关闭外裙时，自定义通道也会停止绘制该网格。
+打开场景并进入 Play，左上角选择「第一套 / 第二套」，随后可独立切换服装部件。默认显示第二套。编辑状态可在 `AnkeWardrobe` 中调整 `Selected Outfit` 和部件的 `Visible`。[AnkeShowcase 场景](Scenes/AnkeShowcase.unity)
 
-脸颈色差：`Calibrate Neck Seam` 从原有脸/身体贴图的 27 个对应接缝位置计算亮面与暗面校正，写入身体材质的 Neck Light/Dark Correction。校正只在头部坐标系中的上颈部生效，向肩部渐退；脸部 SDF 在下颌附近平滑过渡到与颈部一致的法线光照。更改原始肤色后可重新运行校准，`Validate Neck Lighting` 输出多方向光照验证图。
+相机上的 `LinnaeStudyControls` 提供主光方向、强度、阴影柔和度和调试视图。`LinnaeCharacterPipeline` 提供面部 SDF、头发投影与描边开关。
 
-素体和头发来源：`Assets/Studies/AnkeStudy/SourceArt/BaseCharacter/AnkeBaseCharacter.fbx`；当前服装来源：`Assets/Studies/AnkeStudy/SourceArt/Outfit2/_2.fbx`。`Anke.prefab` 保留原有身体和头发的 15 个材质，服装使用 `Materials/Outfit2` 下的 10 个独立材质。源 FBX、导出材质和 EXR 贴图保持原位，亮/暗基底、身体颜色权重层、UV 变换和透明遮罩均保留。
+## 技术实现
 
-8 个服装/饰品网格位于 `Outfit 2 - Clothing and Accessories`，共用现有素体骨骼，附加 8 个饰品节点，不引入第二套身体或整套骨架。保留服装原始 inverse bind matrices，以适配两次导出之间的骨骼姿态差异。重绑定网格保存在 `Models/Outfit2`。
+- 亮面与暗面基底叠加颜色权重、UV 变换和透明遮罩，再接入 `LinnaeLighting.hlsl` 的 Toon 光照、头发高光与环境响应。
+- 两套服装使用同一素体骨架。第二套服装的重绑定网格位于 `Models/Outfit2`，保留绑定矩阵以适配服装与身体的骨骼姿态差异。
+- 身体材质提供 `Neck Light/Dark Correction`，在头部坐标系的上颈部渐变校色。脸部 SDF 在下颌附近与法线光照平滑融合。
+- 丝袜采用 Alpha Blend、关闭 ZWrite，并由 Opacity 贴图控制覆盖率。蕾丝和鞋等部件使用 Alpha Cutout 保留镂空边缘。
+- 换装隐藏的 Renderer 同步退出头发深度与描边绘制，避免隐藏部件留下轮廓。
 
-`Anke/Linnae Layered` 在分层颜色合成后直接调用 `LinnaeLighting.hlsl`；场景复用 LinnaeURP、RenderGraph 头发投影和屏幕描边。Shader 包含透明裁切、ShadowCaster、DepthOnly。脸部绑定 DEF-Head，使用 Linnae 的头部空间 SDF；这是复用参考风格，不是安可原作的专用脸部 SDF。
+## 核心文件
 
-两套丝袜材质的透明度已经编码在 Opacity 贴图中，因此固定采用 Alpha Blend、`SrcAlpha/OneMinusSrcAlpha`、关闭 ZWrite、Render Queue 3000，并保持 `Base Alpha = 1`，避免再次衰减细密网纹。菜单 `Tools/Anke Study/Repair Hosiery Transparency` 可恢复这组设置，`Validate Hosiery Transparency` 用于检查两套丝袜是否被错误重置成 Cutout。蕾丝、内裤和鞋仍使用 Alpha Cutout，以保留清晰的镂空边缘。
+| 文件 | 职责 |
+| --- | --- |
+| [Anke.prefab](Prefabs/Anke.prefab) | 素体、骨架与两套服装 |
+| [AnkeLinnae.shader](Shaders/AnkeLinnae.shader) | 分层表面、透明裁切、投影和深度 Pass |
+| [AnkeWardrobe.cs](Scripts/AnkeWardrobe.cs) | 套装切换与部件显隐 |
+| [LinnaeLighting.hlsl](../LinnaeStudy/Shaders/LinnaeLighting.hlsl) | 共享角色光照 |
+| [LinnaeCharacterRenderFeature.cs](../LinnaeStudy/Scripts/LinnaeCharacterRenderFeature.cs) | 共享头发深度与描边通道 |
 
-保持 FBX 的 T Pose 和 132 个表情 BlendShape，未生成动画。相机上的 LinnaeStudyControls 可调光照和调试模式；LinnaeCharacterPipeline 可切换脸部 SDF、头发投影和描边。
+## 编辑器工具
 
-菜单 `Tools/Anke Study/Validate and Capture` 检查材质、Shader 和骨骼，并将预览和报告输出到 `Tools/AnkePreviews`。`Build Showcase` 会重建生成材质、角色预制体和场景中的角色，覆盖这些生成对象上的手工修改。
+`Tools > Anke Study > Repair Hosiery Transparency` 恢复两套丝袜的透明状态，`Validate Hosiery Transparency` 检查 Blend、深度与队列设置。`Capture Sock Fit` 输出袜子局部多角度视图。
 
-`Apply Outfit 2` 在当前素体上重建第二套服装；`Verify Outfit 2`、`Compare Outfit Binding` 和 `Test Outfit Deformation` 分别验证骨骼归属、原始 FBX 蒙皮一致性及关节变形/复位。换装前备份位于 `SourceArchive/AnkeBeforeOutfit2`，不在 Assets 内，不增加可加载展示场景。
+`Repair Sock Clearance` 与 `Restore Original Sock Mesh` 分别调整和恢复袜子网格顶点，使用项目根目录 `Tools/AnkeSockFit` 中的恢复数据。
 
-`Install Two Outfits` 安装/刷新两套换装控制；`Verify Two Outfits` 验证互斥显示以及隐藏外裙时自定义绘制的排除逻辑，并输出两套截图和回归截图。安装操作会将单件开关恢复为全显示。
+## 当前展示范围
+
+角色以静态姿态展示，保留表情 BlendShape。面部光照使用 LinnaeStudy 的头部空间 SDF，换装重点为部件组织、蒙皮绑定和材质显示。

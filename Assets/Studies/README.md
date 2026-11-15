@@ -1,28 +1,38 @@
-# 渲染学习项目
+# 角色渲染 Study 索引
 
-每个角色的资源集中在对应 Study 目录；从 `Scenes` 中打开学习场景。
+每个 Study 集中保存一个角色或专题的着色器、材质与展示入口。建议先打开场景观察效果，再结合调试视图阅读 Shader 和渲染脚本。
 
-| 学习目录 | 场景入口 |
+## 展示入口
+
+| Study | 场景或着色器入口 | 说明 |
+| --- | --- | --- |
+| [Anke](AnkeStudy/README.md) | [AnkeShowcase](AnkeStudy/Scenes/AnkeShowcase.unity) | 两套服装、分层颜色、共享骨架 |
+| [Brahma Wujian](BrahmaWujianStudy/README.md) | [BrahmaWujianShowcase](BrahmaWujianStudy/Scenes/BrahmaWujianShowcase.unity) | 双形态、毛绒、Stencil 阴影与反射 |
+| [Clukay](ClukayStudy/README.md) | [ClukayShowcase](ClukayStudy/Scenes/ClukayShowcase.unity) | 27 种搭配、混合光照与透明衣料 |
+| [Daiyan](DaiyanStudy/README.md) | [DaiyanShowcase](DaiyanStudy/Scenes/DaiyanShowcase.unity) | 穿搭交互、亮暗基底与蒙皮描边 |
+| [Liino](LiinoStudy/README.md) | [LiinoShowcase](LiinoStudy/Scenes/LiinoShowcase.unity) | 湿润、雨滴、世界高度浸水 |
+| [Linnae](LinnaeStudy/README.md) | [LinnaeShowcase](LinnaeStudy/Scenes/LinnaeShowcase.unity) | SDF、头发深度与描边对照 |
+| [Wuchang](WuchangStudy/README.md) | [WuchangShowcase](WuchangStudy/Scenes/WuchangShowcase.unity) | 八 Pass 角色渲染与材质对照 |
+| [Encore](EncoreStudy/README.md) | [EncoreWuthering](EncoreStudy/Shaders/EncoreWuthering.shadergraph) | 身体颜色分层 Shader 专题 |
+
+## 目录职责
+
+| 目录 | 内容 |
 | --- | --- |
-| AnkeStudy | Scenes/AnkeShowcase.unity |
-| ClukayStudy | Scenes/ClukayShowcase.unity |
-| DaiyanStudy | Scenes/DaiyanShowcase.unity |
-| LiinoStudy | Scenes/LiinoShowcase.unity |
-| LinnaeStudy | Scenes/LinnaeShowcase.unity |
-| EncoreStudy | Shaders，仅着色器学习资源 |
+| `Scenes` | 可直接打开的展示场景 |
+| `Shaders` | 表面 Shader Graph、运行时 Shader 与 HLSL |
+| `Scripts` | 交互控制、场景参数和 Renderer Feature |
+| `Editor` | 材质修复、构建、校准与验证工具 |
+| `Materials` | 展示材质及专用描边材质 |
+| `Prefabs` | 角色和道具预制体 |
+| `Models` / `Textures` / `SourceArt` | 模型、网格、纹理与材质输入数据 |
+| `Rendering` | URP 资产、Renderer、Volume、环境贴图和摄影棚材质 |
 
-## 目录约定
+## 阅读顺序
 
-- `Scenes`：学习场景。
-- `Scripts`：运行控制和渲染脚本；类名及文件名保持对应。
-- `Editor`：仍保留的编辑器辅助工具。
-- `Prefabs`：角色预制体。
-- `Models` / `Materials` / `Textures` / `Shaders`：学习使用的模型、材质、贴图和着色器源码。
-- `Rendering`：渲染管线、Renderer、Volume 与环境反射配置。
-- `SourceArt`：已导入的原始模型与依赖；材质和贴图保留源名称，便于对照原始材质槽。
+1. 从 Linnae 的光照开关和 Liino 的湿润控制观察单个参数对画面的影响。
+2. 阅读 Anke、Daiyan 的颜色层、透明度与描边同步，理解模型分件和渲染状态的配合。
+3. 对照 Clukay、Wuchang、Brahma 的教学 Graph，跟踪纹理到最终表面的数据流。
+4. 进入对应 Multipass Shader、Renderer Feature 与 Pipeline 组件，查看 Pass 顺序、Stencil、深度和反射纹理的使用。
 
-可露凯的 `Hybrid`、`Recovered`、`Wardrobe`、`Weapons`、`Archive` 保留专题划分；专题内同样按资源用途归类。黛烟的描边 Shader 位于 `Shaders`，描边材质位于 `Materials/Outline`。
-
-`Assets/Settings` 是项目共用的渲染配置。部分角色共享 LinnaeStudy 的渲染脚本与着色器代码，这是实际依赖，不要重复复制或单独删除。
-
-原有角色 README 中的构建菜单、已删除的导出脚本等描述可能属于历史制作流程；当前学习入口以本文件和现有场景为准。整理移动记录与验证结果保存在项目根目录 `Tools/StudyOrganization`。
+Anke 依赖 LinnaeStudy 的共享光照和角色管线。Wuchang、Brahma 与 Clukay 的 Renderer Feature 配置位于项目共用的 `Assets/Settings/PC_Renderer.asset`。Liino、Linnae、Anke 与 Daiyan 通过场景组件使用相应的专用管线配置。

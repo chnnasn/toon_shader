@@ -377,67 +377,9 @@ namespace WuchangStudy.Editor
         [MenuItem("Tools/Studies/Wuchang/Install Original-Style Outline")]
         public static void InstallOriginalStyleOutline()
         {
-            Shader outlineShader = AssetDatabase.LoadAssetAtPath<Shader>(
-                Root + "/Shaders/WuchangOutline.shadergraph");
-            if (!outlineShader || ShaderUtil.ShaderHasError(outlineShader))
-                throw new InvalidOperationException("The outline Shader Graph must compile before installation.");
-
-            var outlineMaterials = new Dictionary<string, Material>();
-            foreach (string character in new[] { "105401", "614801" })
-            {
-                string path = Root + "/Materials/Outline_" + character + ".mat";
-                Material material = AssetDatabase.LoadAssetAtPath<Material>(path);
-                if (!material)
-                {
-                    material = new Material(outlineShader) { name = "Outline_" + character };
-                    AssetDatabase.CreateAsset(material, path);
-                }
-                material.shader = outlineShader;
-                material.SetColor("_OutlineColor", character == "105401"
-                    ? new Color(.10f, .085f, .13f, 1f)
-                    : new Color(.16f, .16f, .22f, 1f));
-                // Source meshes are authored at roughly 1/64 display scale.
-                material.SetFloat("_OutlineWidth", .000018f);
-                material.SetFloat("_Cull", (float)CullMode.Front);
-                material.SetFloat("_ZWrite", 1f);
-                material.renderQueue = 1995;
-                material.SetOverrideTag("RenderType", "Opaque");
-                EditorUtility.SetDirty(material);
-                outlineMaterials[character] = material;
-            }
-
-            string[] eligible = { "body", "body03", "clothes", "clothes01", "Face", "hair" };
-            foreach (string character in new[] { "105401", "614801" })
-            {
-                GameObject root = GameObject.Find("Wuchang_" + character);
-                if (!root)
-                    throw new InvalidOperationException("Character root not found: Wuchang_" + character);
-                SkinnedMeshRenderer[] sources = root.GetComponentsInChildren<SkinnedMeshRenderer>(true)
-                    .Where(r => eligible.Contains(r.name) && !r.name.EndsWith("_Outline"))
-                    .ToArray();
-                foreach (SkinnedMeshRenderer source in sources)
-                {
-                    if (!source.gameObject.activeInHierarchy || source.transform.Find(source.name + "_Outline"))
-                        continue;
-                    GameObject outlineObject = new GameObject(source.name + "_Outline");
-                    outlineObject.transform.SetParent(source.transform, false);
-                    SkinnedMeshRenderer outline = outlineObject.AddComponent<SkinnedMeshRenderer>();
-                    outline.sharedMesh = source.sharedMesh;
-                    outline.rootBone = source.rootBone;
-                    outline.bones = source.bones;
-                    outline.localBounds = source.localBounds;
-                    outline.quality = source.quality;
-                    outline.updateWhenOffscreen = source.updateWhenOffscreen;
-                    outline.shadowCastingMode = ShadowCastingMode.Off;
-                    outline.receiveShadows = false;
-                    outline.sharedMaterials = Enumerable.Repeat(
-                        outlineMaterials[character], source.sharedMaterials.Length).ToArray();
-                }
-                PrefabUtility.SaveAsPrefabAsset(root, Root + "/Prefabs/" + root.name + ".prefab");
-            }
-            AssetDatabase.SaveAssets();
-            EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
-            Debug.Log("Original-style inverted-hull outlines installed.");
+            // Kept as a compatibility menu item. Outline is now a real pass of the
+            // runtime multipass shader and is scheduled by the Renderer Feature.
+            WuchangCustomPipelineInstaller.Install();
         }
     }
 }

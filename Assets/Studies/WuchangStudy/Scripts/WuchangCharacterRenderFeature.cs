@@ -9,12 +9,14 @@ public sealed class WuchangCharacterRenderFeature : ScriptableRendererFeature
 {
     PreDepthPass preDepthPass;
     ReflectionPass reflectionPass;
+    OutlinePass outlinePass;
     StencilShadowPass stencilShadowPass;
 
     public override void Create()
     {
         reflectionPass = new ReflectionPass();
         preDepthPass = new PreDepthPass();
+        outlinePass = new OutlinePass();
         stencilShadowPass = new StencilShadowPass();
     }
 
@@ -29,11 +31,14 @@ public sealed class WuchangCharacterRenderFeature : ScriptableRendererFeature
         pipeline.Prepare();
         reflectionPass.pipeline = pipeline;
         preDepthPass.pipeline = pipeline;
+        outlinePass.pipeline = pipeline;
         stencilShadowPass.pipeline = pipeline;
         if (pipeline.reflection)
             renderer.EnqueuePass(reflectionPass);
         if (pipeline.preDepth)
             renderer.EnqueuePass(preDepthPass);
+        if (pipeline.outline && pipeline.outlineDraws.Count > 0)
+            renderer.EnqueuePass(outlinePass);
         if (pipeline.stencilHairShadow)
             renderer.EnqueuePass(stencilShadowPass);
     }
@@ -111,6 +116,33 @@ public sealed class WuchangCharacterRenderFeature : ScriptableRendererFeature
             builder.SetRenderFunc((PassData data, RasterGraphContext context) =>
             {
                 foreach (WuchangCharacterPipeline.Draw draw in data.pipeline.preDepthDraws)
+                    if (IsVisible(draw.renderer))
+                        context.cmd.DrawRenderer(draw.renderer, draw.material, draw.slot, draw.pass);
+            });
+        }
+    }
+
+    sealed class OutlinePass : ScriptableRenderPass
+    {
+        public WuchangCharacterPipeline pipeline;
+
+        public OutlinePass() => renderPassEvent = RenderPassEvent.AfterRenderingOpaques;
+
+        public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData)
+        {
+            WuchangCharacterPipeline current = pipeline;
+            if (!current || current.outlineDraws.Count == 0)
+                return;
+            UniversalResourceData resources = frameData.Get<UniversalResourceData>();
+            using IRasterRenderGraphBuilder builder = renderGraph.AddRasterRenderPass<PassData>(
+                "Wuchang / Outline", out PassData passData);
+            passData.pipeline = current;
+            builder.SetRenderAttachment(resources.activeColorTexture, 0, AccessFlags.ReadWrite);
+            builder.SetRenderAttachmentDepth(resources.activeDepthTexture, AccessFlags.ReadWrite);
+            builder.AllowPassCulling(false);
+            builder.SetRenderFunc((PassData data, RasterGraphContext context) =>
+            {
+                foreach (WuchangCharacterPipeline.Draw draw in data.pipeline.outlineDraws)
                     if (IsVisible(draw.renderer))
                         context.cmd.DrawRenderer(draw.renderer, draw.material, draw.slot, draw.pass);
             });

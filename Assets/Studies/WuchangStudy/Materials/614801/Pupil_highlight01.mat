@@ -42,6 +42,7 @@ Material:
   - CharHairTransE
   - PreDepth
   - Reflection
+  - Outline
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -110,6 +111,9 @@ Material:
     - _HairShadowOffsetY: 0.00508
     - _HairTransmissionStrength: 0.08
     - _Opacity: 0
+    - _OutlineIntensity: 0
+    - _OutlineWidth: 0
+    - _OutlineZBias: 0.001
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RMKOcclusionStrength: 0
@@ -143,6 +147,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _FaceShadowTint: {r: 0.9, g: 0.82, b: 0.84, a: 1}
     - _HalfVector: {r: -0.18, g: 0.28, b: -0.94, a: 0}
+    - _OutlineColor: {r: 0.16, g: 0.16, b: 0.22, a: 1}
     - _ReflectionTint: {r: 0.72, g: 0.78, b: 0.9, a: 1}
     - _ShadowColor: {r: 0.68, g: 0.57, b: 0.63, a: 1}
     - _ShadowRange: {r: 0.24, g: 0.62, b: 0, a: 0}

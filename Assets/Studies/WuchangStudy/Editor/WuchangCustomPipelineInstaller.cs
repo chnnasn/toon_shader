@@ -24,11 +24,12 @@ namespace WuchangStudy.Editor
                 throw new InvalidOperationException("WuchangCharacter.shader must compile before installation.");
 
             ConfigureMaterials(shader);
+            RemoveLegacyOutlineRenderers();
             InstallRendererFeature();
             InstallController();
             AssetDatabase.SaveAssets();
             EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
-            Debug.Log("Wuchang original-style multi-pass pipeline installed: PreDepth, reversible stencil hair/face shadow, and planar Reflection.");
+            Debug.Log("Wuchang original-style multi-pass pipeline installed: Outline, PreDepth, reversible stencil hair/face shadow, and planar Reflection.");
         }
 
         static void ConfigureMaterials(Shader shader)
@@ -49,6 +50,8 @@ namespace WuchangStudy.Editor
                     bool eye = name.Contains("pupil", StringComparison.OrdinalIgnoreCase) || name == "eyebrow01";
                     bool stocking = name == "body02" || name == "body03";
                     bool transparent = name == "clothes02" || name == "Pupil_highlight01";
+                    bool effect = name.Contains("Texiao", StringComparison.OrdinalIgnoreCase);
+                    bool outline = !transparent && !eye && !effect;
 
                     material.SetFloat("_StencilComp", (float)CompareFunction.Always);
                     material.SetFloat("_StencilOp", (float)StencilOp.Keep);
@@ -117,8 +120,15 @@ namespace WuchangStudy.Editor
                     material.SetShaderPassEnabled("CharHairShadow", bangs);
                     material.SetShaderPassEnabled("CharFaceShadow", face);
                     material.SetShaderPassEnabled("CharHairTransE", bangs);
+                    material.SetShaderPassEnabled("Outline", outline);
                     material.SetShaderPassEnabled("PreDepth", !transparent);
                     material.SetShaderPassEnabled("Reflection", !transparent);
+                    material.SetColor("_OutlineColor", character == "105401"
+                        ? new Color(.10f, .085f, .13f, 1f)
+                        : new Color(.16f, .16f, .22f, 1f));
+                    material.SetFloat("_OutlineWidth", outline ? 1.15f : 0f);
+                    material.SetFloat("_OutlineIntensity", outline ? 1f : 0f);
+                    material.SetFloat("_OutlineZBias", .001f);
 
                     material.SetFloat("_SrcBlend", transparent ? (float)BlendMode.SrcAlpha : (float)BlendMode.One);
                     material.SetFloat("_DstBlend", transparent ? (float)BlendMode.OneMinusSrcAlpha : (float)BlendMode.Zero);
@@ -129,6 +139,16 @@ namespace WuchangStudy.Editor
                     material.SetOverrideTag("RenderType", transparent ? "Transparent" : "Opaque");
                     EditorUtility.SetDirty(material);
                 }
+            }
+        }
+
+        static void RemoveLegacyOutlineRenderers()
+        {
+            foreach (Transform transform in UnityEngine.Object.FindObjectsByType<Transform>(
+                         FindObjectsInactive.Include))
+            {
+                if (transform && transform.name.EndsWith("_Outline", StringComparison.Ordinal))
+                    UnityEngine.Object.DestroyImmediate(transform.gameObject);
             }
         }
 
@@ -161,13 +181,15 @@ namespace WuchangStudy.Editor
             if (!pipeline)
                 pipeline = owner.AddComponent<WuchangCharacterPipeline>();
             WuchangLighting lighting = UnityEngine.Object.FindAnyObjectByType<WuchangLighting>();
-            pipeline.surfaces = lighting ? lighting.surfaces : UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None);
+            pipeline.surfaces = lighting ? lighting.surfaces :
+                UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsInactive.Exclude);
             pipeline.keyLight = lighting ? lighting.keyLight : UnityEngine.Object.FindAnyObjectByType<Light>();
             pipeline.studyCamera = lighting ? lighting.studyCamera : Camera.main;
             GameObject head = GameObject.Find("Wuchang_105401");
             pipeline.headReference = head ? head.transform : null;
             pipeline.reflectionPlaneY = 0f;
             pipeline.preDepth = true;
+            pipeline.outline = true;
             pipeline.stencilHairShadow = true;
             pipeline.reflection = true;
             pipeline.reflectionStrength = 0.08f;

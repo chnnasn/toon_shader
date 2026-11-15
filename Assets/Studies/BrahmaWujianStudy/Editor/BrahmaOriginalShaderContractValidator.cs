@@ -24,6 +24,7 @@ namespace BrahmaWujianStudy.Editor
         };
 
         const string TeachingGraphPath = Root + "/Shaders/BrahmaSurface.shadergraph";
+        const string LegacyTeachingShaderName = "AetherGazer/Brahma Wujian/Master";
 
         [Serializable]
         sealed class Contract
@@ -50,6 +51,46 @@ namespace BrahmaWujianStudy.Editor
                     string.Join("\n- ", errors));
             Debug.Log("Brahma original shader contract: PASS — 8 recovered passes, readable 0-Custom-Function " +
                 "teaching graph, stencil 200→201→200, Reflection/PreDepth scheduling, and URP feature verified.");
+        }
+
+        [MenuItem("Tools/Studies/Brahma Wujian/Reload Teaching Graph")]
+        public static void ReloadTeachingGraph()
+        {
+            int closedWindows = 0;
+            foreach (EditorWindow window in Resources.FindObjectsOfTypeAll<EditorWindow>())
+            {
+                string typeName = window.GetType().FullName ?? string.Empty;
+                string title = window.titleContent != null ? window.titleContent.text : string.Empty;
+                bool isGraphWindow =
+                    typeName.Contains("ShaderGraph", StringComparison.OrdinalIgnoreCase) ||
+                    typeName.Contains("MaterialGraph", StringComparison.OrdinalIgnoreCase) ||
+                    title.Contains("Shader Graph", StringComparison.OrdinalIgnoreCase);
+                if (!isGraphWindow)
+                    continue;
+                window.Close();
+                closedWindows++;
+            }
+
+            int destroyedLegacyPreviews = 0;
+            foreach (Shader shader in Resources.FindObjectsOfTypeAll<Shader>())
+            {
+                if (shader.name != LegacyTeachingShaderName || EditorUtility.IsPersistent(shader))
+                    continue;
+                UnityEngine.Object.DestroyImmediate(shader);
+                destroyedLegacyPreviews++;
+            }
+
+            // Shader Graph preview shaders are native Unity objects. A script-domain reload does not
+            // necessarily release an orphaned preview after the graph is replaced on disk, so unload
+            // those objects before asking the importer to generate the current graph again.
+            EditorUtility.UnloadUnusedAssetsImmediate(true);
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            AssetDatabase.ImportAsset(TeachingGraphPath,
+                ImportAssetOptions.ForceSynchronousImport | ImportAssetOptions.ForceUpdate);
+            Debug.Log($"Brahma teaching graph reloaded from disk; closed stale Shader Graph windows: {closedWindows}; " +
+                $"destroyed legacy preview shaders: {destroyedLegacyPreviews}.");
         }
 
         internal static List<string> Validate()

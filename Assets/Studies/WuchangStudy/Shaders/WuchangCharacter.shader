@@ -38,6 +38,10 @@ Shader "AetherGazer/Wuchang Character Reconstructed"
         _ReflectionTint("Reflection Tint", Color) = (0.72,0.78,0.9,1)
         _ReflectionStrength("Reflection Strength", Range(0,1)) = 0.08
         _HairTransmissionStrength("Hair Transmission", Range(0,1)) = 0.08
+        _OutlineColor("Outline Color", Color) = (0.10,0.085,0.13,1)
+        _OutlineWidth("Outline Width (Pixels)", Range(0,4)) = 1.15
+        _OutlineIntensity("Outline Intensity", Range(0,1)) = 1
+        _OutlineZBias("Outline Z Bias", Range(0,0.01)) = 0.001
 
         [HideInInspector] _UseFringeShadowCaster("Fringe Shadow Caster", Float) = 0
         [HideInInspector] _UseFringeShadowReceiver("Fringe Shadow Receiver", Float) = 0
@@ -85,6 +89,24 @@ Shader "AetherGazer/Wuchang Character Reconstructed"
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN
             #pragma multi_compile_fragment _ _SHADOWS_SOFT
             #pragma multi_compile_fog
+            #include "WuchangCharacterCommon.hlsl"
+            ENDHLSL
+        }
+
+        Pass
+        {
+            // Renderer Feature schedules this private pass after the main opaque
+            // surface. It is fixed-function multipass work, not a second surface graph.
+            Name "Outline"
+            Tags { "LightMode"="WuchangOutline" }
+            Blend SrcAlpha OneMinusSrcAlpha
+            Cull Front
+            ZWrite On
+            ZTest Less
+            HLSLPROGRAM
+            #pragma target 4.5
+            #pragma vertex WuchangOutlineVert
+            #pragma fragment WuchangOutlineFrag
             #include "WuchangCharacterCommon.hlsl"
             ENDHLSL
         }
