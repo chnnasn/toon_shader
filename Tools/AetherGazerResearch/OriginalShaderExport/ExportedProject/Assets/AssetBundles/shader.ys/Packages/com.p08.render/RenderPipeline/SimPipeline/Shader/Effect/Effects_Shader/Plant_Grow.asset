@@ -1,0 +1,1206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!48 &4800000
+Shader:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ZTong/Plant_Grow
+  m_ParsedForm:
+    m_PropInfo:
+      m_Props:
+      - m_Name: _MainTex
+        m_Description: 主纹理
+        m_Attributes:
+        - BeginVertical
+        m_Type: 4
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName: white
+          m_TexDim: 2
+      - m_Name: _MainColor
+        m_Description: 颜色
+        m_Attributes: []
+        m_Type: 0
+        m_Flags: 48
+        m_DefValue[0]: 1
+        m_DefValue[1]: 1
+        m_DefValue[2]: 1
+        m_DefValue[3]: 1
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _MainRotation
+        m_Description: 旋转
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 360
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _MainUVOffset
+        m_Description: 'UV偏移(XY: Main)'
+        m_Attributes: []
+        m_Type: 1
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _PlusTex
+        m_Description: 附加贴图
+        m_Attributes:
+        - EndVertical
+        - BeginVertical
+        m_Type: 4
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName: black
+          m_TexDim: 2
+      - m_Name: _PlusColor
+        m_Description: 颜色
+        m_Attributes: []
+        m_Type: 0
+        m_Flags: 48
+        m_DefValue[0]: 1
+        m_DefValue[1]: 1
+        m_DefValue[2]: 1
+        m_DefValue[3]: 1
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _PlusRotation
+        m_Description: 旋转
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 360
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _PlusUVOffset
+        m_Description: 'UV偏移(XY: Plus)'
+        m_Attributes: []
+        m_Type: 1
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _NormalExtTex
+        m_Description: 生长贴图
+        m_Attributes:
+        - EndVertical
+        - BeginVertical
+        m_Type: 4
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName: white
+          m_TexDim: 2
+      - m_Name: _NormalExtRotation
+        m_Description: 旋转
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 360
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _Lengthens_Curve
+        m_Description: 曲线控制生长(Custom1.X)
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _Lengthens
+        m_Description: 生长
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 1
+        m_DefValue[1]: -0.5
+        m_DefValue[2]: 0.5
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _Thickness_Curve
+        m_Description: 曲线控制膨胀(Custom1.Y)
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _Thickness
+        m_Description: 膨胀
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0.01
+        m_DefValue[1]: 0
+        m_DefValue[2]: 1
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissolveSettings
+        m_Description: 溶解贴图
+        m_Attributes:
+        - BeginVertical
+        - Flod(27, _UseDissolve)
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _UseDissolve
+        m_Description: 使用溶解
+        m_Attributes:
+        - BeginVertical
+        - Hide
+        - Keyword(DISSOLVE_SIMPLE, 1)
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissovleTex
+        m_Description: 溶解贴图
+        m_Attributes:
+        - BeginVertical
+        m_Type: 4
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName: white
+          m_TexDim: 2
+      - m_Name: _TexSetting_Dissovle
+        m_Description: 贴图设置
+        m_Attributes:
+        - BeginVertical
+        - Flod(4)
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissovleRotation
+        m_Description: 旋转
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 360
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _IsRedAlpha_Dissovle
+        m_Description: R通道
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 1
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _IsTillingUV_Dissovle
+        m_Description: 平铺
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 1
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _IsOpposition_Dissovle
+        m_Description: 反相
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissovleStrength
+        m_Description: 溶解强度
+        m_Attributes:
+        - EndVertical
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 1
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissovleSoft
+        m_Description: 软硬
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 1
+        m_DefValue[1]: 0.01
+        m_DefValue[2]: 1
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissovleUVOffset_X2Y2
+        m_Description: 偏移(粒子 X2Y2)
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissovleStrength_Z2
+        m_Description: 强度(粒子 Z2)
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissovleSoft_W2
+        m_Description: 软硬(粒子 W2)
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissovleUVOffset
+        m_Description: XY:偏移 ZW:斜切
+        m_Attributes: []
+        m_Type: 1
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissolveDirectionSettings
+        m_Description: 溶解方向
+        m_Attributes:
+        - EndVertical
+        - BeginVertical
+        - Flod(7, _UseDissolveDirection)
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _UseDissolveDirection
+        m_Description: 使用溶解方向
+        m_Attributes:
+        - Hide
+        - Keyword(DISSOLVE_PLUS, 1)
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DirectionTex
+        m_Description: 溶解方向贴图
+        m_Attributes: []
+        m_Type: 4
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName: black
+          m_TexDim: 2
+      - m_Name: _TexSetting_Direction
+        m_Description: 贴图设置
+        m_Attributes:
+        - BeginVertical
+        - Flod(3)
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DirectionRotation
+        m_Description: 旋转
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 360
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _IsRedAlpha_Direction
+        m_Description: R通道
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 1
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _IsTillingUV_Direction
+        m_Description: 平铺
+        m_Attributes:
+        - Toggle
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 1
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DirectionStrength
+        m_Description: 溶解贴图衰减
+        m_Attributes:
+        - EndVertical
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 1
+        m_DefValue[2]: 10
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissolveBoundSettings
+        m_Description: 溶解边缘
+        m_Attributes:
+        - EndVertical
+        - BeginVertical
+        - Flod(5, _UseDissolveBound)
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _UseDissolveBound
+        m_Description: 使用溶解边缘
+        m_Attributes:
+        - Hide
+        m_Type: 2
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissolveBoundWidth1
+        m_Description: 一层宽度
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0.5
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissolveBoundWidth2
+        m_Description: 二层宽度
+        m_Attributes: []
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 0
+        m_DefValue[1]: 0
+        m_DefValue[2]: 0.5
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissolveBoundColor1
+        m_Description: 一层颜色
+        m_Attributes: []
+        m_Type: 0
+        m_Flags: 16
+        m_DefValue[0]: 1
+        m_DefValue[1]: 1
+        m_DefValue[2]: 1
+        m_DefValue[3]: 1
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _DissolveBoundColor2
+        m_Description: 二层颜色
+        m_Attributes: []
+        m_Type: 0
+        m_Flags: 16
+        m_DefValue[0]: 1
+        m_DefValue[1]: 1
+        m_DefValue[2]: 1
+        m_DefValue[3]: 1
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+      - m_Name: _Scale
+        m_Description: 缩放
+        m_Attributes:
+        - EndVertical
+        - EndVertical
+        - EndVertical
+        - Hide
+        m_Type: 3
+        m_Flags: 0
+        m_DefValue[0]: 1
+        m_DefValue[1]: 0.01
+        m_DefValue[2]: 100
+        m_DefValue[3]: 0
+        m_DefTexture:
+          m_DefaultName:
+          m_TexDim: 1
+    m_SubShaders:
+    - m_Passes:
+      - serializedVersion: 2
+        m_EditorDataHash:
+        - serializedVersion: 2
+          Hash: 7ab26cbc8c3d99154ef941a02aaef1e1
+        m_Platforms: 04
+        m_NameIndices:
+          $Globals: 1
+          UnityPerDraw: 2
+          _HighPrecisionRotation: 4
+          _Lengthens: 14
+          _Lengthens_Curve: 13
+          _MainColor: 22
+          _MainRotation: 6
+          _MainTex: 20
+          _MainTex_ST: 5
+          _MainUVOffset: 7
+          _NormalExtRotation: 12
+          _NormalExtTex: 0
+          _NormalExtTex_ST: 11
+          _PlusColor: 23
+          _PlusRotation: 9
+          _PlusTex: 21
+          _PlusTex_ST: 8
+          _PlusUVOffset: 10
+          _Scale: 17
+          _Thickness: 16
+          _Thickness_Curve: 15
+          sim_Time: 3
+          unity_MatrixVP: 18
+          unity_ObjectToWorld: 19
+        m_Type: 0
+        m_State:
+          serializedVersion: 2
+          m_Name:
+          rtBlend0:
+            srcBlend:
+              val: 1
+              name: '<noninit>'
+            destBlend:
+              val: 10
+              name: '<noninit>'
+            srcBlendAlpha:
+              val: 1
+              name: '<noninit>'
+            destBlendAlpha:
+              val: 10
+              name: '<noninit>'
+            blendOp:
+              val: 0
+              name: '<noninit>'
+            blendOpAlpha:
+              val: 0
+              name: '<noninit>'
+            colMask:
+              val: 15
+              name: '<noninit>'
+          rtBlend1:
+            srcBlend:
+              val: 1
+              name: '<noninit>'
+            destBlend:
+              val: 0
+              name: '<noninit>'
+            srcBlendAlpha:
+              val: 1
+              name: '<noninit>'
+            destBlendAlpha:
+              val: 0
+              name: '<noninit>'
+            blendOp:
+              val: 0
+              name: '<noninit>'
+            blendOpAlpha:
+              val: 0
+              name: '<noninit>'
+            colMask:
+              val: 15
+              name: '<noninit>'
+          rtBlend2:
+            srcBlend:
+              val: 1
+              name: '<noninit>'
+            destBlend:
+              val: 0
+              name: '<noninit>'
+            srcBlendAlpha:
+              val: 1
+              name: '<noninit>'
+            destBlendAlpha:
+              val: 0
+              name: '<noninit>'
+            blendOp:
+              val: 0
+              name: '<noninit>'
+            blendOpAlpha:
+              val: 0
+              name: '<noninit>'
+            colMask:
+              val: 15
+              name: '<noninit>'
+          rtBlend3:
+            srcBlend:
+              val: 1
+              name: '<noninit>'
+            destBlend:
+              val: 0
+              name: '<noninit>'
+            srcBlendAlpha:
+              val: 1
+              name: '<noninit>'
+            destBlendAlpha:
+              val: 0
+              name: '<noninit>'
+            blendOp:
+              val: 0
+              name: '<noninit>'
+            blendOpAlpha:
+              val: 0
+              name: '<noninit>'
+            colMask:
+              val: 15
+              name: '<noninit>'
+          rtBlend4:
+            srcBlend:
+              val: 1
+              name: '<noninit>'
+            destBlend:
+              val: 0
+              name: '<noninit>'
+            srcBlendAlpha:
+              val: 1
+              name: '<noninit>'
+            destBlendAlpha:
+              val: 0
+              name: '<noninit>'
+            blendOp:
+              val: 0
+              name: '<noninit>'
+            blendOpAlpha:
+              val: 0
+              name: '<noninit>'
+            colMask:
+              val: 15
+              name: '<noninit>'
+          rtBlend5:
+            srcBlend:
+              val: 1
+              name: '<noninit>'
+            destBlend:
+              val: 0
+              name: '<noninit>'
+            srcBlendAlpha:
+              val: 1
+              name: '<noninit>'
+            destBlendAlpha:
+              val: 0
+              name: '<noninit>'
+            blendOp:
+              val: 0
+              name: '<noninit>'
+            blendOpAlpha:
+              val: 0
+              name: '<noninit>'
+            colMask:
+              val: 15
+              name: '<noninit>'
+          rtBlend6:
+            srcBlend:
+              val: 1
+              name: '<noninit>'
+            destBlend:
+              val: 0
+              name: '<noninit>'
+            srcBlendAlpha:
+              val: 1
+              name: '<noninit>'
+            destBlendAlpha:
+              val: 0
+              name: '<noninit>'
+            blendOp:
+              val: 0
+              name: '<noninit>'
+            blendOpAlpha:
+              val: 0
+              name: '<noninit>'
+            colMask:
+              val: 15
+              name: '<noninit>'
+          rtBlend7:
+            srcBlend:
+              val: 1
+              name: '<noninit>'
+            destBlend:
+              val: 0
+              name: '<noninit>'
+            srcBlendAlpha:
+              val: 1
+              name: '<noninit>'
+            destBlendAlpha:
+              val: 0
+              name: '<noninit>'
+            blendOp:
+              val: 0
+              name: '<noninit>'
+            blendOpAlpha:
+              val: 0
+              name: '<noninit>'
+            colMask:
+              val: 15
+              name: '<noninit>'
+          rtSeparateBlend: 0
+          zClip:
+            val: 1
+            name: '<noninit>'
+          zTest:
+            val: 4
+            name: '<noninit>'
+          zWrite:
+            val: 1
+            name: '<noninit>'
+          culling:
+            val: 0
+            name: '<noninit>'
+          conservative:
+            val: 0
+            name: '<noninit>'
+          offsetFactor:
+            val: 0
+            name: '<noninit>'
+          offsetUnits:
+            val: 0
+            name: '<noninit>'
+          alphaToMask:
+            val: 0
+            name: '<noninit>'
+          stencilOp:
+            pass:
+              val: 0
+              name: '<noninit>'
+            fail:
+              val: 0
+              name: '<noninit>'
+            zFail:
+              val: 0
+              name: '<noninit>'
+            comp:
+              val: 8
+              name: '<noninit>'
+          stencilOpFront:
+            pass:
+              val: 0
+              name: '<noninit>'
+            fail:
+              val: 0
+              name: '<noninit>'
+            zFail:
+              val: 0
+              name: '<noninit>'
+            comp:
+              val: 8
+              name: '<noninit>'
+          stencilOpBack:
+            pass:
+              val: 0
+              name: '<noninit>'
+            fail:
+              val: 0
+              name: '<noninit>'
+            zFail:
+              val: 0
+              name: '<noninit>'
+            comp:
+              val: 8
+              name: '<noninit>'
+          stencilReadMask:
+            val: 255
+            name: '<noninit>'
+          stencilWriteMask:
+            val: 255
+            name: '<noninit>'
+          stencilRef:
+            val: 0
+            name: '<noninit>'
+          fogStart:
+            val: 0
+            name: unity_FogStart
+          fogEnd:
+            val: 0
+            name: unity_FogEnd
+          fogDensity:
+            val: 0
+            name: unity_FogDensity
+          fogColor:
+            x:
+              val: 0
+              name: '<noninit>'
+            y:
+              val: 0
+              name: '<noninit>'
+            z:
+              val: 0
+              name: '<noninit>'
+            w:
+              val: 0
+              name: '<noninit>'
+            name: unity_FogColor
+          fogMode: -1
+          gpuProgramID: 53618
+          m_Tags:
+            tags:
+              DisableBatching: true
+              LIGHTMODE: FORWARDBASE
+              QUEUE: Transparent
+              RenderType: Opaque
+          m_LOD: 100
+          lighting: 0
+        m_ProgramMask: 6
+        progVertex:
+          m_SubPrograms: []
+          m_PlayerSubPrograms:
+          - []
+          - []
+          - []
+          - - m_BlobIndex: 3
+              m_KeywordIndices:
+              m_ShaderRequirements: 33
+              m_GpuProgramType: 15
+            - m_BlobIndex: 4
+              m_KeywordIndices: 0400
+              m_ShaderRequirements: 33
+              m_GpuProgramType: 15
+            - m_BlobIndex: 5
+              m_KeywordIndices: 0500
+              m_ShaderRequirements: 33
+              m_GpuProgramType: 15
+          m_ParameterBlobIndices:
+          - 
+          - 
+          - 
+          - 000000000100000002000000
+          m_CommonParameters:
+            m_VectorParams: []
+            m_MatrixParams: []
+            m_TextureParams:
+            - m_NameIndex: 0
+              m_Index: 0
+              m_SamplerIndex: 0
+              m_MultiSampled: 0
+              m_Dim: 2
+            m_BufferParams: []
+            m_ConstantBuffers:
+            - serializedVersion: 2
+              m_NameIndex: 1
+              m_MatrixParams:
+              - m_NameIndex: 18
+                m_Index: 928
+                m_ArraySize: 0
+                m_Type: 0
+                m_RowCount: 4
+              m_VectorParams:
+              - m_NameIndex: 3
+                m_Index: 1360
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 4
+              - m_NameIndex: 4
+                m_Index: 1932
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              - m_NameIndex: 5
+                m_Index: 1936
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 4
+              - m_NameIndex: 6
+                m_Index: 1968
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              - m_NameIndex: 7
+                m_Index: 1972
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 2
+              - m_NameIndex: 8
+                m_Index: 1984
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 4
+              - m_NameIndex: 9
+                m_Index: 2016
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              - m_NameIndex: 10
+                m_Index: 2020
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 2
+              - m_NameIndex: 11
+                m_Index: 2032
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 4
+              - m_NameIndex: 12
+                m_Index: 2048
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              - m_NameIndex: 13
+                m_Index: 2052
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              - m_NameIndex: 14
+                m_Index: 2056
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              - m_NameIndex: 15
+                m_Index: 2060
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              - m_NameIndex: 16
+                m_Index: 2064
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              - m_NameIndex: 17
+                m_Index: 2240
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 1
+              m_StructParams: []
+              m_Size: 2256
+              m_IsPartialCB: 1
+            - serializedVersion: 2
+              m_NameIndex: 2
+              m_MatrixParams:
+              - m_NameIndex: 19
+                m_Index: 0
+                m_ArraySize: 0
+                m_Type: 0
+                m_RowCount: 4
+              m_VectorParams: []
+              m_StructParams: []
+              m_Size: 672
+              m_IsPartialCB: 1
+            m_ConstantBufferBindings:
+            - m_NameIndex: 1
+              m_Index: 0
+              m_ArraySize: 1
+            - m_NameIndex: 2
+              m_Index: 1
+              m_ArraySize: 1
+            m_UAVParams: []
+            m_Samplers: []
+          m_SerializedKeywordStateMask: 000001000200030004000500
+        progFragment:
+          m_SubPrograms: []
+          m_PlayerSubPrograms:
+          - []
+          - []
+          - []
+          - - m_BlobIndex: 9
+              m_KeywordIndices:
+              m_ShaderRequirements: 33
+              m_GpuProgramType: 17
+            - m_BlobIndex: 10
+              m_KeywordIndices: 0400
+              m_ShaderRequirements: 33
+              m_GpuProgramType: 17
+            - m_BlobIndex: 11
+              m_KeywordIndices: 0500
+              m_ShaderRequirements: 33
+              m_GpuProgramType: 17
+          m_ParameterBlobIndices:
+          - 
+          - 
+          - 
+          - 060000000700000008000000
+          m_CommonParameters:
+            m_VectorParams: []
+            m_MatrixParams: []
+            m_TextureParams:
+            - m_NameIndex: 20
+              m_Index: 0
+              m_SamplerIndex: 0
+              m_MultiSampled: 0
+              m_Dim: 2
+            - m_NameIndex: 21
+              m_Index: 1
+              m_SamplerIndex: 1
+              m_MultiSampled: 0
+              m_Dim: 2
+            m_BufferParams: []
+            m_ConstantBuffers:
+            - serializedVersion: 2
+              m_NameIndex: 1
+              m_MatrixParams: []
+              m_VectorParams:
+              - m_NameIndex: 22
+                m_Index: 1952
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 4
+              - m_NameIndex: 23
+                m_Index: 2000
+                m_ArraySize: 0
+                m_Type: 0
+                m_Dim: 4
+              m_StructParams: []
+              m_Size: 2256
+              m_IsPartialCB: 1
+            m_ConstantBufferBindings:
+            - m_NameIndex: 1
+              m_Index: 0
+              m_ArraySize: 1
+            m_UAVParams: []
+            m_Samplers: []
+          m_SerializedKeywordStateMask: 000001000200030004000500
+        progGeometry:
+          m_SubPrograms: []
+          m_PlayerSubPrograms: []
+          m_ParameterBlobIndices: []
+          m_CommonParameters:
+            m_VectorParams: []
+            m_MatrixParams: []
+            m_TextureParams: []
+            m_BufferParams: []
+            m_ConstantBuffers: []
+            m_ConstantBufferBindings: []
+            m_UAVParams: []
+            m_Samplers: []
+          m_SerializedKeywordStateMask:
+        progHull:
+          m_SubPrograms: []
+          m_PlayerSubPrograms: []
+          m_ParameterBlobIndices: []
+          m_CommonParameters:
+            m_VectorParams: []
+            m_MatrixParams: []
+            m_TextureParams: []
+            m_BufferParams: []
+            m_ConstantBuffers: []
+            m_ConstantBufferBindings: []
+            m_UAVParams: []
+            m_Samplers: []
+          m_SerializedKeywordStateMask:
+        progDomain:
+          m_SubPrograms: []
+          m_PlayerSubPrograms: []
+          m_ParameterBlobIndices: []
+          m_CommonParameters:
+            m_VectorParams: []
+            m_MatrixParams: []
+            m_TextureParams: []
+            m_BufferParams: []
+            m_ConstantBuffers: []
+            m_ConstantBufferBindings: []
+            m_UAVParams: []
+            m_Samplers: []
+          m_SerializedKeywordStateMask:
+        progRayTracing:
+          m_SubPrograms: []
+          m_PlayerSubPrograms: []
+          m_ParameterBlobIndices: []
+          m_CommonParameters:
+            m_VectorParams: []
+            m_MatrixParams: []
+            m_TextureParams: []
+            m_BufferParams: []
+            m_ConstantBuffers: []
+            m_ConstantBufferBindings: []
+            m_UAVParams: []
+            m_Samplers: []
+          m_SerializedKeywordStateMask:
+        m_HasInstancingVariant: 0
+        m_HasProceduralInstancingVariant: 0
+        m_UseName:
+        m_Name:
+        m_TextureName:
+        m_Tags:
+          tags: {}
+        m_PackageRequirements:
+          m_Requirements: []
+          m_StatusMessage:
+          m_CombinedStatus: 0
+      m_Tags:
+        tags:
+          DisableBatching: true
+          LIGHTMODE: FORWARDBASE
+          QUEUE: Transparent
+          RenderType: Opaque
+      m_LOD: 100
+      m_PackageRequirements:
+        m_Requirements: []
+        m_StatusMessage:
+        m_CombinedStatus: 0
+    m_KeywordNames:
+    - STEREO_INSTANCING_ON
+    - UNITY_SINGLE_PASS_STEREO
+    - STEREO_MULTIVIEW_ON
+    - STEREO_CUBEMAP_RENDER_ON
+    - DISSOLVE_PLUS
+    - DISSOLVE_SIMPLE
+    m_KeywordFlags: 000000000101
+    m_Name: ZTong/Plant_Grow
+    m_CustomEditorName: EffectShaderEditor
+    m_FallbackName:
+    m_Dependencies: []
+    m_CustomEditorForRenderPipelines: []
+    m_DisableNoSubshadersMessage: 0
+  platforms: 04000000
+  offsets:
+  - 00000000
+  compressedLengths:
+  - d7100000
+  decompressedLengths:
+  - fc550000
+  compressedBlob: a20c000000940000005000010062e40000006c010c005350020000100c006260030000680e0c0062c8110000d8140c0062a026000038120c0053d8380000344800620c39000050030c00625c3c000094020c0053f03e00009c0c00628c410000ec0a0c0062784c000084090c006eba750a0c03000100e60800000024476c6f62616c73d008180000c400ea556e69747950657244726177a00238000f500015f108060000000f0000005f446973736f766c655465785f53542c0000070117043c005220080000122c00b072656374696f6e526f7461080015003000170130005980080000103000065d000c5c005870080000168800df55564f66667365745f5832593260000358580800001134000a8f000d30001c4030000464002f0000f000022f30086c013b1f046c01190f1001ac00e800134d100000640213050c009f160e0000020102010001000ef00544584243bca6fe31880ec23fe360e5c9be25d4f5370040f00d00006e01f3022c000000d4000000480100004953474ea0660000a50017804800049a015b0f0700008918000050005b0f0f00008f180000d1005b07070000961800010400120318001701180013041800f316504f534954494f4e00434f4c4f52004e4f524d414c00544558434f4f524400ab4f53474e6c3400170882041801a800003e040fa800014f00000062a800000018003b53565f7b00067400f10853484452a00c0000400001002803000059000004468e204400268d00100004ee01105a5b0022601052025218000400700c00a2555500005f00000372101000000c0031f21010380004180013020c005732101000030c000058007567000004f22010f000106540002920100c000040004068000002c801623800000812003000221a80b00010553c00c3400000530469381d000008222000160a08002380412001571a00000612180013811800453700000a58000f40000817322800042000007c005700a08c460a90000028001362200022a6891800117bf6020214002256140c0100d000148250001680280000540053610b363b1df000001001133a28001b3ad0001782180008d0000558000f400008443900000b60002e02407003133a940084780000001f0000034c00533200000f620c0022f60f580004400040e00fc940040008140044f90fc93f5400624d0000063200d8018300d00000960510005d07140a54002aa609540043000000bf040000dc02320712004001043c00134650005336000006420c00131ae800031003230722340022660a340013862800871200000138000007480105d80153db0fc9404d7000022c0002b8020424001700e8012f5606b4000700600004dc0013064c00043000045402009c00172ab4011704c4000374011409c4001b1a2800132a5c0012152b000594002206013000079400133f0400005000230b32600322960530001346f0016679000000e68a0c0000a4001332540013661800177ed002261615d0021b42d0021b7ed002046801162a080009d0021742180008d0021b42a0010e40000fa402072fa60aa4023f2f5604a4025f071c010fa4020e172aa40204bc01294600b40005b00004a40214c2380203a4022e0604a4020f7c020008200505a4021b0a280004b80104a40208940007a40205a00204a4022ac2208c002206845802107cd801168e0c00081c06047c021b807c020f1c06490f7c0201044c010f7c022117017c020c6c042d0611d8030d7c0209d803035000047c021b015c04047c0213027c0213007c0217017c020ef8060a7c02000100044c061f0a20050103f4060f2005051b9230012a56097c021b0220050368000d7c020358030efc060f7c02041f027c02080c3803042005177f2005127f2f001509700703dc08352a80209c00138050001b82bc081880d004071400006b0a0cf00404d400664800000bf200a401019800137e70011760940803980004f402131a9800170a980013819800042400173a84001b1a4c03138164031472000513157c001282280a03a406140a200004180001d40103200a3f4602102800060088012aa61a2800170070002a4602300017039000130290001f029000041f02900000130254001f02280004049000082800171098012a46021c001f34a00504004e014c440000051c0000f4020474002aa60a5400001c001bd210032606091c001472240303e0032686032c031772a00001380003c001178c440100380114f2c801042404034c05133b4800042000041800173a8c0026460ec8012af2004000183cd000160ec80126f2201400083000123d98041405f80b22461e0800113ec301173b280e08720d17018c0e130504001706680e14727f04031800002c00100d420eff024953534f4c56455f504c55530000006a147c0e19f001cd1a0cd68d660695bcb620dd6b4e05a937002644147c0e53ec000000a87c0e13b87a0000d40d1f987c0e041fa17c0e041fa77c0e041fae7c0e041fae7c0e0413ae3c00041800130560000f940e111eb4c0000d940e1fa4940e041faa940e041baa9000000400220f0c18001b04c0000430001c03c0001f0cdc0e0f229412dc0e2fa504dc0e670430001f05e80e18000c0000940b170318001704180013050c0f1f060c0fffffff6f0cd0021f7ed002141e7e900c0fd0022a1f1a4000050fa402ffc5040c0f2f56090c0f0f1f220c0f0c1b42e4051b1a7c0205380c0b7c021b22c80a0e40000e7c021bc2b00a0774010580020814000480020c7c0226e60ac80105ac100e580e05cc01087c02043c000f7c021913b62c030c7c02071c010f7c020e1f1a0c0f050f20059d0c54100f0c0f081f220c0f101f220c0f001f1a0c0f081a026c022700020c0f1703a4010f0c0f591be20c0f2a06897c0e042000041800080c0f3f560e10280006080c0f042800180070001a0e30001703900017030c0f0f9000011f03900000130254001f03280004080c0f042800080c0f239607e0050308000f0c0f21047400043c0e04680004f00e13031003086800043800085c042a0609c800044c000c0c0f2a560e0c0f087c000f0c0f011b030c0f05380f0738010c2800173c70070428000c0c0f1b030c0f0860081306101022a68b200010830c00150808101808280401e8001684280000cc02045413265681e802188330001211540c007400042c0013a6cc0310852800160c8c130330021407141314c6fc010310040ffc17011f84fc17a81f03fc172c1b04f008170374061703b005170374061b04f0081f03fc1718130374061f05fc17301f03fc17001b044c061f05fc17041b04fc171f0580150c1f04801509030c0f0c8015178274061f82fc17041f88fc17c50314040f6c0b0a0ffc17201f03fc174804b4040ffc17251f03fc17141e03fc170f781a260470110c7c0217877c021f87bc1404041400130414001505d01402fa100fd014170004001707d814176248241705721305d8149f53494d504c4500ca11d81419f001135ea6db740d0f3415eb93b94e980e5f37002aa411d8141f90d814b41e9c14240dd8141f8cd814041f92d814041f92d814041e92d8140f9c2312220c10c0141f03c014b10ec0230fb414ffffffffffffffffffffffffff131f32b4140008ec0804140008ec080f38120104f411040014007c012f1605001407087406046c060f381219005c001e0238120fb4140e022c000adc290fb414251f01b02c101f02b02c141f0238120d0fb4142d0f38125a2f02004438171f0034001800ca1015142c36ef6c7665426f756e64436f6c6f72322c36012fb0083000061f313000011ca08c368f537472656e677468bc3604224408e4270630003f6f66742c000414488c00a54973526564416c70686137000f300001214c080a020030009954696c6c696e67555631000f6400001450b0378049734f70706f736978370b35000c34001954240107f4003f5f5a32300001165c503906f4002f5f572c00021d60ac390a51010c8c001684f400072401033b000f4038041688f4000828010935000c143a148ce801395573651b020f6400041f904802026f5769647468313000011f943000070f280102139810030004031c0dac3a0b80031304fc3808c039043c00130220000f5003151f0c5003ffa10fb802811f0194021413110c0004ba160408009f7202000002020102003c1812f001eda2bf9f66e4394dc5dd3f00731dfd4e7e00264c023c1813a0943b1f49e83a291f0fe83a041f0f4c170b00f017132c44000074001b204400160090178154617267657400ab80172070018017028c000880171b7e7017040c001f017c1700041000130110002662108017040c0017022817130028170014004445000009582f26e61a240e01ee0103700004240001a42f1f10480e0308e82f2a460ed02f1c7a88311602d0310001001a7d30302b07f2fc2f05b4083c200005d81201000d03d4002af60f903000e4082a8220300002e40808800812112a0005c0041f05c42f088fae0a000002040104b00213f001053fe079cacf3b5469e879b74161a781560026880ab00253e80000001cec1a0f042f261f0f042f041f0f042f041f03042f041f0c042f041f03f80243226409f8022a5902f8021f8cf80208040c0017020c001f031003100410001b0210001f0330030c266210b01a000c0013c218110418001f055403001305a80205c40b034000001f0105440c1604180c04a01308f83a04880f1b8598131b00b0031746943501e801031c011700fc1a08f41604881a089c1a173a8c0e1b0a5c0304b40c0dc41a330000c0b010183f4c00171ab8000c1c1b180e38210b300013883401087438038a3314086c0e269605c8000054011b050c1026f68f4c0000ac131701181408c00426960534011303340104a0011b2234010464200420121b2280131788e800163a080f1f07201c050498171e015001183f801304600017892401138990011382340e0c40000748152409521401121eb00226a689e01013843c0e0cc42217865400048000042c001b422c021885e016072c00170078180a300228803f4c021f3a24170404b8021d038c1d0620001e225c0105dc24088c0f1b3a5c0f082800170ecc011302a000080400045c004f38200007700000046c001c09f80f0a1c032f40400c1701171a0c020f5c000504b0021f039407101f0494071013044c071f0494070c1f0394070003280614096414071c3905a001178a4c001803fc130b54001f8a4c00001b034c001b8b6c030c2c02081c03130034130f30020509e8040b48000cac1f1f422800140880081f025c1c001f03a802041f3a800234163a50052f0a4244000804c0000434041f00a8023807200605cc3a0ff40105138b3c200438180f3c2001170ad4011737ac0504303a1336903a263609080a08042604d01214720c291a074c0a18020003034c0a046c040ce401045000007c011e120c020f1807142f4040cc26010808060d0c0707f4010c1c00046c0208ec0a1b061c3c08ec0a1f0aec0a0a172f9a090fd825099f460900000203010300ec0a12f0010c48e9145fe8bbfa577116d8545805575600262009ec0a10d0680a03ec0a0f1825261f0f1825040318000fec0a010f1825021f0cd40a43221408d40a1f05d40a240fc80a160fb80a210fac0af41f82ac0a1000a4060460040f8c090504ec080b6408047103150950220f84090804e02208840904b4220f8409011f018409001f0184090417014c000884090824260168000b48050884090884190c20000814000f8409111f018409000a50260ac0060c88050b70000d8409041c000f8805050c40000420060e5c000f8409631f0084091c1f0084090c04a81a0f8409290f2c02020f8409081f1a380d080f4800010b94212f0a4228001404e0020c60020c84090ca8021f3a8002340470000484091f01840908170184091f01a802380484000878440ff401051e8bc0290f84091208f01c0884091700840908a8080c84091f008409180c3c021f008409001f018409a9500000000000
+  stageCounts: 02000000
+  m_Dependencies: []
+  m_NonModifiableTextures: {}
+  m_ShaderIsBaked: 1
+  m_DefaultTextures: {}
+  errors: []
+  m_CompileInfo:
+    m_Snippets: {}
+    m_MeshComponentsFromSnippets: 0
+    m_HasSurfaceShaders: 0
+    m_HasFixedFunctionShaders: 0
+  m_CompileSmokeTestAfterImport: 0

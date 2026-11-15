@@ -1,0 +1,260 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Pupil_highlight
+  m_Shader: {fileID: 4800000, guid: 87a1ae8f1a8a59444b34bfd3f64e30a5, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - OPAQUE
+  - _BLINKTOGGLE_ON
+  - _DEFAULT_REFLECTION
+  - _INVERSIONTOGGLE_ON
+  - _MASK2TOGGLE_ON
+  - _MASK3TOGGLE_ON
+  - _MASKDIRECTION_ON
+  - _ROTATIONSWITCH_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - Outline
+  - CharHairShadow
+  - CharFaceShadow
+  - CharHairTransE
+  - PreDepth
+  - Reflection
+  - SHADOWCASTER
+  - FurShell
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EffectMask:
+        m_Texture: {fileID: 2800000, guid: c2d7738a8f6d2c64c83b812c6e8b3885, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HairMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainPlusTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 2800000, guid: c2d7738a8f6d2c64c83b812c6e8b3885, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MatCapTex:
+        m_Texture: {fileID: 2800000, guid: 5ec48f4331d3b2946a86e99c1c2c88b0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 7284f0cd512373045ac5d636a3cf8e06, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RMOTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SparkleMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StockingBumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex_Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Anisotropy: 1
+    - _AnisotropyPow: 72
+    - _AnisotropyShift: 0.05
+    - _BakeWithCustomLightmap: 0
+    - _BlendAlphaDst: 10
+    - _BlendAlphaSrc: 1
+    - _BlendDst: 0
+    - _BlendSrc: 1
+    - _BlinkAngle: 1
+    - _BlinkScale: 10
+    - _BlinkScale2: 1.93
+    - _BlinkToggle: 1
+    - _BodyAtlasMode: 0
+    - _BumpScale: 1
+    - _CharSaturation: 0
+    - _ConcealLerp: 0
+    - _Cull: 2
+    - _Cull_Reflection: 1
+    - _CustomEnvCubeScale: 1
+    - _Cutoff: 0.02
+    - _DetailNormalMapScale: 1
+    - _DitherAlpha: 1
+    - _DstBlend: 10
+    - _EffectMode: 0
+    - _EmissionColor: 10
+    - _EmissiveIntensity: 0
+    - _EyeHighlightMode: 1
+    - _EyeMode: 1
+    - _FabricMode: 0
+    - _FaceMode: 0
+    - _FlashRotationAngle: 0
+    - _FlashScale: 0.5
+    - _FlashSpeedX: 0.5
+    - _FlashSpeedY: 0
+    - _FurBend: 0.4
+    - _FurDensity: 1200
+    - _FurLength: 0.009
+    - _FurMode: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.14142135
+    - _GlossyReflections: 1
+    - _HairMode: 0
+    - _HairShadowX: 0
+    - _HairShadowY: 0
+    - _HairTranEAlpha: 0
+    - _HolographicIntensity: 0
+    - _HolographicWidth: 200
+    - _InversionToggle: 1
+    - _LensMode: 0
+    - _Mask2Scale: 0.107
+    - _Mask2Soft: 0.045
+    - _Mask2Toggle: 0
+    - _Mask3Toggle: 1
+    - _MaskAlpha: 0.014
+    - _MaskColor1: 0.08
+    - _MaskColor2: 0
+    - _MaskDirection: 0
+    - _MaskScale: 0.107
+    - _MaskSettingGroup: 0
+    - _MaskSoft: 0.076
+    - _MatCapPow: 10
+    - _MatCapSettingGroup: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalScale: 1
+    - _Occlusion: 1
+    - _OcclusionStrength: 1
+    - _OutlineIntensity: 0
+    - _OutlineWidth: 0.75
+    - _OutlineZBias: 0.00001
+    - _Parallax: 0.02
+    - _RampCount: 3
+    - _RimColorMixAlbedo: 0.5
+    - _RimLightIntensity: 1
+    - _RimMidPoint: 0.65
+    - _RimWidth: 0.18
+    - _RotateSpeed: 1.8
+    - _RotationAngle: 398
+    - _RotationSwitch: 0
+    - _Roughness: 1
+    - _ScaleSpeed: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 5
+    - _StencilComp: 8
+    - _StencilOp: 2
+    - _StencilRefC: 204
+    - _StencilRefShadowCaster: 200
+    - _StencilRefShadowReceiver: 201
+    - _StockingInt: 0.55
+    - _StockingNormalIntensity: 0.2
+    - _StudyEdgeStrength: 0.025
+    - _StudyEnvironmentWeight: 0.18
+    - _StudyHairSaturation: 1
+    - _StudyHairTipBoost: 0
+    - _StudyLightFloor: 0.62
+    - _StudyNormalWeight: 0.85
+    - _StudyOpacity: 1
+    - _StudyProceduralSparkle: 0
+    - _StudyRampWeight: 0
+    - _StudyRimWeight: 0.025
+    - _StudyShadowStrength: 0.75
+    - _StudySkinLift: 0
+    - _StudySparkle: 0
+    - _StudySpecularWeight: 0.16
+    - _UVSec: 0
+    - _UseAlphaTest: 1
+    - _UseFringeShadowCaster: 0
+    - _UseFringeShadowReceiver: 0
+    - _UseHairTranE: 0
+    - _UseRampMap: 1
+    - _UseRimLight: 1
+    - _UseStockingFalloff: 0
+    - _WriteMask: 255
+    - _ZWrite: 0
+    m_Colors:
+    - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    - _ColorPlus: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissiveColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FlashColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HairAnisotropyColor: {r: 0.83, g: 0.96, b: 1, a: 1}
+    - _HolographicColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Mask2Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Mask3Color: {r: 1, g: 1, b: 1, a: 1}
+    - _MaskColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MatColor: {r: 0.3551086, g: 0.44739822, b: 0.7169812, a: 1}
+    - _MetallicRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _OcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _PropertyMax: {r: 1, g: 1, b: 1, a: 1}
+    - _PropertyMin: {r: 0, g: 0, b: 0, a: 1}
+    - _RampMaskChannel: {r: 0, g: 0, b: 0, a: 1}
+    - _RimLightTintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RoughnessRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _StockingCenterColor: {r: 1, g: 1, b: 1, a: 1}
+    - _StockingFalloffColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _StudyEdgeTint: {r: 0.32, g: 0.28, b: 0.34, a: 1}
+    - _StudyHairTint: {r: 1, g: 1, b: 1, a: 1}
+    - _StudyShadowTint: {r: 0.64, g: 0.67, b: 0.75, a: 1}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

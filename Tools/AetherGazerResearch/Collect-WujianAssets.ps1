@@ -11,10 +11,8 @@ if (-not (Test-Path -LiteralPath $ExportedAssets -PathType Container)) {
 }
 
 $seedPatterns = @(
-    '*\char\108502ui_tpose.ys\*\108502ui_tpose.prefab',
-    '*\char\108502ui_tpose$naive.ys\*\108502ui_tpose$naive.prefab',
-    '*\ch_bat_108502.ys\*\ch_bat_108502.prefab',
-    '*\ch_arm_108502.ys\*\ch_arm_108502.prefab'
+    '*\char\102003ui_tpose.ys\*\102003ui_tpose.prefab',
+    '*\char\102003ui_tpose$naive.ys\*\102003ui_tpose$naive.prefab'
 )
 
 $allMeta = Get-ChildItem -LiteralPath $ExportedAssets -Recurse -File -Filter '*.meta'

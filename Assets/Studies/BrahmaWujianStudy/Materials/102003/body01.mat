@@ -1,0 +1,362 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: body01
+  m_Shader: {fileID: 4800000, guid: 87a1ae8f1a8a59444b34bfd3f64e30a5, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _USEHAIRSHADOW_ON
+  - _USEREFLECTIONRAMP_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
+  disabledShaderPasses:
+  - Override3
+  - Override1
+  - Override2
+  - CharHairTransE
+  - CharHairShadow
+  - CharFaceShadow
+  - FurShell
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 70771a069c9b41f42832a7e482882c8a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 60ff81f150eebe04cb596ba2b50536e7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CrystalAttributeTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CrystalInteriorColorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CrystalReflectTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CustomReflectionTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DeformMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EffectMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ExtensionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HairMaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HairNoiseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HairNoiseTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainPlusTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MultiSpecularRampMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParticleDecal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RMOTex:
+        m_Texture: {fileID: 2800000, guid: 9951b5281eea19545bf370f320cfe757, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampMap:
+        m_Texture: {fileID: 2800000, guid: 16008838839731a4c9093e548cf45f76, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampMask:
+        m_Texture: {fileID: 2800000, guid: cf19993ba2ee56245aed7818d9cc0c5c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RimMask:
+        m_Texture: {fileID: 2800000, guid: f8826372f0334234badff1133083fac8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkinHdr:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SparkleMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _StockingBumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex_Mask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AnisotropicGXX: 0
+    - _AnisotropicSpecular: 0
+    - _Anisotropy: 1
+    - _Anisotropy2: 1
+    - _AnisotropyPow: 72
+    - _AnisotropyShift: 0.05
+    - _BaseSettingGroup: 0
+    - _BlendAlphaDst: 0
+    - _BlendAlphaSrc: 1
+    - _BlendDst: 0
+    - _BlendSmoothness: 0.1
+    - _BlendSrc: 1
+    - _BlendThreshold: 0
+    - _BodyAtlasMode: 0
+    - _CharacterRenderMode: 0
+    - _CharacterSurface: 0
+    - _ChromaticAberrationIntensity: 1
+    - _Conservative: 0
+    - _CrystalInteriorColorDepth: 1
+    - _CrystalInteriorTexScale: 1
+    - _CrystalIsRefractionBackground: 0
+    - _CrystalReflectContrast: 1
+    - _CrystalReflectEdgeContrast: 3
+    - _CrystalRefractivity: 1
+    - _CrystalSetting: 0
+    - _CrystalThickness: 0.5
+    - _Cull: 2
+    - _CullMode: 0
+    - _Cutoff: 0.02
+    - _DeformSettingGroup: 0
+    - _DisableFaceSDFShadow: 0
+    - _DoubleSided: 0
+    - _DstBlend: 0
+    - _EffectMode: 0
+    - _EffectRange: 1
+    - _EffectStart: 0
+    - _EmissiveIntensity: 0.7
+    - _ExtensionFactor: 0.1
+    - _ExtensionFade: 0.1
+    - _ExtensionPeriod: 1
+    - _EyeHighlightMode: 0
+    - _EyeMode: 0
+    - _FabricMode: 0
+    - _FaceEffectSetting: 0
+    - _FaceMode: 0
+    - _FaceSpecular: 1
+    - _FlashRadius: 0.01
+    - _ForceDisableHiding: 0
+    - _FurBend: 0.4
+    - _FurDensity: 1200
+    - _FurLength: 0.009
+    - _FurMode: 0
+    - _GGXRange: 0
+    - _GlobalIlluminationOverride: 0
+    - _GradientPos: 1
+    - _GradientRange: 1
+    - _GridSize: 176
+    - _HairLightingMode: 0
+    - _HairMode: 0
+    - _HairNoiseStrength: 1
+    - _HairShadowX: 0
+    - _HairShadowY: 0
+    - _HairTranEAlpha: 0
+    - _HueShiftRange: 0
+    - _IndirectDiffuseBlend: 0
+    - _IndirectDiffuseIntensity: 1
+    - _IndirectSpecularBlend: 0
+    - _IndirectSpecularIntensity: 1
+    - _InvertBlendTexUV: 0
+    - _LensMode: 0
+    - _LightingParamRemapGroup: 0
+    - _MatScale: 6
+    - _Metallic: 1
+    - _NormalScale: 1
+    - _Occlusion: 1
+    - _OnlyEmissionSwitch: 0
+    - _OutlineAntialias: 0
+    - _OutlineCullMode: 1
+    - _OutlineIntensity: 1
+    - _OutlineOffset: 0
+    - _OutlineSettingGroup: 1
+    - _OutlineThickness: 0.0025
+    - _OutlineWidth: 0.75
+    - _OutlineZBias: 0.00001
+    - _RampCount: 3
+    - _ReflectionScale: 2
+    - _RenderSettingGroup: 0
+    - _RimColorMixAlbedo: 0.877
+    - _RimDistanceFold: 10
+    - _RimLightInLight: 1
+    - _RimLightIntensity: 0.62
+    - _RimMaxDistance: 999
+    - _RimMidPoint: 0.374
+    - _RimWidth: 0.114
+    - _RimlightFade: 0.468
+    - _RimlightRange: -0.613
+    - _RimlightThreshold: 0.259
+    - _Roughness: 1
+    - _SDFType: 0
+    - _SceneFog: 0
+    - _ShadowMaskScale: 1
+    - _ShadowNewHair: 0
+    - _ShowEmissionColor: 1
+    - _SkinSSSSettingGroup: 0
+    - _SkinSelect: 1
+    - _SparkleEnabled: 0
+    - _SparkleFrequency: 1
+    - _SpecularFade: 0.1
+    - _SpecularThreshold: 0.5
+    - _SrcBlend: 1
+    - _Stencil: 255
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilRefC: 206
+    - _StencilRefShadowCaster: 200
+    - _StencilRefShadowReceiver: 201
+    - _StencilSettingGroup: 0
+    - _StockingInt: 0
+    - _StockingNormalIntensity: 1
+    - _StudyEdgeStrength: 0.025
+    - _StudyEnvironmentWeight: 0.18
+    - _StudyHairSaturation: 1
+    - _StudyHairTipBoost: 0
+    - _StudyLightFloor: 0.62
+    - _StudyNormalWeight: 0.85
+    - _StudyOpacity: 1
+    - _StudyProceduralSparkle: 0
+    - _StudyRampWeight: 0.06
+    - _StudyRimWeight: 0.025
+    - _StudyShadowStrength: 0.75
+    - _StudySkinLift: 1
+    - _StudySparkle: 0
+    - _StudySpecularWeight: 0.16
+    - _SwitchShape: 1
+    - _TextureScale: 1
+    - _UseAlphaTest: 0
+    - _UseDefaultShadowCaster: 1
+    - _UseEffect: 0
+    - _UseExtension: 0
+    - _UseFaceReceiveShadow: 0
+    - _UseFringeShadowCaster: 0
+    - _UseFringeShadowReceiver: 0
+    - _UseGIFlatten: 0
+    - _UseHairShadow: 1
+    - _UseHairTranE: 0
+    - _UseMaskTexture: 0
+    - _UseMultiSpecularRampMap: 0
+    - _UseRampMap: 0
+    - _UseRampMaskRGBChannel: 0
+    - _UseReflectionProbe: 0
+    - _UseReflectionRamp: 1
+    - _UseRimLight: 1
+    - _UseSkinDeform: 1
+    - _UseSmoothNormal: 1
+    - _UseSpecularUV2: 0
+    - _UseStockingFalloff: 0
+    - _WhitePow: 1
+    - _WhitePowerRange: 1
+    - _WriteMask: 255
+    - _ZOffset_Unit: 0
+    - _ZTestMode: 4
+    - _ZWrite: 1
+    - _ZWriteForward: 1
+    - _ZWriteOutline: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorPlus: {r: 1, g: 1, b: 1, a: 1}
+    - _CrystalBackgroundColor: {r: 0.5, g: 1, b: 1, a: 1}
+    - _CrystalInteriorColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CrystalReflectColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CrystalSpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EffectColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 2.4890683, g: 2.6416445, b: 1.1894315, a: 0}
+    - _EmissiveColor: {r: 0.04, g: 0.82, b: 0.88, a: 1}
+    - _ExtensionHSVColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ExtensionParams: {r: 0, g: 1, b: 0.1, a: 0.1}
+    - _ExtralEmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FresnelSkinColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HairAnisotropyColor: {r: 0.83, g: 0.96, b: 1, a: 1}
+    - _HairShadowOffset: {r: -5, g: 7.5, b: -5, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MatColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MetallicRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _OcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _OutlineColor: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
+    - _OutlineShadowColor: {r: 0.5, g: 0.48820755, b: 0.48820755, a: 1}
+    - _RampMaskChannel: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectionColor: {r: 1, g: 0.98649734, b: 0.957, a: 1}
+    - _RimLightTintColor: {r: 0.6540139, g: 0.6698113, b: 0.6694987, a: 1}
+    - _RimlightColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    - _RimlightDir1: {r: -0.9907088, g: 0.00000014959288, b: 0.136, a: 0}
+    - _RimlightDir2: {r: -0.9907088, g: -0.00000014959288, b: 0.136, a: 0}
+    - _RoughnessRemap: {r: 0, g: 1, b: 1, a: 0}
+    - _SecondEmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SecondUVFlowSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _StockingCenterColor: {r: 1, g: 1, b: 1, a: 1}
+    - _StockingFalloffColor: {r: 0.09999997, g: 0, b: 0, a: 1}
+    - _StudyEdgeTint: {r: 0.32, g: 0.28, b: 0.34, a: 1}
+    - _StudyHairTint: {r: 1, g: 1, b: 1, a: 1}
+    - _StudyShadowTint: {r: 0.64, g: 0.67, b: 0.75, a: 1}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

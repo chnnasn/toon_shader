@@ -11,13 +11,11 @@ if (-not (Test-Path -LiteralPath $manifestPath)) {
 
 $wanted = @(
     '^allshaders\.ys$',
-    '^comchar/assets/comchar/artresources/char/hero/1085\.ys$',
-    '^comchar/char/108502.*\.ys$',
-    '^comchar/t0world/model/108502/.*\.ys$',
-    '^comchar/weapon/108502ui_weapon\.ys$',
-    '^comchar/assets/comchar/artresources/weapon/108502/.*\.ys$',
-    '^comchar/assets/comchar/artresources/prop/1085/108502/.*\.ys$',
-    '^comchar/assets/comchar/artresources/prop/dlc/models/ch_(arm|bat)_108502\.ys$'
+    '^shader\.ys$',
+    '^comchar/shader\.ys$',
+    '^shaderextracollect_comchar\.ys$',
+    '^comchar/assets/comchar/artresources/char/hero/1020\.ys$',
+    '^comchar/char/102003ui_tpose(\$naive)?\.ys$'
 )
 
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
