@@ -418,6 +418,10 @@ namespace BrahmaWujianStudy.Editor
             material.SetFloat("_HairTranEAlpha", bangs ? .35f : 0);
             material.SetFloat("_HairShadowX", bangs ? .0037f : 0);
             material.SetFloat("_HairShadowY", bangs ? .00778f : 0);
+            material.SetVector("_BrahmaHairShadowOffsetOS", bangs ?
+                new Vector4(.0037f, .00778f, 0, 0) : Vector4.zero);
+            material.SetColor("_ReflectionTint", new Color(.72f, .78f, .9f, 1));
+            material.SetFloat("_ReflectionStrength", .08f);
             material.SetFloat("_Cull", hair ? (float)CullMode.Off : (float)CullMode.Back);
 
             if (face || stocking)
@@ -456,7 +460,7 @@ namespace BrahmaWujianStudy.Editor
             material.SetFloat("_BlendAlphaSrc", (float)BlendMode.One);
             material.SetFloat("_BlendAlphaDst", transparent ? (float)BlendMode.OneMinusSrcAlpha : (float)BlendMode.Zero);
             material.SetFloat("_ZWrite", transparent ? 0 : 1);
-            material.renderQueue = transparent ? (int)RenderQueue.Transparent : (int)RenderQueue.Geometry;
+            material.renderQueue = transparent ? (int)RenderQueue.Transparent : (int)RenderQueue.Geometry + 10;
             material.SetOverrideTag("RenderType", transparent ? "Transparent" : "Opaque");
         }
 

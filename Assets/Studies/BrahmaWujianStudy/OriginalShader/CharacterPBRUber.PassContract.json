@@ -1,0 +1,93 @@
+{
+  "sourceShader": "SimPipeline/Character/PBR/Uber",
+  "sourceGuid": "46911bd795802db49ba8651314d84d38",
+  "sourceSha256": "f30545a30d2076d5e9d6a66db270f2676592b5aeb90c39987a3b7d21fbcd064f",
+  "sourceAsset": "Tools/AetherGazerResearch/OriginalShaderEvidence/SerializedShaders/AssetBundles/shader.ys/Packages/com.p08.render/RenderPipeline/SimPipeline/Shader/Character/PBR/Character_PBR_Uber.asset",
+  "propertyCount": 155,
+  "queue": "Geometry+10",
+  "renderPipelineTag": "UniversalPipeline",
+  "passes": [
+    {
+      "index": 0,
+      "name": "ForwardBase",
+      "lightMode": "FORWARDBASE",
+      "blend": "[_SrcBlend] [_DstBlend], [_BlendAlphaSrc] [_BlendAlphaDst]",
+      "zTest": "LEqual",
+      "zWrite": "[_ZWrite]",
+      "cull": "[_Cull]",
+      "stencil": "Ref [_StencilRefC], ReadMask 255, WriteMask [_WriteMask], Comp [_StencilComp], Pass [_StencilOp]"
+    },
+    {
+      "index": 1,
+      "name": "Outline",
+      "lightMode": "ALWAYS",
+      "blend": "SrcAlpha OneMinusSrcAlpha, [_BlendAlphaSrc] [_BlendAlphaDst]",
+      "zTest": "Less",
+      "zWrite": "On",
+      "cull": "Front"
+    },
+    {
+      "index": 2,
+      "name": "CharHairShadow",
+      "lightMode": "CharHairShadow",
+      "colorMask": 0,
+      "zTest": "LEqual",
+      "zWrite": "Off",
+      "cull": "[_Cull]",
+      "stencil": "Ref [_StencilRefShadowCaster], ReadMask 255, WriteMask 255, Comp Equal, Pass IncrSat"
+    },
+    {
+      "index": 3,
+      "name": "CharFaceShadow",
+      "lightMode": "CharFaceShadow",
+      "blend": "One Zero",
+      "zTest": "LEqual",
+      "zWrite": "Off",
+      "cull": "[_Cull]",
+      "stencil": "Ref [_StencilRefShadowReceiver], ReadMask 255, WriteMask 255, Comp Equal, Pass DecrWrap"
+    },
+    {
+      "index": 4,
+      "name": "CharHairTransE",
+      "lightMode": "CharHairTransE",
+      "blend": "SrcAlpha OneMinusSrcAlpha, One OneMinusSrcAlpha",
+      "zTest": "LEqual",
+      "zWrite": "[_ZWrite]",
+      "cull": "[_Cull]",
+      "stencil": "Ref [_StencilRefC], ReadMask 255, WriteMask 255, Comp Equal, Pass Keep"
+    },
+    {
+      "index": 5,
+      "name": "ShadowCaster",
+      "lightMode": "SHADOWCASTER",
+      "colorMask": 0,
+      "zTest": "LEqual",
+      "zWrite": "On",
+      "cull": "[_Cull]"
+    },
+    {
+      "index": 6,
+      "name": "Reflection",
+      "lightMode": "Reflection",
+      "blend": "[_SrcBlend] [_DstBlend], [_BlendAlphaSrc] [_BlendAlphaDst]",
+      "zTest": "LEqual",
+      "zWrite": "On",
+      "cull": "Front"
+    },
+    {
+      "index": 7,
+      "name": "PreDepth",
+      "lightMode": "PreDepth",
+      "colorMask": 0,
+      "zTest": "LEqual",
+      "zWrite": "On",
+      "cull": "[_Cull]"
+    }
+  ],
+  "stencilCycle": {
+    "faceForwardWrite": 200,
+    "hairShadow": "Equal 200, IncrSat -> 201",
+    "faceShadow": "Equal 201, DecrWrap -> 200"
+  },
+  "reconstructionBoundary": "Fixed pass states, names, ordering, material values and compiled shader evidence are recoverable. Authoring-time HLSL/Shader Graph source is not present in the player build; lighting code is a behavioral reconstruction."
+}

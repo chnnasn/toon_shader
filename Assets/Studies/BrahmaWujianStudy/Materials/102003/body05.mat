@@ -18,7 +18,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2010
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses:
@@ -241,6 +241,7 @@ Material:
     - _OutlineZBias: 0.00001
     - _RampCount: 3
     - _ReflectionScale: 2
+    - _ReflectionStrength: 0.08
     - _RenderSettingGroup: 0
     - _RimColorMixAlbedo: 0.877
     - _RimDistanceFold: 10
@@ -321,6 +322,7 @@ Material:
     - _ZWriteOutline: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BrahmaHairShadowOffsetOS: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorPlus: {r: 1, g: 1, b: 1, a: 1}
     - _CrystalBackgroundColor: {r: 0.5, g: 1, b: 1, a: 1}
@@ -344,6 +346,7 @@ Material:
     - _OutlineShadowColor: {r: 0.5, g: 0.48820755, b: 0.48820755, a: 1}
     - _RampMaskChannel: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectionColor: {r: 1, g: 0.98649734, b: 0.957, a: 1}
+    - _ReflectionTint: {r: 0.72, g: 0.78, b: 0.9, a: 1}
     - _RimLightTintColor: {r: 0.6540139, g: 0.6698113, b: 0.6694987, a: 1}
     - _RimlightColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
     - _RimlightDir1: {r: -0.9907088, g: 0.00000014959288, b: 0.136, a: 0}

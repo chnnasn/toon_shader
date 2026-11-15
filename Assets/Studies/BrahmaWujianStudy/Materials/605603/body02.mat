@@ -17,7 +17,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2010
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses:
@@ -270,6 +270,7 @@ Material:
     - _RampCount: 3
     - _ReflectionFresnelF0: 0
     - _ReflectionIntensity: 0.35
+    - _ReflectionStrength: 0.08
     - _RenderSettingGroup: 0
     - _RimColorMixAlbedo: 0.425
     - _RimDistanceFold: 1
@@ -353,6 +354,7 @@ Material:
     - _AlbedoColor: {r: 1, g: 1, b: 1, a: 1}
     - _AoeSelectColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BrahmaHairShadowOffsetOS: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorPlus: {r: 1, g: 1, b: 1, a: 1}
     - _CrystalBackgroundColor: {r: 0.5, g: 1, b: 1, a: 1}
@@ -380,6 +382,7 @@ Material:
     - _RMOTexChannelG: {r: 1, g: 0, b: 0, a: 0}
     - _RMOTexChannelR: {r: 0, g: 0, b: 0, a: 1}
     - _RampMaskChannel: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectionTint: {r: 0.72, g: 0.78, b: 0.9, a: 1}
     - _RimLightTintColor: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
     - _RoughnessRemap: {r: 0, g: 1, b: 1, a: 0}
     - _SecondUVFlowSpeed: {r: 8, g: 8, b: 0, a: 0}

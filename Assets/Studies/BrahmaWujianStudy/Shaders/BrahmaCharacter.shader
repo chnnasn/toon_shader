@@ -28,6 +28,9 @@ Shader "AetherGazer/Brahma Wujian/Reconstructed Multipass"
         _StudyShadowTint("Study Shadow", Color) = (.69,.59,.64,1)
         _StudyHairTint("Hair Tint", Color) = (1,1,1,1)
         _StudyEdgeTint("Edge Tint", Color) = (.18,.25,.45,1)
+        _ReflectionTint("Reflection Tint", Color) = (.72,.78,.9,1)
+        _ReflectionStrength("Reflection Strength", Range(0,1)) = .08
+        [HideInInspector] _BrahmaHairShadowOffsetOS("Hair Shadow Graph Offset", Vector) = (0,0,0,0)
         _RampMaskChannel("Ramp Channel", Vector) = (0,0,0,1)
         _Tiling("Stocking Tiling", Vector) = (1,1,0,0)
         _RoughnessRemap("Roughness Remap", Vector) = (0,1,1,0)
@@ -105,7 +108,7 @@ Shader "AetherGazer/Brahma Wujian/Reconstructed Multipass"
     }
     SubShader
     {
-        Tags { "RenderPipeline"="UniversalPipeline" "Queue"="Geometry" "RenderType"="Opaque" }
+        Tags { "RenderPipeline"="UniversalPipeline" "Queue"="Geometry+10" "RenderType"="Opaque" "IgnoreProjector"="True" }
         Pass
         {
             Name "ForwardBase" Tags { "LightMode"="UniversalForward" }
@@ -126,8 +129,12 @@ Shader "AetherGazer/Brahma Wujian/Reconstructed Multipass"
         }
         Pass
         {
+            // The original custom SRP labels this pass "Always".  URP treats
+            // LightMode as a scheduling contract, so keep the original state
+            // but give manually scheduled auxiliary passes private tags.
             Name "Outline" Tags { "LightMode"="BrahmaOutline" }
-            Cull Front ZWrite On ZTest LEqual
+            Blend SrcAlpha OneMinusSrcAlpha, [_BlendAlphaSrc] [_BlendAlphaDst]
+            Cull Front ZWrite On ZTest Less
             HLSLPROGRAM
             #pragma target 4.5
             #pragma vertex BrahmaOutlineVert

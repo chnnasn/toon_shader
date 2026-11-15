@@ -10,8 +10,8 @@
 - 场景：`Scenes/BrahmaWujianShowcase.unity`
 - 两个清理后的研究 Prefab：`Prefabs/Brahma_Wujian_102003.prefab`、`Prefabs/Brahma_Wujian_605603.prefab`
 - WuchangStudy 风格自包含源资源：`SourceArt/102003`、`SourceArt/605603`
-- Shader Graph 表面研究：`Shaders/BrahmaSurface.shadergraph`
-- Shader Graph 自定义函数：`Shaders/BrahmaLighting.hlsl`
+- Shader Graph 分层研究资产：`BrahmaSurface.shadergraph`、`BrahmaOutline.shadergraph`、`BrahmaHairShadow.shadergraph`、`BrahmaReflection.shadergraph`、`BrahmaPreDepth.shadergraph`。
+- Surface 图的自定义函数位于 `Shaders/BrahmaLighting.hlsl`；固定 Pass 状态不塞进单一 Custom Function，而由多 Pass 包装 Shader 与 Renderer Feature 管理。
 - `Shaders/BrahmaCharacter.shader` 实现角色八个基础 Pass，并增加 FurShell 毛绒层。
 - URP 17 RenderGraph Feature：`Scripts/BrahmaWujianRenderFeature.cs`
 - 场景级 Pass 收集与头部/反射矩阵：`Scripts/BrahmaWujianPipeline.cs`
@@ -30,12 +30,12 @@ Unity 菜单：
 
 发布包中可恢复的是序列化 Shader、材质属性、关键字和 Pass 状态，不是开发期可编辑 Shader 源码。原始 AssetRipper 导出、输入包、Shader TypeTree、日志与导入清单已按用户要求从项目删除；下面是删除前已落实到实现中的 Pass 状态摘要，不再附带原始证据包。
 
-恢复到的角色 Uber Shader 有 155 个属性和以下八个 Pass：
+恢复到的角色 Uber Shader 有 155 个属性和以下八个 Pass。机器可读状态契约位于 `OriginalShader/CharacterPBRUber.PassContract.json`：
 
 | 顺序 | Pass | 本研究对应实现 |
 |---:|---|---|
 | 0 | ForwardBase | URP `UniversalForward`，材质 Stencil 写入 |
-| 1 | Outline | 像素宽度倒壳，应用于身体和衣服 |
+| 1 | Outline | `Blend SrcAlpha OneMinusSrcAlpha`、`ZTest Less`、`ZWrite On`、`Cull Front` |
 | 2 | CharHairShadow | `ColorMask 0`、`ZWrite Off`、Equal、IncrSat |
 | 3 | CharFaceShadow | `ZWrite Off`、Equal、DecrWrap |
 | 4 | CharHairTransE | 刘海透射混合 |
@@ -43,7 +43,11 @@ Unity 菜单：
 | 6 | Reflection | `ZWrite On`、`ZTest LEqual`、`Cull Front`，独立反射 RT |
 | 7 | PreDepth | `ColorMask 0`、`ZWrite On`、`ZTest LEqual` |
 
-Stencil 循环按原状态复现：脸部 Forward 写 `200`，刘海阴影在 Equal 200 时执行 IncrSat 到 `201`，脸部接收 Pass 在 Equal 201 时着色并 DecrWrap 回 `200`。102003 刘海偏移采用原材质记录的 `X=0.0037`、`Y=0.00778`。
+Stencil 循环按原状态复现：脸部 Forward 写 `200`，刘海阴影在 Equal 200 时执行 IncrSat 到 `201`，脸部接收 Pass 在 Equal 201 时着色并 DecrWrap 回 `200`。102003 刘海偏移采用原材质记录的 `X=0.0037`、`Y=0.00778`。Opaque 材质队列与原包一致为 `Geometry+10`。
+
+URP 17 Renderer Feature 把 `Reflection`、`PreDepth`、`Outline`、Stencil 头发/脸部阴影、Hair Transmission 和 Fur Shell 拆成独立 RenderGraph Pass。Reflection 在 `BeforeRenderingPrePasses`，PreDepth 在 `BeforeRenderingOpaques`；Stencil Pass 严格先画刘海再画脸部接收面。菜单 `Tools/Studies/Brahma Wujian/Validate Original Shader Contract` 会检查八个原 Pass 的顺序、固定状态、五个 Shader Graph、材质 Stencil 值以及 Renderer Feature 是否唯一启用。
+
+原始自定义 SRP 的 `LightMode` 名称只记录在 `OriginalShader/CharacterPBRUber.PassContract.json` 中；URP 运行时包装器对所有手动调度的辅助 Pass 使用 `Brahma*` 私有标签。不能直接把原版 `Always` / `Reflection` / `PreDepth` 标签照搬进 URP，否则 URP 会把它们纳入自己的 pass 选择并产生错误材质（洋红）。Pass 名、顺序、Blend / ZTest / ZWrite / Cull / Stencil 固定状态仍按原版契约保留。
 
 ## 截图标定内容
 
@@ -60,7 +64,7 @@ Stencil 循环按原状态复现：脸部 Forward 写 `200`，刘海阴影在 Eq
 
 `Editor/BrahmaReferenceCalibration.cs` 保存上述校准入口。灯光参数为主光强度 1.08、欧拉角 (42, -24, 0)，补光强度 0.36、欧拉角 (15, 135, 0)。参考预览使用双倍分辨率渲染后缩采样。当前灯光数值由截图标定，未恢复到游戏展示场景的原始灯光配置。
 
-`BrahmaSurface.shadergraph` 保留 80 个基础研究参数，其 Custom Function 位于 `BrahmaLighting.hlsl`。最终展示场景使用 `BrahmaCharacter.shader` 和 `BrahmaCharacterCommon.hlsl`，本次截图标定的环境反射、镜片、高光蒙版及毛绒扩展参数位于该实现中。
+`BrahmaSurface.shadergraph` 保留 80 个基础研究参数，其 Surface Custom Function 位于 `BrahmaLighting.hlsl`。其余四个 Pass 图不再塞入 Surface 图；最终展示场景使用 `BrahmaCharacter.shader` 和 `BrahmaCharacterCommon.hlsl` 承载 Shader Graph 无法表达的固定状态、Stencil 写入和 RenderGraph 调度。
 
 ## 一致性边界
 

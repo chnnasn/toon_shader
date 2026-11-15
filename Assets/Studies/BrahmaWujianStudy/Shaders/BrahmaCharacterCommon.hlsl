@@ -27,6 +27,7 @@ float4 _RimLightTintColor;
 float4 _StudyShadowTint;
 float4 _StudyHairTint;
 float4 _StudyEdgeTint;
+float4 _ReflectionTint;
 float4 _RampMaskChannel;
 float4 _Tiling;
 float4 _RoughnessRemap;
@@ -46,10 +47,12 @@ float _HairShadowX, _HairShadowY, _HairTranEAlpha;
 float _OutlineWidth, _OutlineIntensity, _OutlineZBias;
 float _StudyEnvironmentWeight, _LensMode, _FurLength, _EyeHighlightMode;
 float _FabricMode, _FurDensity, _FurBend, _BodyAtlasMode;
+float _ReflectionStrength;
 CBUFFER_END
 
 float4 _BrahmaHeadForwardWS;
 float4 _BrahmaHeadRightWS;
+float4 _BrahmaHairShadowOffsetOS;
 float4x4 _BrahmaReflectionVP;
 float _BrahmaFurLayer;
 float3 _LightDirection;
@@ -359,7 +362,7 @@ half4 BrahmaOutlineFrag(BrahmaVaryings input) : SV_Target
     half4 baseSample = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, input.uv);
     BrahmaAlphaClip(baseSample.a);
     clip(_OutlineIntensity - .01);
-    return half4(lerp(_StudyEdgeTint.rgb, baseSample.rgb * .25h, .5h), 1);
+    return half4(lerp(_StudyEdgeTint.rgb, baseSample.rgb * .25h, .5h), baseSample.a);
 }
 
 half4 BrahmaFurFrag(BrahmaVaryings input) : SV_Target
@@ -413,7 +416,9 @@ half4 BrahmaReflectionFrag(BrahmaVaryings input) : SV_Target
 {
     half4 baseSample = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, input.uv) * _BaseColor;
     BrahmaAlphaClip(baseSample.a);
-    return half4(BrahmaEvaluate(input, false), 1);
+    half3 reflected = BrahmaEvaluate(input, false);
+    reflected = lerp(reflected, reflected * _ReflectionTint.rgb, saturate(_ReflectionStrength));
+    return half4(reflected, 1);
 }
 
 #endif

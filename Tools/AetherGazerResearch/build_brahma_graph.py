@@ -1,7 +1,11 @@
-"""Create the study graph using the installed Shader Graph 17 serialization schema.
+"""Create the Brahma study graphs using Shader Graph 17 serialization.
 
-The Custom Function node is authored here because UnitySkills exposes a smaller
-node subset. The Unity editor then generates and validates the shader normally.
+The surface graph owns the material evaluation Custom Function. The four pass
+graphs are deliberately separate authoring/inspection assets, matching the
+WuchangStudy split: Outline, HairShadow, Reflection and PreDepth. Fixed-function
+states and stencil ordering remain in BrahmaCharacter.shader plus the URP
+Renderer Feature because Shader Graph cannot express the recovered custom-SRP
+pass contract by itself.
 """
 import copy
 import json
@@ -192,9 +196,58 @@ for name, kind, block_name in [('Color', 'Vector3', 'SurfaceDescription.BaseColo
     connect(function, index, block, 0)
     arguments.append(('out float3' if kind == 'Vector3' else 'out float', name))
 
-(DEST / 'BrahmaSurface.shadergraph').write_text('\n\n'.join(json.dumps(o, indent=4) for o in result), encoding='utf-8')
+surface_path = DEST / 'BrahmaSurface.shadergraph'
+surface_path.write_text('\n\n'.join(json.dumps(o, indent=4) for o in result), encoding='utf-8')
 if not hlsl_meta.exists():
     hlsl_meta.write_text('fileFormatVersion: 2\nguid: ' + hlsl_guid + '\nShaderIncludeImporter:\n  externalObjects: {}\n  userData: \n  assetBundleName: \n  assetBundleVariant: \n', encoding='utf-8')
 signature = 'void BrahmaSurface_float(\n    ' + ',\n    '.join(t + ' ' + n for t, n in arguments) + ')\n'
 (ROOT / 'Tools/AetherGazerResearch/brahma-function-signature.txt').write_text(signature, encoding='utf-8')
-print('Graph nodes', len(graph['m_Nodes']), 'properties', len(properties), 'function arguments', len(arguments))
+
+def replace_strings(value, replacements):
+    if isinstance(value, str):
+        for old, new in replacements.items():
+            value = value.replace(old, new)
+        return value
+    if isinstance(value, list):
+        return [replace_strings(item, replacements) for item in value]
+    if isinstance(value, dict):
+        return {key: replace_strings(item, replacements) for key, item in value.items()}
+    return value
+
+def clone_pass_graph(source_name, destination_name, graph_path, replacements=None):
+    """Clone a proven Wuchang pass graph while keeping a Brahma-specific API."""
+    source_path = ROOT / 'Assets/Studies/WuchangStudy/Shaders' / (source_name + '.shadergraph')
+    destination_path = DEST / (destination_name + '.shadergraph')
+    cloned = copy.deepcopy(objects(source_path))
+    cloned[0]['m_Path'] = graph_path
+    cloned = replace_strings(cloned, replacements or {})
+    destination_path.write_text(
+        '\n\n'.join(json.dumps(item, indent=4) for item in cloned), encoding='utf-8')
+
+    meta_path = destination_path.with_suffix(destination_path.suffix + '.meta')
+    graph_guid = existing_meta_guid(meta_path, uid(destination_name + '.shadergraph'))
+    source_meta = source_path.with_suffix(source_path.suffix + '.meta').read_text(encoding='utf-8-sig')
+    source_meta = source_meta.replace(
+        next(line for line in source_meta.splitlines() if line.startswith('guid: ')),
+        'guid: ' + graph_guid)
+    meta_path.write_text(source_meta, encoding='utf-8')
+
+clone_pass_graph(
+    'WuchangOutline', 'BrahmaOutline',
+    'AetherGazer/Brahma Wujian/Pass Graphs/Outline',
+    {'_OutlineColor': '_StudyEdgeTint'})
+clone_pass_graph(
+    'WuchangHairShadow', 'BrahmaHairShadow',
+    'AetherGazer/Brahma Wujian/Pass Graphs/Hair Shadow',
+    {'_HairShadowOffsetOS': '_BrahmaHairShadowOffsetOS',
+     '_MaskAlphaClip': '_Cutoff'})
+clone_pass_graph(
+    'WuchangReflection', 'BrahmaReflection',
+    'AetherGazer/Brahma Wujian/Pass Graphs/Reflection',
+    {'_RMKMap': '_RMOTex'})
+clone_pass_graph(
+    'WuchangPreDepth', 'BrahmaPreDepth',
+    'AetherGazer/Brahma Wujian/Pass Graphs/PreDepth')
+
+print('Surface graph nodes', len(graph['m_Nodes']), 'properties', len(properties),
+      'function arguments', len(arguments), 'pass graphs', 4)

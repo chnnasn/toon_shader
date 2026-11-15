@@ -16,7 +16,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2010
   stringTagMap:
     RenderType: Opaque
   disabledShaderPasses:
@@ -161,6 +161,7 @@ Material:
     - _OutlineZBias: 0.00001
     - _Parallax: 0.02
     - _RampCount: 3
+    - _ReflectionStrength: 0.08
     - _RimColorMixAlbedo: 0.5
     - _RimLightIntensity: 1
     - _RimMidPoint: 0.65
@@ -202,6 +203,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BrahmaHairShadowOffsetOS: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorPlus: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
@@ -210,6 +212,7 @@ Material:
     - _MetallicRemap: {r: 0, g: 1, b: 1, a: 0}
     - _OcclusionRemap: {r: 0, g: 1, b: 1, a: 0}
     - _RampMaskChannel: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectionTint: {r: 0.72, g: 0.78, b: 0.9, a: 1}
     - _RimLightTintColor: {r: 1, g: 1, b: 1, a: 1}
     - _RoughnessRemap: {r: 0, g: 1, b: 1, a: 0}
     - _StockingCenterColor: {r: 1.05, g: 0.98, b: 1, a: 1}
