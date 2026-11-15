@@ -1,0 +1,2470 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AllShaders
+  m_Shaders:
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: ABERATION
+        passType: 0
+      - keywords: ABERATION EXTRA_POSTEFFECT FXAA
+        passType: 0
+      - keywords: ABERATION EXTRA_POSTEFFECT FXAA GLITCH RADIAL_BLUR
+        passType: 0
+      - keywords: ABERATION EXTRA_POSTEFFECT FXAA RADIAL_BLUR
+        passType: 0
+      - keywords: ABERATION EXTRA_POSTEFFECT RADIAL_BLUR
+        passType: 0
+      - keywords: ABERATION FXAA
+        passType: 0
+      - keywords: ABERATION FXAA GLITCH
+        passType: 0
+      - keywords: ABERATION FXAA RADIAL_BLUR
+        passType: 0
+      - keywords: ABERATION RADIAL_BLUR
+        passType: 0
+      - keywords: DEPTH_BLUR
+        passType: 0
+      - keywords: DEPTH_BLUR EXTRA_POSTEFFECT
+        passType: 0
+      - keywords: DEPTH_BLUR EXTRA_POSTEFFECT FXAA
+        passType: 0
+      - keywords: DEPTH_BLUR FXAA
+        passType: 0
+      - keywords: EXTRA_POSTEFFECT
+        passType: 0
+      - keywords: EXTRA_POSTEFFECT FXAA
+        passType: 0
+      - keywords: EXTRA_POSTEFFECT FXAA RADIAL_BLUR
+        passType: 0
+      - keywords: FXAA
+        passType: 0
+      - keywords: FXAA GLITCH
+        passType: 0
+      - keywords: FXAA RADIAL_BLUR
+        passType: 0
+      - keywords: GLITCH
+        passType: 0
+      - keywords: RADIAL_BLUR
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: UNITY_UI_ALPHACLIP
+        passType: 0
+      - keywords: UNITY_UI_ALPHACLIP UNITY_UI_CLIP_RECT
+        passType: 0
+      - keywords: UNITY_UI_CLIP_RECT
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _EDITOR_TIME_RENDERING _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _EDITOR_TIME_RENDERING _PARTICLETYPE_BILLBOARD
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _EDITOR_TIME_RENDERING _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _EDITOR_TIME_RENDERING _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _EDITOR_TIME_RENDERING _PARTICLETYPE_BILLBOARD _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _EDITOR_TIME_RENDERING _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _EDITOR_TIME_RENDERING _PARTICLETYPE_BILLBOARD
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _EDITOR_TIME_RENDERING _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _EDITOR_TIME_RENDERING _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _EDITOR_TIME_RENDERING _PARTICLETYPE_BILLBOARD _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _EDITOR_TIME_RENDERING _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _EDITOR_TIME_RENDERING _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _EDITOR_TIME_RENDERING _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX _WORLD_SPACE
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX
+        passType: 0
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA_OVERLIFETIME_TEX _WORLD_SPACE
+        passType: 0
+      - keywords: _EDITOR_TIME_RENDERING
+        passType: 0
+  - first: {fileID: 66, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: DIRECTIONAL
+        passType: 4
+      - keywords: DIRECTIONAL LIGHTPROBE_SH
+        passType: 4
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 1
+      - keywords:
+        passType: 2
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: DIRECTIONAL
+        passType: 4
+      - keywords: POINT
+        passType: 5
+      - keywords:
+        passType: 6
+      - keywords:
+        passType: 7
+      - keywords:
+        passType: 10
+      - keywords:
+        passType: 11
+  - first: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: _SUNDISK_SIMPLE
+        passType: 0
+  - first: {fileID: 9000, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 9001, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 9002, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 9003, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 9004, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 9007, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 9101, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 9103, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: CUTOFF LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: CUTOFF LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: CUTOFF SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: CUTOFF SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_REGIONAL_SHADOW _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _CUSTOM_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT SIM_REGIONAL_SHADOW _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT _CUSTOM_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_REGIONAL_SHADOW TRANSPARENT_PREMULT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT TRANSPARENT_PREMULT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_REGIONAL_SHADOW TRANSPARENT_PREMULT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT TRANSPARENT_PREMULT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_REGIONAL_SHADOW _CUSTOM_REFLECTION
+        passType: 4
+      - keywords: OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_REGIONAL_SHADOW _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: OPAQUE SIM_ADDITIONAL_LIGHT SIM_REGIONAL_SHADOW _CUSTOM_REFLECTION
+        passType: 4
+      - keywords: OPAQUE SIM_ADDITIONAL_LIGHT SIM_REGIONAL_SHADOW _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: OPAQUE SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: OPAQUE SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: OPAQUE _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_REGIONAL_SHADOW TRANSPARENT_PREMULT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT TRANSPARENT_PREMULT _CUSTOM_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT TRANSPARENT_PREMULT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_REGIONAL_SHADOW TRANSPARENT_PREMULT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT TRANSPARENT_PREMULT _CUSTOM_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT TRANSPARENT_PREMULT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: _DEFAULT_REFLECTION
+        passType: 4
+      - keywords:
+        passType: 8
+      - keywords: CUTOFF
+        passType: 8
+      - keywords: SIM_REGIONAL_SHADOW
+        passType: 8
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: FORGE02 FORGE03
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: ABBERATION MAIN_PLUS MASK
+        passType: 0
+      - keywords: DISSOLVE_SIMPLE
+        passType: 0
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS MASK
+        passType: 0
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS MASK NOISE
+        passType: 0
+      - keywords: DISSOLVE_SIMPLE MASK
+        passType: 0
+      - keywords: DISSOLVE_SIMPLE MASK NOISE
+        passType: 0
+      - keywords: DISSOLVE_SIMPLE NOISE
+        passType: 0
+      - keywords: MASK
+        passType: 0
+      - keywords: MASK NOISE
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords:
+        passType: 4
+      - keywords: DISSOLVE_PLUS
+        passType: 4
+      - keywords: DISSOLVE_PLUS MAIN_PLUS MASK
+        passType: 4
+      - keywords: DISSOLVE_PLUS MAIN_PLUS NOISE
+        passType: 4
+      - keywords: DISSOLVE_PLUS NOISE
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS MASK
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS MASK NOISE
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS NOISE
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MASK
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MASK NOISE
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE NOISE
+        passType: 4
+      - keywords: MAIN_PLUS
+        passType: 4
+      - keywords: MAIN_PLUS MASK
+        passType: 4
+      - keywords: MAIN_PLUS MASK NOISE
+        passType: 4
+      - keywords: MAIN_PLUS NOISE
+        passType: 4
+      - keywords: MASK
+        passType: 4
+      - keywords: MASK NOISE
+        passType: 4
+      - keywords: NOISE
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: UNITY_UI_ALPHACLIP
+        passType: 0
+      - keywords: UNITY_UI_CLIP_RECT
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: UNITY_UI_CLIP_RECT
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords:
+        passType: 1
+      - keywords:
+        passType: 2
+      - keywords: DIRECTIONAL
+        passType: 4
+      - keywords: POINT
+        passType: 5
+      - keywords:
+        passType: 6
+      - keywords:
+        passType: 7
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+      - keywords:
+        passType: 10
+      - keywords:
+        passType: 11
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: FORGE02
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: sim_FOG_LINEAR
+        passType: 4
+      - keywords: sim_FOG_NONE
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: DETAILBLUR
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: DEBUG_MATCAP
+        passType: 0
+      - keywords: DEBUG_NONE
+        passType: 0
+      - keywords: DEBUG_NONE SIM_DISSOLVE
+        passType: 0
+      - keywords: DEBUG_NONE SIM_DITHERING
+        passType: 0
+      - keywords: DEBUG_NONE SIM_SLICE
+        passType: 0
+      - keywords: DEBUG_OUTLINE_COLOR
+        passType: 0
+      - keywords: DEBUG_PROPERTY
+        passType: 0
+      - keywords: DEBUG_REFLECTION
+        passType: 0
+      - keywords: DEBUG_RIMLIGHT
+        passType: 0
+      - keywords: DEBUG_SHADOW
+        passType: 0
+      - keywords: DEBUG_VERTEX_ALPHA
+        passType: 0
+      - keywords: DEBUG_VERTEX_COLOR
+        passType: 0
+      - keywords: SIM_DISSOLVE
+        passType: 0
+      - keywords: SIM_DITHERING
+        passType: 0
+      - keywords: SIM_INTERFERENCE
+        passType: 0
+      - keywords: SIM_SLICE
+        passType: 0
+      - keywords:
+        passType: 4
+      - keywords: DEBUG_NONE EYE_MODE
+        passType: 4
+      - keywords: DEBUG_NONE EYE_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: DEBUG_NONE EYE_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: DEBUG_NONE EYE_MODE SIM_SLICE
+        passType: 4
+      - keywords: DEBUG_NONE FACE_MODE
+        passType: 4
+      - keywords: DEBUG_NONE FACE_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: DEBUG_NONE FACE_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: DEBUG_NONE FACE_MODE SIM_ADDITIONAL_LIGHT SIM_DISSOLVE
+        passType: 4
+      - keywords: DEBUG_NONE FACE_MODE SIM_ADDITIONAL_LIGHT SIM_DITHERING
+        passType: 4
+      - keywords: DEBUG_NONE FACE_MODE SIM_DISSOLVE
+        passType: 4
+      - keywords: DEBUG_NONE FACE_MODE SIM_DITHERING
+        passType: 4
+      - keywords: DEBUG_NONE FACE_MODE SIM_SLICE
+        passType: 4
+      - keywords: DEBUG_NONE HAIR_MODE
+        passType: 4
+      - keywords: DEBUG_NONE HAIR_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: DEBUG_NONE HAIR_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: DEBUG_NONE HAIR_MODE SIM_ADDITIONAL_LIGHT SIM_DISSOLVE
+        passType: 4
+      - keywords: DEBUG_NONE HAIR_MODE SIM_ADDITIONAL_LIGHT SIM_DITHERING
+        passType: 4
+      - keywords: DEBUG_NONE HAIR_MODE SIM_DISSOLVE
+        passType: 4
+      - keywords: DEBUG_NONE HAIR_MODE SIM_DITHERING
+        passType: 4
+      - keywords: DEBUG_NONE HAIR_MODE SIM_SLICE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW SIM_DITHERING TRANSPARENT_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW SIM_SLICE STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW TRANSPARENT_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT SIM_DISSOLVE STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT SIM_DITHERING STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT SIM_DITHERING TRANSPARENT_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT SIM_SLICE STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_ADDITIONAL_LIGHT TRANSPARENT_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_DISSOLVE STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_DITHERING STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_DITHERING TRANSPARENT_MODE
+        passType: 4
+      - keywords: DEBUG_NONE SIM_SLICE STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE STANDARD_MODE
+        passType: 4
+      - keywords: DEBUG_NONE TRANSPARENT_MODE
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW EYE_MODE
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW EYE_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW EYE_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW FACE_MODE
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW FACE_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW FACE_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW FACE_MODE SIM_ADDITIONAL_LIGHT SIM_DITHERING
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW FACE_MODE SIM_ADDITIONAL_LIGHT SIM_SLICE
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW TRANSPARENT_MODE
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW SIM_ADDITIONAL_LIGHT SIM_DITHERING
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW SIM_ADDITIONAL_LIGHT SIM_SLICE
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW SIM_ADDITIONAL_LIGHT TRANSPARENT_MODE
+        passType: 4
+      - keywords: EXTENSION_EMISSION_FLOW TRANSPARENT_MODE
+        passType: 4
+      - keywords: EXTENSION_SECOND_NORMAL
+        passType: 4
+      - keywords: EXTENSION_SECOND_NORMAL SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: EXTENSION_SECOND_NORMAL SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: EXTENSION_SECOND_NORMAL SIM_ADDITIONAL_LIGHT SIM_SLICE
+        passType: 4
+      - keywords: EYE_MODE
+        passType: 4
+      - keywords: EYE_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: EYE_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: EYE_MODE SIM_INTERFERENCE
+        passType: 4
+      - keywords: EYE_MODE SIM_SLICE
+        passType: 4
+      - keywords: FACE_MODE
+        passType: 4
+      - keywords: FACE_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: FACE_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: FACE_MODE SIM_ADDITIONAL_LIGHT SIM_DISSOLVE
+        passType: 4
+      - keywords: FACE_MODE SIM_ADDITIONAL_LIGHT SIM_DITHERING
+        passType: 4
+      - keywords: FACE_MODE SIM_ADDITIONAL_LIGHT SIM_SLICE
+        passType: 4
+      - keywords: FACE_MODE SIM_DISSOLVE
+        passType: 4
+      - keywords: FACE_MODE SIM_DITHERING
+        passType: 4
+      - keywords: FACE_MODE SIM_INTERFERENCE
+        passType: 4
+      - keywords: FACE_MODE SIM_SLICE
+        passType: 4
+      - keywords: HAIR_MODE
+        passType: 4
+      - keywords: HAIR_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: HAIR_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: HAIR_MODE SIM_ADDITIONAL_LIGHT SIM_DISSOLVE
+        passType: 4
+      - keywords: HAIR_MODE SIM_ADDITIONAL_LIGHT SIM_DITHERING
+        passType: 4
+      - keywords: HAIR_MODE SIM_ADDITIONAL_LIGHT SIM_SLICE
+        passType: 4
+      - keywords: HAIR_MODE SIM_DISSOLVE
+        passType: 4
+      - keywords: HAIR_MODE SIM_DITHERING
+        passType: 4
+      - keywords: HAIR_MODE SIM_INTERFERENCE
+        passType: 4
+      - keywords: HAIR_MODE SIM_SLICE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW SIM_DITHERING TRANSPARENT_MODE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW SIM_SLICE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW TRANSPARENT_MODE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DISSOLVE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DITHERING
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DITHERING TRANSPARENT_MODE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_SLICE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_SLICE TRANSPARENT_MODE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT STANDARD_MODE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT TRANSPARENT_MODE
+        passType: 4
+      - keywords: SIM_DISSOLVE
+        passType: 4
+      - keywords: SIM_DITHERING
+        passType: 4
+      - keywords: SIM_DITHERING TRANSPARENT_MODE
+        passType: 4
+      - keywords: SIM_INTERFERENCE
+        passType: 4
+      - keywords: SIM_INTERFERENCE TRANSPARENT_MODE
+        passType: 4
+      - keywords: SIM_SLICE
+        passType: 4
+      - keywords: TRANSPARENT_MODE
+        passType: 4
+      - keywords:
+        passType: 8
+      - keywords: SIM_DIRECTIONAL_SHADOW
+        passType: 8
+      - keywords:
+        passType: 13
+      - keywords: SIM_ADDITIONAL_LIGHT
+        passType: 13
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 13
+      - keywords: SIM_DISSOLVE
+        passType: 13
+      - keywords: SIM_DITHERING
+        passType: 13
+      - keywords: SIM_SLICE
+        passType: 13
+      - keywords: TRANSPARENT_MODE
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: UNITY_UI_ALPHACLIP
+        passType: 0
+      - keywords: UNITY_UI_CLIP_RECT
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: LIGHTMAP_ON
+        passType: 4
+      - keywords: LIGHTMAP_ON _REAL_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON _REAL_REFLECTION sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: _REAL_REFLECTION
+        passType: 4
+      - keywords: _REAL_REFLECTION sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: sim_DYN_FOG_LINEAR
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: FORGE01 FORGE02 _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: FORGE01 FORGE02 _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: FORGE01 FORGE02 _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: FORGE01 FORGE02 _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: FORGE01 FORGE02 _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: FORGE01 FORGE02 _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: FORGE01
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: MAIN_PLUS
+        passType: 4
+      - keywords: MAIN_PLUS NOISE
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: MAIN_PLUS NOISE _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: MAIN_PLUS _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+      - keywords: NOISE
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: NOISE _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: FORGE01
+        passType: 4
+      - keywords: FORGE01 FORGE02
+        passType: 4
+      - keywords: FORGE02
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: WARNING_CIRCLE
+        passType: 4
+      - keywords: WARNING_FANSHAPE
+        passType: 4
+      - keywords: WARNING_RECTANGLE
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _NO_COLOR_AND_SIZE_OVERLIFETIME_TEX _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: FORGE02
+        passType: 4
+      - keywords: FORGE02 FORGE04
+        passType: 4
+      - keywords: FORGE02 FORGE04 FORGE05 FORGE07
+        passType: 4
+      - keywords: FORGE04
+        passType: 4
+      - keywords: FORGE04 FORGE05
+        passType: 4
+      - keywords: FORGE04 FORGE05 FORGE07
+        passType: 4
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH _REQUIRE_ROTATION_OVERLIFETIME_TEX
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: FORGE01 _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: FORGE01 _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 13
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: HAS_DEPTH_BUFFER SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_USE_CUBEMAP sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_USE_CUBEMAP
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_USE_CUBEMAP sim_DYN_FOG_LINEAR sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_USE_CUBEMAP sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT SIM_USE_CUBEMAP sim_FOG_NONE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT sim_FOG_NONE
+        passType: 4
+      - keywords: sim_FOG_NONE
+        passType: 4
+      - keywords:
+        passType: 11
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT VEGETATION
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT VEGETATION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT VEGETATION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT VEGETATION
+        passType: 4
+      - keywords:
+        passType: 8
+      - keywords: SIM_REGIONAL_SHADOW
+        passType: 8
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 5
+      - keywords: POINT
+        passType: 5
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_BASE_LAYER
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_BASE_LAYER SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW SIM_FUR_LAYER
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_FUR_LAYER
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: FORGE02 FORGE05 FORGE06
+        passType: 4
+      - keywords: FORGE02 FORGE05 FORGE06 SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: FORGE05
+        passType: 4
+      - keywords: FORGE05 SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON OPAQUE SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords:
+        passType: 8
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords: _CURVEQUALITY_ULTRA _PARTICLETYPE_STRETCHEDBILLBOARD
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: USE_SCREENSHOT
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: sim_FOG_NONE
+        passType: 4
+      - keywords: sim_FOG_NONE
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: DIRECTIONAL
+        passType: 4
+      - keywords: DIRECTIONAL LIGHTPROBE_SH
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD _REQUIRE_CUSTOM_DATA
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 4
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 4
+      - keywords:
+        passType: 13
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_BILLBOARD
+        passType: 13
+      - keywords: _CURVEQUALITY_NORMAL _PARTICLETYPE_MESH
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 1
+      - keywords:
+        passType: 2
+      - keywords:
+        passType: 4
+      - keywords: DIRECTIONAL
+        passType: 4
+      - keywords: POINT
+        passType: 5
+      - keywords:
+        passType: 6
+      - keywords:
+        passType: 7
+      - keywords: SHADOWS_DEPTH
+        passType: 8
+      - keywords:
+        passType: 10
+      - keywords:
+        passType: 11
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: CRI_LINEAR_COLORSPACE
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: _EDITOR_TIME_RENDERING
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: DISSOLVE_PLUS MAIN_PLUS
+        passType: 4
+      - keywords: DISSOLVE_PLUS MAIN_PLUS MASK NOISE
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS MASK
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MAIN_PLUS NOISE
+        passType: 4
+      - keywords: DISSOLVE_SIMPLE MASK
+        passType: 4
+      - keywords: MAIN_PLUS MASK
+        passType: 4
+      - keywords: MASK
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords: FORGE01 FORGE02
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: EYE_MODE
+        passType: 4
+      - keywords: EYE_MODE SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: EYE_MODE SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 4
+      - keywords:
+        passType: 8
+      - keywords:
+        passType: 13
+      - keywords: SIM_ADDITIONAL_LIGHT
+        passType: 13
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_DIRECTIONAL_SHADOW
+        passType: 13
+  - first: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_DITHERING SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_DITHERING SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_DITHERING _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_DITHERING _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_DITHERING SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_DITHERING SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_DITHERING _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_DITHERING _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON _CUSTOM_REFLECTION _DIRT
+        passType: 4
+      - keywords: LIGHTMAP_ON _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: LIGHTMAP_ON _DEFAULT_REFLECTION _DIRT
+        passType: 4
+      - keywords: LIGHTMAP_ON _DEFAULT_REFLECTION _DIRT _DIRT_MASK
+        passType: 4
+      - keywords: LIGHTMAP_ON _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON _DEFAULT_REFLECTION _DIRT _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON _DEFAULT_REFLECTION _NO_NORMALMAP
+        passType: 4
+      - keywords: LIGHTMAP_ON _DEFAULT_REFLECTION _NO_NORMALMAP sim_DYN_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _CUSTOM_REFLECTION _DIRT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _CUSTOM_REFLECTION _DIRT _NO_NORMALMAP
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _DIRT _NO_NORMALMAP
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT _DEFAULT_REFLECTION _NO_NORMALMAP
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT _DEFAULT_REFLECTION _DIRT _NO_NORMALMAP
+        passType: 4
+      - keywords: _DEFAULT_REFLECTION
+        passType: 4
+      - keywords: _DEFAULT_REFLECTION _DIRT
+        passType: 4
+      - keywords: _DEFAULT_REFLECTION _DIRT _DIRT_MASK
+        passType: 4
+      - keywords: _DEFAULT_REFLECTION _DIRT _DIRT_MASK _NO_NORMALMAP
+        passType: 4
+      - keywords: _DEFAULT_REFLECTION _DIRT _NO_NORMALMAP
+        passType: 4
+      - keywords: _DEFAULT_REFLECTION _NO_NORMALMAP
+        passType: 4
+      - keywords: _DIRT _NO_NORMALMAP _REAL_REFLECTION
+        passType: 4
+      - keywords: _NO_NORMALMAP _REAL_REFLECTION
+        passType: 4
+      - keywords:
+        passType: 11
+      - keywords:
+        passType: 13
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT VEGETATION sim_DYN_FOG_LINEAR sim_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT VEGETATION sim_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT sim_DYN_FOG_LINEAR sim_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT sim_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON SIM_ADDITIONAL_LIGHT sim_FOG_LINEAR
+        passType: 4
+      - keywords: LIGHTMAP_ON sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT VEGETATION sim_DYN_FOG_LINEAR sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT VEGETATION sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT VEGETATION sim_FOG_NONE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT sim_DYN_FOG_LINEAR sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT sim_FOG_LINEAR
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MAIN_LIGHT sim_FOG_NONE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT sim_FOG_LINEAR
+        passType: 4
+      - keywords: sim_DYN_FOG_LINEAR sim_FOG_LINEAR
+        passType: 4
+      - keywords: sim_FOG_LINEAR
+        passType: 4
+      - keywords: sim_FOG_NONE
+        passType: 4
+      - keywords:
+        passType: 8
+      - keywords:
+        passType: 11
+      - keywords:
+        passType: 13
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+      - keywords: FORGE02
+        passType: 4
+      - keywords: FORGE02 FORGE04
+        passType: 4
+      - keywords: FORGE04
+        passType: 4
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 4
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords: sim_FOG_NONE
+        passType: 4
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords: sim_FOG_LINEAR
+        passType: 0
+      - keywords: sim_FOG_NONE
+        passType: 0
+      - keywords: sim_FOG_LINEAR
+        passType: 4
+      - keywords: sim_FOG_NONE
+        passType: 4
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords: sim_FOG_NONE
+        passType: 4
+      - keywords:
+        passType: 11
+      - keywords:
+        passType: 13
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords: PER_VERTEX_INFO
+        passType: 0
+      - keywords:
+        passType: 4
+      - keywords:
+        passType: 13
+      - keywords: PER_VERTEX_INFO
+        passType: 13
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: PER_VERTEX_INFO
+        passType: 0
+      - keywords: PER_VERTEX_INFO SIM_DITHERING
+        passType: 0
+      - keywords: PER_VERTEX_INFO SIM_SLICE
+        passType: 0
+      - keywords: SIM_SLICE
+        passType: 0
+      - keywords: NORMAL_MAP SIM_ADDITIONAL_LIGHT SIM_MMD_METAL
+        passType: 4
+      - keywords: NORMAL_MAP SIM_MMD_METAL
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_ADDITIONAL_LIGHT SIM_MMD_EMISSION
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_ADDITIONAL_LIGHT SIM_MMD_HAIR_FAKE_HIGHLIGHT
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_ADDITIONAL_LIGHT SIM_MMD_METAL
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_ADDITIONAL_LIGHT SIM_MMD_PLAIN
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_DITHERING SIM_MMD_METAL
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_MMD_EMISSION
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_MMD_HAIR
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_MMD_HAIR_FAKE_HIGHLIGHT
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_MMD_METAL
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_MMD_METAL SIM_SLICE
+        passType: 4
+      - keywords: PER_VERTEX_INFO SIM_MMD_PLAIN
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MMD_EMISSION
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MMD_HAIR_FAKE_HIGHLIGHT
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MMD_METAL
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MMD_METAL SIM_SLICE
+        passType: 4
+      - keywords: SIM_ADDITIONAL_LIGHT SIM_MMD_PLAIN
+        passType: 4
+      - keywords: SIM_MMD_EMISSION
+        passType: 4
+      - keywords: SIM_MMD_HAIR_FAKE_HIGHLIGHT
+        passType: 4
+      - keywords: SIM_MMD_METAL
+        passType: 4
+      - keywords: SIM_MMD_METAL SIM_SLICE
+        passType: 4
+      - keywords: SIM_MMD_PLAIN
+        passType: 4
+      - keywords:
+        passType: 8
+      - keywords:
+        passType: 13
+  - first: {fileID: 0}
+    second:
+      variants:
+      - keywords:
+        passType: 0
+      - keywords: SIM_MMD_PLAIN
+        passType: 4
+      - keywords:
+        passType: 8

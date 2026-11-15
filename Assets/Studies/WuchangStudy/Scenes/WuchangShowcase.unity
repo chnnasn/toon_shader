@@ -242,6 +242,84 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.006626345, y: 0.0011076597, z: 0.0000000020954758}
     m_Extent: {x: 0.0071259076, y: 0.0027125685, z: 0.002386009}
   m_DirtyAABB: 0
+--- !u!1 &296531062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 296531064}
+  - component: {fileID: 296531063}
+  m_Layer: 0
+  m_Name: Wuchang Custom Pipeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &296531063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296531062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfa5e7aab7463f547b65e96ec01129c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WuchangCharacterPipeline
+  surfaces:
+  - {fileID: 933063444}
+  - {fileID: 933063443}
+  - {fileID: 933063442}
+  - {fileID: 933063441}
+  - {fileID: 933063440}
+  - {fileID: 933063439}
+  - {fileID: 933063438}
+  - {fileID: 933063437}
+  - {fileID: 933063436}
+  - {fileID: 933063435}
+  - {fileID: 933063434}
+  - {fileID: 933063433}
+  - {fileID: 1113938867}
+  - {fileID: 1113938866}
+  - {fileID: 1113938865}
+  - {fileID: 1113938864}
+  - {fileID: 1113938863}
+  - {fileID: 1113938862}
+  - {fileID: 1113938861}
+  - {fileID: 1113938860}
+  - {fileID: 1113938859}
+  - {fileID: 1113938858}
+  - {fileID: 1113938857}
+  keyLight: {fileID: 1939053574}
+  studyCamera: {fileID: 797603800}
+  headReference: {fileID: 1055255040}
+  reflectionPlaneY: 0
+  preDepth: 1
+  stencilHairShadow: 1
+  reflection: 1
+  reflectionStrength: 0.08
+  globalHairShadowOffsetX: 0
+  globalHairShadowOffsetY: 0
+--- !u!4 &296531064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296531062}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &298092358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,6 +1545,11 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0026695414, y: -0.000054543256, z: -0.0001646718}
     m_Extent: {x: 0.003428268, y: 0.0027900683, z: 0.0038363836}
   m_DirtyAABB: 0
+--- !u!4 &1055255040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b2f0715f7c82e514e953be12bb44bccb, type: 3}
+  m_PrefabInstance: {fileID: 933063432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1113938856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4299,3 +4382,4 @@ SceneRoots:
   - {fileID: 797603803}
   - {fileID: 1205521571}
   - {fileID: 1999540006}
+  - {fileID: 296531064}

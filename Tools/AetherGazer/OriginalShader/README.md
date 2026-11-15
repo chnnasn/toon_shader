@@ -18,12 +18,12 @@ The shipping player contains compiled shader variants rather than the author's e
 |---:|---|---|
 | 0 | `ForwardBase` | `WuchangSurface.shadergraph`: base texture, toon threshold, original ramp, rim, specular and material controls |
 | 1 | `Outline` | `WuchangOutline.shadergraph`: separate inverted-hull Shader Graph |
-| 2 | `CharHairShadow` | Not reproducible exactly without the original custom SRP stencil/renderer feature; approximated by authored hair mask and face SDF |
-| 3 | `CharFaceShadow` | Conservative face-only SDF tint reconstruction |
+| 2 | `CharHairShadow` | `WuchangCharacter.shader` + `WuchangCharacterRenderFeature`: clip-space fringe offset, `Stencil==200`, `IncrSat` to 201, `ColorMask 0` |
+| 3 | `CharFaceShadow` | Receiver redraw only at `Stencil==201`, then `DecrWrap` back to 200 |
 | 4 | `CharHairTransE` | Hair highlight/transmission appearance approximated by the original `hair01_Mask` |
 | 5 | `ShadowCaster` | Supplied by generated URP Shader Graph passes / scene renderer settings |
-| 6 | `Reflection` | RMK/RMO material information retained; custom SimPipeline reflection pass is not duplicated |
-| 7 | `PreDepth` | Supplied by generated URP depth passes where applicable |
+| 6 | `Reflection` | Dedicated mirrored-view render target and front-face-cull shader pass; published as `_WuchangReflectionTexture` |
+| 7 | `PreDepth` | Dedicated `ColorMask 0`, `ZWrite On`, `ZTest LEqual` pass scheduled before opaques |
 
 ## Confirmed original feature switches
 
@@ -48,6 +48,11 @@ Relevant original global keywords include `FACE_MODE`, `_USE_STOCKING`, `_ANISOT
 
 ## Reconstruction files
 
+- Multi-pass ShaderLab shader: `Assets/Studies/WuchangStudy/Shaders/WuchangCharacter.shader`
+- Shared HLSL implementation: `Assets/Studies/WuchangStudy/Shaders/WuchangCharacterCommon.hlsl`
+- URP 17 RenderGraph scheduler: `Assets/Studies/WuchangStudy/Scripts/WuchangCharacterRenderFeature.cs`
+- Renderer/material pass collector: `Assets/Studies/WuchangStudy/Scripts/WuchangCharacterPipeline.cs`
+- Idempotent installer: `Assets/Studies/WuchangStudy/Editor/WuchangCustomPipelineInstaller.cs`
 - Surface Shader Graph: `Assets/Studies/WuchangStudy/Shaders/WuchangSurface.shadergraph`
 - Outline Shader Graph: `Assets/Studies/WuchangStudy/Shaders/WuchangOutline.shadergraph`
 - Rebuild and verification code: `Assets/Studies/WuchangStudy/Editor/WuchangStudyBuilder.cs`
@@ -55,4 +60,6 @@ Relevant original global keywords include `FACE_MODE`, `_USE_STOCKING`, `_ANISOT
 - Original shared maps: `Assets/Studies/WuchangStudy/SourceArt/Shared/`
 - Render preview: `Tools/AetherGazer/WuchangPreview.png`
 
-The surface graph uses the extracted base/ramp maps plus the authored `hair01_Mask`, `siwa_normal`, face SDF blend map and RMK blue-channel AO. Exact parity for the original `CharHairShadow`, `CharFaceShadow`, reflection and pre-depth passes would require custom HLSL plus matching SimPipeline renderer features; pure URP Shader Graph cannot reproduce those custom stencil and pipeline passes byte-for-byte.
+The active reconstruction now uses custom HLSL and a URP 17 Renderer Feature for the custom pass contract. The important serialized render states are reproduced directly: face ForwardBase writes stencil 200; the displaced bangs pass tests 200 and increments it to 201; the face receiver pass tests 201, shades only that region, and decrements it back to 200. Reflection and PreDepth are separately scheduled rather than folded into the forward surface pass.
+
+This is a behavioral reconstruction from the shipping player's serialized shader, compiled program metadata, material values and screenshots. The player does not contain the author's editable HLSL or complete SimPipeline C# source, so the implementation must not be described as byte-for-byte original source. State parity is directly verifiable; instruction-level lighting parity remains an approximation.

@@ -21,12 +21,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: clothes02
-  m_Shader: {fileID: -6465566751694194690, guid: 4f679d04f33b1d84e89dac53e1d143cf, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4df5007cb3cf02b4990ad450f41a5b2e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -37,6 +37,11 @@ Material:
   - DepthOnly
   - SHADOWCASTER
   - MOTIONVECTORS
+  - CharHairShadow
+  - CharFaceShadow
+  - CharHairTransE
+  - PreDepth
+  - Reflection
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -47,6 +52,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Base_Map:
         m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FaceSDFMap:
@@ -86,25 +95,47 @@ Material:
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
+    - _BlendAlphaDst: 10
+    - _BlendAlphaSrc: 1
     - _CastShadows: 0
     - _Cull: 0
+    - _Cutoff: 0.01
     - _DstBlend: 10
     - _DstBlendAlpha: 10
+    - _FaceSDFSoftness: 0.025
     - _FaceSDFStrength: 0
     - _HairMaskStrength: 0
+    - _HairShadowDepthBias: 0
+    - _HairShadowOffsetX: -0.00232
+    - _HairShadowOffsetY: 0.00508
+    - _HairTransmissionStrength: 0.08
     - _Opacity: 0.22
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RMKOcclusionStrength: 0
     - _RampRow: 0.95
     - _RampStrength: 0.1
+    - _ReflectionStrength: 0.08
+    - _RimPower: 4
     - _RimStrength: 0.035
+    - _SpecPower: 64
     - _SpecStrength: 0.24
     - _SrcBlend: 5
     - _SrcBlendAlpha: 1
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilRefC: 206
+    - _StencilRefShadowCaster: 200
+    - _StencilRefShadowReceiver: 201
+    - _StockingBaseLift: 0
+    - _StockingInt: 1
+    - _StockingNormalIntensity: 0.2
     - _StockingPatternStrength: 0
     - _StockingStrength: 0
     - _Surface: 1
+    - _UseFringeShadowCaster: 0
+    - _UseFringeShadowReceiver: 0
+    - _WriteMask: 255
     - _ZTest: 4
     - _ZWrite: 0
     - _ZWriteControl: 0
@@ -112,8 +143,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _FaceShadowTint: {r: 0.9, g: 0.82, b: 0.84, a: 1}
     - _HalfVector: {r: -0.18, g: 0.28, b: -0.94, a: 0}
+    - _ReflectionTint: {r: 0.72, g: 0.78, b: 0.9, a: 1}
     - _ShadowColor: {r: 0.82, g: 0.82, b: 0.88, a: 1}
     - _ShadowRange: {r: 0.24, g: 0.62, b: 0, a: 0}
+    - _StockingAbsorptionColor: {r: 1, g: 1, b: 1, a: 1}
     - _StockingCenterColor: {r: 1, g: 1, b: 1, a: 1}
     - _StockingFalloffColor: {r: 1, g: 1, b: 1, a: 1}
     - _StockingTiling: {r: 10, g: 620.16, b: 0, a: 0}
