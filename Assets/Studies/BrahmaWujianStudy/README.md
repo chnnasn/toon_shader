@@ -10,9 +10,10 @@
 - 场景：`Scenes/BrahmaWujianShowcase.unity`
 - 两个清理后的研究 Prefab：`Prefabs/Brahma_Wujian_102003.prefab`、`Prefabs/Brahma_Wujian_605603.prefab`
 - WuchangStudy 风格自包含源资源：`SourceArt/102003`、`SourceArt/605603`
-- Shader Graph 分层研究资产：`BrahmaSurface.shadergraph`、`BrahmaOutline.shadergraph`、`BrahmaHairShadow.shadergraph`、`BrahmaReflection.shadergraph`、`BrahmaPreDepth.shadergraph`。
-- Surface 图的自定义函数位于 `Shaders/BrahmaLighting.hlsl`；固定 Pass 状态不塞进单一 Custom Function，而由多 Pass 包装 Shader 与 Renderer Feature 管理。
-- `Shaders/BrahmaCharacter.shader` 实现角色八个基础 Pass，并增加 FurShell 毛绒层。
+- 教学 Shader Graph：`Shaders/BrahmaSurface.shadergraph`。它由 89 个普通节点、100 条连线和 7 个有序分组组成，0 个 Custom Function；可以从 Base/Mask 一路读到 Toon、Rim、Specular、Hair、Stocking、Face SDF 和最终合成。
+- `Shaders/BrahmaCharacter.shader` 是唯一的角色运行时 Multipass Shader，实现原角色八个基础 Pass，并增加 FurShell 毛绒层。
+- `Shaders/BrahmaCharacterCommon.hlsl` 仅承载 Shader Graph 无法表达的原 SRP 固定 Pass、Stencil 与运行时光照函数，不再被伪装成一个巨型 Graph 节点。
+- Studio Floor / Sky 已移到 `Rendering`，不与角色 Shader 混在同一目录。
 - URP 17 RenderGraph Feature：`Scripts/BrahmaWujianRenderFeature.cs`
 - 场景级 Pass 收集与头部/反射矩阵：`Scripts/BrahmaWujianPipeline.cs`
 - 可重复构建器：`Editor/BrahmaWujianStudyBuilder.cs`
@@ -45,7 +46,7 @@ Unity 菜单：
 
 Stencil 循环按原状态复现：脸部 Forward 写 `200`，刘海阴影在 Equal 200 时执行 IncrSat 到 `201`，脸部接收 Pass 在 Equal 201 时着色并 DecrWrap 回 `200`。102003 刘海偏移采用原材质记录的 `X=0.0037`、`Y=0.00778`。Opaque 材质队列与原包一致为 `Geometry+10`。
 
-URP 17 Renderer Feature 把 `Reflection`、`PreDepth`、`Outline`、Stencil 头发/脸部阴影、Hair Transmission 和 Fur Shell 拆成独立 RenderGraph Pass。Reflection 在 `BeforeRenderingPrePasses`，PreDepth 在 `BeforeRenderingOpaques`；Stencil Pass 严格先画刘海再画脸部接收面。菜单 `Tools/Studies/Brahma Wujian/Validate Original Shader Contract` 会检查八个原 Pass 的顺序、固定状态、五个 Shader Graph、材质 Stencil 值以及 Renderer Feature 是否唯一启用。
+URP 17 Renderer Feature 把 `Reflection`、`PreDepth`、`Outline`、Stencil 头发/脸部阴影、Hair Transmission 和 Fur Shell 拆成独立 RenderGraph Pass。Reflection 在 `BeforeRenderingPrePasses`，PreDepth 在 `BeforeRenderingOpaques`；Stencil Pass 严格先画刘海再画脸部接收面。菜单 `Tools/Studies/Brahma Wujian/Validate Original Shader Contract` 会检查八个原 Pass 的顺序、固定状态、教学 Graph 不含 Custom Function、七个教学分组、材质 Stencil 值以及 Renderer Feature 是否唯一启用。
 
 原始自定义 SRP 的 `LightMode` 名称只记录在 `OriginalShader/CharacterPBRUber.PassContract.json` 中；URP 运行时包装器对所有手动调度的辅助 Pass 使用 `Brahma*` 私有标签。不能直接把原版 `Always` / `Reflection` / `PreDepth` 标签照搬进 URP，否则 URP 会把它们纳入自己的 pass 选择并产生错误材质（洋红）。Pass 名、顺序、Blend / ZTest / ZWrite / Cull / Stencil 固定状态仍按原版契约保留。
 
@@ -64,7 +65,7 @@ URP 17 Renderer Feature 把 `Reflection`、`PreDepth`、`Outline`、Stencil 头�
 
 `Editor/BrahmaReferenceCalibration.cs` 保存上述校准入口。灯光参数为主光强度 1.08、欧拉角 (42, -24, 0)，补光强度 0.36、欧拉角 (15, 135, 0)。参考预览使用双倍分辨率渲染后缩采样。当前灯光数值由截图标定，未恢复到游戏展示场景的原始灯光配置。
 
-`BrahmaSurface.shadergraph` 保留 80 个基础研究参数，其 Surface Custom Function 位于 `BrahmaLighting.hlsl`。其余四个 Pass 图不再塞入 Surface 图；最终展示场景使用 `BrahmaCharacter.shader` 和 `BrahmaCharacterCommon.hlsl` 承载 Shader Graph 无法表达的固定状态、Stencil 写入和 RenderGraph 调度。
+`BrahmaSurface.shadergraph` 只保留 25 个真正参与教学数据流的参数，不再把 80 个属性连到一个 63 端口 Custom Function。Graph 分为七段：`Base Texture & Alpha → Toon Diffuse & Ramp → Rim → Specular & RMO → Hair Anisotropy → Stocking → Face SDF & Final Combine`。原游戏的 Outline、Stencil、Reflection、PreDepth 是 Pass/管线行为，不属于 Surface 数学，因此只在 `BrahmaCharacter.shader`、`BrahmaCharacterCommon.hlsl` 与 Renderer Feature 中各保留一份实现，不再创建四个重复 Shader Graph。
 
 ## 一致性边界
 

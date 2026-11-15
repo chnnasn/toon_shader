@@ -1,207 +1,41 @@
-"""Create the Brahma study graphs using Shader Graph 17 serialization.
+"""Build the readable Brahma teaching Shader Graph.
 
-The surface graph owns the material evaluation Custom Function. The four pass
-graphs are deliberately separate authoring/inspection assets, matching the
-WuchangStudy split: Outline, HairShadow, Reflection and PreDepth. Fixed-function
-states and stencil ordering remain in BrahmaCharacter.shader plus the URP
-Renderer Feature because Shader Graph cannot express the recovered custom-SRP
-pass contract by itself.
+The runtime reconstruction remains the handwritten multipass shader because
+Shader Graph cannot author the recovered stencil/fixed-function pass contract.
+This graph is intentionally a visible, node-by-node study of the material
+evaluation. It contains no Custom Function node and no duplicate pass graphs.
 """
 import copy
 import json
+import sys
 import uuid
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-DEST = ROOT / 'Assets/Studies/BrahmaWujianStudy/Shaders'
-DEST.mkdir(parents=True, exist_ok=True)
+SOURCE = ROOT / "Assets/Studies/WuchangStudy/Shaders/WuchangSurface.shadergraph"
+DEST = ROOT / "Assets/Studies/BrahmaWujianStudy/Shaders/BrahmaSurface.shadergraph"
+
+# The graph is now meant to be hand-arranged for learning. Regeneration must be
+# an explicit decision so a later tool run cannot erase the user's layout.
+if DEST.exists() and "--overwrite" not in sys.argv:
+    print("BrahmaSurface already exists; preserving manual node layout. "
+          "Pass --overwrite only when a full regeneration is intended.")
+    raise SystemExit(0)
+
 
 def objects(path):
-    text = path.read_text(encoding='utf-8-sig')
+    text = path.read_text(encoding="utf-8-sig")
     result = []
     while text.strip():
-        obj, end = json.JSONDecoder().raw_decode(text.lstrip())
-        result.append(obj)
+        value, end = json.JSONDecoder().raw_decode(text.lstrip())
+        result.append(value)
         text = text.lstrip()[end:]
     return result
 
-source = objects(ROOT / 'Assets/Studies/WuchangStudy/Shaders/WuchangSurface.shadergraph')
-custom = objects(next((ROOT / 'Library/PackageCache').glob(
-    'com.unity.shadergraph@*/ShaderGraphLibrary/Nature/SpeedTree8ColorAlpha.shadersubgraph')))
-prototypes = {o['m_Type'].split('.')[-1]: o for o in source + custom}
-by_id = {o['m_ObjectId']: o for o in source}
-graph = copy.deepcopy(source[0])
-graph['m_ObjectId'] = uuid.uuid5(uuid.NAMESPACE_URL, 'BrahmaWujian/Graph').hex
-graph['m_Path'] = 'AetherGazer/Brahma Wujian'
-graph['m_Properties'] = []
-graph['m_Keywords'] = []
-graph['m_CategoryData'] = []
-graph['m_GroupDatas'] = []
-graph['m_StickyNoteDatas'] = []
-graph['m_Edges'] = []
-blocks = [o for o in source if o['m_Type'].endswith('.BlockNode')]
-result = [graph] + copy.deepcopy(blocks)
-for block in blocks:
-    result += [copy.deepcopy(by_id[s['m_Id']]) for s in block['m_Slots']]
-graph['m_Nodes'] = [{'m_Id': o['m_ObjectId']} for o in blocks]
-targets = [o for o in source if o['m_Type'].endswith(('UniversalTarget', 'UniversalUnlitSubTarget'))]
-universal_target = next(o for o in targets if o['m_Type'].endswith('UniversalTarget'))
-graph['m_ActiveTargets'] = [{'m_Id': universal_target['m_ObjectId']}]
-for original in targets:
-    target = copy.deepcopy(original)
-    if target['m_Type'].endswith('UniversalTarget'):
-        target['m_CastShadows'] = True
-        target['m_SurfaceType'] = 0
-        target['m_AllowMaterialOverride'] = True
-    else:
-        target['m_KeepLightingVariants'] = True
-        target['m_DefaultSSAO'] = False
-        target['m_DefaultDecalBlending'] = False
-    result.append(target)
 
 def uid(name):
-    return uuid.uuid5(uuid.NAMESPACE_URL, 'BrahmaWujian/' + name).hex
+    return uuid.uuid5(uuid.NAMESPACE_URL, "BrahmaWujian/ReadableGraph/" + name).hex
 
-def existing_meta_guid(path, fallback):
-    """Keep Unity's imported GUID stable when regenerating the graph."""
-    if path.exists():
-        for line in path.read_text(encoding='utf-8-sig').splitlines():
-            if line.startswith('guid: '):
-                return line.removeprefix('guid: ').strip()
-    return fallback
-
-def clone(kind, name):
-    obj = copy.deepcopy(prototypes[kind])
-    obj['m_ObjectId'] = uid(name)
-    result.append(obj)
-    return obj
-
-def slot(kind, name, index, output=False):
-    obj = clone(kind + 'MaterialSlot', name + '/slot')
-    obj.update(m_Id=index, m_DisplayName=name.split('/')[-1], m_ShaderOutputName=name.split('/')[-1],
-               m_SlotType=int(output), m_StageCapability=3)
-    if 'm_Value' in obj:
-        obj['m_Value'] = copy.deepcopy(obj['m_DefaultValue'])
-    return obj
-
-def node(kind, name, x, y):
-    obj = clone(kind, name)
-    obj['m_Group'] = {'m_Id': ''}
-    obj['m_DrawState']['m_Position'].update(x=x, y=y, width=220, height=100)
-    obj['m_PreviewExpanded'] = False
-    obj['m_Precision'] = 1
-    graph['m_Nodes'].append({'m_Id': obj['m_ObjectId']})
-    return obj
-
-def connect(a, a_slot, b, b_slot):
-    graph['m_Edges'].append({'m_OutputSlot': {'m_Node': {'m_Id': a['m_ObjectId']}, 'm_SlotId': a_slot},
-                             'm_InputSlot': {'m_Node': {'m_Id': b['m_ObjectId']}, 'm_SlotId': b_slot}})
-
-# Original material names are retained, so the imported bindings remain inspectable.
-textures = ['_BaseMap', '_BumpMap', '_RMOTex', '_RampMap', '_RampMask', '_BlendTex',
-            '_HairMaskTex', '_StockingBumpMap', '_NoiseMap', '_SparkleMap']
-colors = {
-    '_BaseColor': [1, 1, 1, 1], '_HairAnisotropyColor': [1, 1, 1, 1],
-    '_StockingCenterColor': [1, 1, 1, 1], '_StockingFalloffColor': [.2, .2, .2, 1],
-    '_EmissiveColor': [1, 1, 1, 1], '_RimLightTintColor': [1, 1, 1, 1],
-    '_StudyShadowTint': [.69, .59, .64, 1], '_OutlineColor': [.3, .3, .3, 1],
-}
-vectors = {'_RampMaskChannel': [0, 0, 0, 1], '_Tiling': [1, 1, 0, 0],
-           '_RoughnessRemap': [0, 1, 1, 0], '_MetallicRemap': [0, 1, 1, 0],
-           '_OcclusionRemap': [0, 1, 1, 0], '_HeadForward': [0, 0, -1, 0],
-           '_HeadRight': [1, 0, 0, 0]}
-floats = {
-    '_FaceMode': 0, '_HairMode': 0, '_EyeMode': 0, '_FurMode': 0, '_EffectMode': 0,
-    '_NormalScale': 1, '_UseAlphaTest': 0, '_Cutoff': .5, '_CharacterSurface': 0,
-    '_Roughness': 1, '_Metallic': 1, '_Occlusion': 1, '_UseRampMap': 1, '_RampCount': 10,
-    '_UseRampMaskRGBChannel': 0, '_Anisotropy': 1, '_AnisotropyPow': 72, '_AnisotropyShift': .05,
-    '_UseStockingFalloff': 0, '_StockingInt': .55, '_StockingNormalIntensity': .2,
-    '_EmissiveIntensity': 0, '_UseRimLight': 1, '_RimLightIntensity': 1,
-    '_RimMidPoint': .65, '_RimWidth': .18, '_RimColorMixAlbedo': .5,
-    '_StudyRampWeight': .22, '_StudySpecularWeight': .12, '_StudyRimWeight': .045,
-    '_StudyLightFloor': .85, '_StudyShadowStrength': .65, '_StudySparkle': 0,
-    '_StudyNormalWeight': 1, '_StudyOpacity': 1,
-    '_HairShadowX': .0045, '_HairShadowY': .0075, '_HairTranEAlpha': .5,
-    '_UseFringeShadowCaster': 0, '_UseFringeShadowReceiver': 0, '_UseHairTranE': 0,
-    '_StencilComp': 8, '_StencilOp': 0, '_StencilRefC': 206, '_WriteMask': 255,
-    '_StencilRefShadowCaster': 200, '_StencilRefShadowReceiver': 201,
-    '_BlendAlphaSrc': 1, '_BlendAlphaDst': 0,
-    '_OutlineWidth': 2, '_OutlineIntensity': 1, '_OutlineZBias': .001,
-    '_FurExtrudeStrength': .015, '_NoisePower': 1, '_Timing': .6,
-}
-# Keep every original-facing control on the blackboard, but do not consume
-# unused values in the Custom Function.  Shader Graph 17 mis-generates the
-# second output when a Custom Function slot index reaches 65.
-connected_floats = [name for name in list(floats)[:36]
-                    if name not in {'_CharacterSurface', '_UseRampMaskRGBChannel', '_HairShadowX'}]
-connected = textures + list(colors)[:7] + list(vectors) + connected_floats
-properties = [(n, 'Texture2D', None) for n in textures]
-properties += [(n, 'Color', dict(zip('rgba', v))) for n, v in colors.items()]
-properties += [(n, 'Vector4', dict(zip('xyzw', v))) for n, v in vectors.items()]
-properties += [(n, 'Vector1', v) for n, v in floats.items()]
-hlsl_meta = DEST / 'BrahmaLighting.hlsl.meta'
-hlsl_guid = existing_meta_guid(hlsl_meta, uid('BrahmaLighting.hlsl'))
-function = node('CustomFunctionNode', 'BrahmaSurface', 400, 0)
-function.update(m_FunctionName='BrahmaSurface', m_FunctionSource=hlsl_guid,
-                m_SourceType=0, m_FunctionBody='', m_FunctionSourceUsePragmas=True, m_Slots=[])
-arguments = []
-for index, (name, kind) in enumerate([('UV', 'Vector4'), ('PositionWS', 'Vector3'),
-                                      ('NormalWS', 'Vector3'), ('TangentWS', 'Vector3')]):
-    geometry = node('UVNode' if index == 0 else 'NormalVectorNode', name, -850, index * 150)
-    if index == 1:
-        geometry['m_Type'] = 'UnityEditor.ShaderGraph.PositionNode'
-        geometry['m_PositionSource'] = 0
-    if index == 3:
-        geometry['m_Type'] = 'UnityEditor.ShaderGraph.TangentVectorNode'
-    geometry['m_Space'] = 2
-    output = slot(kind, name + '/Out', 0, True)
-    geometry['m_Slots'] = [{'m_Id': output['m_ObjectId']}]
-    entry = slot(kind, 'function/' + name, index)
-    entry['m_StageCapability'] = 2
-    function['m_Slots'].append({'m_Id': entry['m_ObjectId']})
-    connect(geometry, 0, function, index)
-    arguments.append(('float4' if kind == 'Vector4' else 'float3', name))
-
-for i, (name, kind, value) in enumerate(properties):
-    prop = clone(kind + 'ShaderProperty', name + '/property')
-    prop.update(m_Name=name, m_OverrideReferenceName=name, m_DefaultReferenceName=name,
-                m_GeneratePropertyBlock=True, m_Hidden=False,
-                m_Guid={'m_GuidSerialized': str(uuid.UUID(uid(name + '/guid')))})
-    if value is not None:
-        prop['m_Value'] = value
-    if kind == 'Texture2D':
-        prop['m_DefaultType'] = 1 if name == '_BumpMap' or name == '_StockingBumpMap' else 0
-    graph['m_Properties'].append({'m_Id': prop['m_ObjectId']})
-    if name not in connected:
-        continue
-    slot_kind = 'Vector4' if kind == 'Color' else kind
-    propnode = node('PropertyNode', name + '/node', -400, i * 110)
-    propnode['m_Property'] = {'m_Id': prop['m_ObjectId']}
-    output = slot(slot_kind, name + '/Out', 0, True)
-    propnode['m_Slots'] = [{'m_Id': output['m_ObjectId']}]
-    number = len(arguments)
-    entry = slot(slot_kind, 'function/' + name[1:], number)
-    entry['m_StageCapability'] = 2
-    function['m_Slots'].append({'m_Id': entry['m_ObjectId']})
-    connect(propnode, 0, function, number)
-    arguments.append(({'Texture2D': 'UnityTexture2D', 'Vector1': 'float', 'Vector4': 'float4'}[slot_kind], name[1:]))
-
-for name, kind, block_name in [('Color', 'Vector3', 'SurfaceDescription.BaseColor'),
-                               ('Alpha', 'Vector1', 'SurfaceDescription.Alpha')]:
-    index = len(arguments)
-    entry = slot(kind, 'function/' + name, index, True)
-    entry['m_StageCapability'] = 2
-    function['m_Slots'].append({'m_Id': entry['m_ObjectId']})
-    block = next(b for b in blocks if b['m_Name'] == block_name)
-    connect(function, index, block, 0)
-    arguments.append(('out float3' if kind == 'Vector3' else 'out float', name))
-
-surface_path = DEST / 'BrahmaSurface.shadergraph'
-surface_path.write_text('\n\n'.join(json.dumps(o, indent=4) for o in result), encoding='utf-8')
-if not hlsl_meta.exists():
-    hlsl_meta.write_text('fileFormatVersion: 2\nguid: ' + hlsl_guid + '\nShaderIncludeImporter:\n  externalObjects: {}\n  userData: \n  assetBundleName: \n  assetBundleVariant: \n', encoding='utf-8')
-signature = 'void BrahmaSurface_float(\n    ' + ',\n    '.join(t + ' ' + n for t, n in arguments) + ')\n'
-(ROOT / 'Tools/AetherGazerResearch/brahma-function-signature.txt').write_text(signature, encoding='utf-8')
 
 def replace_strings(value, replacements):
     if isinstance(value, str):
@@ -214,40 +48,181 @@ def replace_strings(value, replacements):
         return {key: replace_strings(item, replacements) for key, item in value.items()}
     return value
 
-def clone_pass_graph(source_name, destination_name, graph_path, replacements=None):
-    """Clone a proven Wuchang pass graph while keeping a Brahma-specific API."""
-    source_path = ROOT / 'Assets/Studies/WuchangStudy/Shaders' / (source_name + '.shadergraph')
-    destination_path = DEST / (destination_name + '.shadergraph')
-    cloned = copy.deepcopy(objects(source_path))
-    cloned[0]['m_Path'] = graph_path
-    cloned = replace_strings(cloned, replacements or {})
-    destination_path.write_text(
-        '\n\n'.join(json.dumps(item, indent=4) for item in cloned), encoding='utf-8')
 
-    meta_path = destination_path.with_suffix(destination_path.suffix + '.meta')
-    graph_guid = existing_meta_guid(meta_path, uid(destination_name + '.shadergraph'))
-    source_meta = source_path.with_suffix(source_path.suffix + '.meta').read_text(encoding='utf-8-sig')
-    source_meta = source_meta.replace(
-        next(line for line in source_meta.splitlines() if line.startswith('guid: ')),
-        'guid: ' + graph_guid)
-    meta_path.write_text(source_meta, encoding='utf-8')
+items = copy.deepcopy(objects(SOURCE))
+replacements = {
+    "AetherGazer/Wuchang Study": "AetherGazer/Brahma Wujian/Teaching Surface",
+    "_RMKMap": "_RMOTex",
+    "RMK (R metallic, G emissive, B AO, A roughness)": "RMO (R metallic, G emissive, B AO, A roughness)",
+    "_RMKOcclusionStrength": "_Occlusion",
+    "RMK AO": "Occlusion strength",
+    "_HairMaskMap": "_HairMaskTex",
+    "_HairMaskStrength": "_Anisotropy",
+    "_StockingNormalMap": "_StockingBumpMap",
+    "_StockingPatternStrength": "_StockingNormalIntensity",
+    "_StockingStrength": "_UseStockingFalloff",
+    "_StockingTiling": "_Tiling",
+    "_FaceSDFMap": "_BlendTex",
+    "_FaceSDFStrength": "_FaceMode",
+    "_FaceShadowTint": "_StudyFaceShadowTint",
+    "_ShadowColor": "_StudyShadowTint",
+    "_RampStrength": "_StudyRampWeight",
+    "_SpecStrength": "_StudySpecularWeight",
+    "_RimStrength": "_StudyRimWeight",
+    "_Opacity": "_StudyOpacity",
+    "_AlphaClip": "_UseAlphaTest",
+}
+items = replace_strings(items, replacements)
+graph = items[0]
+by_id = {item["m_ObjectId"]: item for item in items if "m_ObjectId" in item}
+graph["m_Path"] = "AetherGazer/Brahma Wujian/Teaching Surface"
 
-clone_pass_graph(
-    'WuchangOutline', 'BrahmaOutline',
-    'AetherGazer/Brahma Wujian/Pass Graphs/Outline',
-    {'_OutlineColor': '_StudyEdgeTint'})
-clone_pass_graph(
-    'WuchangHairShadow', 'BrahmaHairShadow',
-    'AetherGazer/Brahma Wujian/Pass Graphs/Hair Shadow',
-    {'_HairShadowOffsetOS': '_BrahmaHairShadowOffsetOS',
-     '_MaskAlphaClip': '_Cutoff'})
-clone_pass_graph(
-    'WuchangReflection', 'BrahmaReflection',
-    'AetherGazer/Brahma Wujian/Pass Graphs/Reflection',
-    {'_RMKMap': '_RMOTex'})
-clone_pass_graph(
-    'WuchangPreDepth', 'BrahmaPreDepth',
-    'AetherGazer/Brahma Wujian/Pass Graphs/PreDepth')
+category_rules = [
+    ("01 Base & Masks", {"_BaseMap", "_BaseColor", "_RMOTex", "_Occlusion"}),
+    ("02 Toon Lighting", {"_RampMap", "_StudyShadowTint", "_ShadowRange", "_StudyRampWeight", "_RampRow"}),
+    ("03 Specular & Rim", {"_StudySpecularWeight", "_StudyRimWeight"}),
+    ("04 Hair", {"_HairMaskTex", "_Anisotropy"}),
+    ("05 Face SDF", {"_BlendTex", "_FaceMode", "_StudyFaceShadowTint"}),
+    ("06 Stocking", {"_StockingBumpMap", "_StockingCenterColor", "_StockingFalloffColor",
+                      "_UseStockingFalloff", "_StockingNormalIntensity", "_Tiling"}),
+    ("07 Surface", {"_StudyOpacity", "_UseAlphaTest"}),
+]
+properties = []
+for ref in graph["m_Properties"]:
+    prop = by_id[ref["m_Id"]]
+    reference = prop.get("m_OverrideReferenceName") or prop.get("m_DefaultReferenceName")
+    properties.append((reference, prop["m_ObjectId"]))
 
-print('Surface graph nodes', len(graph['m_Nodes']), 'properties', len(properties),
-      'function arguments', len(arguments), 'pass graphs', 4)
+graph["m_CategoryData"] = []
+for title, members in category_rules:
+    child_ids = [object_id for reference, object_id in properties if reference in members]
+    if not child_ids:
+        continue
+    category_id = uid("Category/" + title)
+    graph["m_CategoryData"].append({"m_Id": category_id})
+    items.append({
+        "m_SGVersion": 0,
+        "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+        "m_ObjectId": category_id,
+        "m_Name": title,
+        "m_ChildObjectList": [{"m_Id": object_id} for object_id in child_ids],
+    })
+
+bands = [
+    ("01 Base Texture & Alpha", -10000, -200),
+    ("02 Toon Diffuse & Ramp", -200, 700),
+    ("03 Rim / View Edge", 700, 1100),
+    ("04 Specular & RMO", 1100, 1450),
+    ("05 Hair Anisotropy", 1450, 1850),
+    ("06 Stocking Layer", 1850, 2250),
+    ("07 Face SDF & Final Combine", 2250, 10000),
+]
+graph["m_GroupDatas"] = []
+groups = {}
+group_objects = {}
+for title, low, _ in bands:
+    group_id = uid("Group/" + title)
+    groups[title] = group_id
+    graph["m_GroupDatas"].append({"m_Id": group_id})
+    group_object = {
+        "m_SGVersion": 0,
+        "m_Type": "UnityEditor.ShaderGraph.GroupData",
+        "m_ObjectId": group_id,
+        "m_Title": title,
+        "m_Position": {"x": 0.0, "y": 0.0},
+    }
+    group_objects[title] = group_object
+    items.append(group_object)
+
+for node_ref in graph["m_Nodes"]:
+    node = by_id.get(node_ref["m_Id"])
+    if not node or node.get("m_Type", "").endswith("BlockNode"):
+        continue
+    position = node.get("m_DrawState", {}).get("m_Position", {})
+    y = float(position.get("y", 0.0))
+    for title, low, high in bands:
+        if low <= y < high:
+            node["m_Group"] = {"m_Id": groups[title]}
+            break
+
+# Put chapters on a stable two-column page. Nodes keep their authored order
+# inside each chapter, but no group is allowed to overlap another group.
+layout_targets = {
+    "01 Base Texture & Alpha": (-3000.0, 0.0),
+    "02 Toon Diffuse & Ramp": (-3000.0, 900.0),
+    "03 Rim / View Edge": (-3000.0, 1800.0),
+    "04 Specular & RMO": (-3000.0, 2700.0),
+    "05 Hair Anisotropy": (200.0, 0.0),
+    "06 Stocking Layer": (200.0, 1100.0),
+    "07 Face SDF & Final Combine": (200.0, 2200.0),
+}
+for title, target in layout_targets.items():
+    group_id = groups[title]
+    members = []
+    for node_ref in graph["m_Nodes"]:
+        node = by_id.get(node_ref["m_Id"])
+        if node and node.get("m_Group", {}).get("m_Id") == group_id:
+            members.append(node)
+    if not members:
+        continue
+    min_x = min(float(node["m_DrawState"]["m_Position"].get("x", 0.0)) for node in members)
+    min_y = min(float(node["m_DrawState"]["m_Position"].get("y", 0.0)) for node in members)
+    delta_x = target[0] - min_x
+    delta_y = target[1] - min_y
+    for node in members:
+        position = node["m_DrawState"]["m_Position"]
+        position["x"] = float(position.get("x", 0.0)) + delta_x
+        position["y"] = float(position.get("y", 0.0)) + delta_y
+    group_objects[title]["m_Position"] = {"x": target[0] - 80.0, "y": target[1] - 170.0}
+
+chapter_notes = {
+    "01 Base Texture & Alpha": "BaseMap × BaseColor. Alpha is kept separate for clip/opacity.",
+    "02 Toon Diffuse & Ramp": "N·L remap → band/ramp lookup → shadow tint blend.",
+    "03 Rim / View Edge": "View direction and normal build a controllable silhouette response.",
+    "04 Specular & RMO": "RMO channels drive occlusion/specular response before final lighting.",
+    "05 Hair Anisotropy": "Hair mask modulates the strand highlight before it joins the surface.",
+    "06 Stocking Layer": "Tiled normal and view falloff tint the base surface as a separate layer.",
+    "07 Face SDF & Final Combine": "Face SDF selects lit/shadow color, then all modules are combined.",
+}
+graph["m_StickyNoteDatas"] = []
+for title, content in chapter_notes.items():
+    note_id = uid("Sticky/" + title)
+    x, y = layout_targets[title]
+    graph["m_StickyNoteDatas"].append({"m_Id": note_id})
+    items.append({
+        "m_SGVersion": 0,
+        "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+        "m_ObjectId": note_id,
+        "m_Title": title,
+        "m_Content": content,
+        "m_TextSize": 0,
+        "m_Theme": 0,
+        "m_Position": {"serializedVersion": "2", "x": x, "y": y - 140.0,
+                       "width": 560.0, "height": 100.0},
+        "m_Group": {"m_Id": groups[title]},
+    })
+
+note_id = uid("Sticky/ReadMe")
+graph["m_StickyNoteDatas"].append({"m_Id": note_id})
+items.append({
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.StickyNoteData",
+    "m_ObjectId": note_id,
+    "m_Title": "How to read this graph",
+    "m_Content": (
+        "Follow groups 01→07. This graph teaches the visible surface data flow: "
+        "texture/masks, toon ramp, rim, specular, hair, stocking and face SDF. "
+        "Stencil, Outline, Reflection and PreDepth are fixed-function multipass "
+        "work and therefore live in BrahmaCharacter.shader + Renderer Feature."
+    ),
+    "m_TextSize": 0,
+    "m_Theme": 1,
+    "m_Position": {"serializedVersion": "2", "x": -3000.0, "y": -420.0,
+                   "width": 1000.0, "height": 150.0},
+    "m_Group": {"m_Id": ""},
+})
+
+DEST.write_text("\n\n".join(json.dumps(item, indent=4) for item in items), encoding="utf-8")
+print("Readable Brahma graph:", len(graph["m_Nodes"]), "nodes,",
+      len(graph["m_Edges"]), "edges,", len(graph["m_Properties"]),
+      "properties, 0 Custom Functions,", len(bands), "groups")

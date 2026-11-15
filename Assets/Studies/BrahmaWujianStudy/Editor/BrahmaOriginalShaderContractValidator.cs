@@ -23,14 +23,7 @@ namespace BrahmaWujianStudy.Editor
             "CharHairTransE", "ShadowCaster", "Reflection", "PreDepth"
         };
 
-        static readonly string[] GraphPaths =
-        {
-            Root + "/Shaders/BrahmaSurface.shadergraph",
-            Root + "/Shaders/BrahmaOutline.shadergraph",
-            Root + "/Shaders/BrahmaHairShadow.shadergraph",
-            Root + "/Shaders/BrahmaReflection.shadergraph",
-            Root + "/Shaders/BrahmaPreDepth.shadergraph"
-        };
+        const string TeachingGraphPath = Root + "/Shaders/BrahmaSurface.shadergraph";
 
         [Serializable]
         sealed class Contract
@@ -55,8 +48,8 @@ namespace BrahmaWujianStudy.Editor
             if (errors.Count > 0)
                 throw new InvalidOperationException("Brahma original shader contract failed:\n- " +
                     string.Join("\n- ", errors));
-            Debug.Log("Brahma original shader contract: PASS — 8 recovered passes, 5 split Shader Graphs, " +
-                "stencil 200→201→200, Reflection and PreDepth scheduling, and URP feature installation verified.");
+            Debug.Log("Brahma original shader contract: PASS — 8 recovered passes, readable 0-Custom-Function " +
+                "teaching graph, stencil 200→201→200, Reflection/PreDepth scheduling, and URP feature verified.");
         }
 
         internal static List<string> Validate()
@@ -142,14 +135,24 @@ namespace BrahmaWujianStudy.Editor
 
         static void ValidateGraphs(List<string> errors)
         {
-            foreach (string path in GraphPaths)
+            Shader shader = AssetDatabase.LoadAssetAtPath<Shader>(TeachingGraphPath);
+            if (!shader)
+                errors.Add("Teaching Shader Graph did not import as a Shader: " + TeachingGraphPath);
+            else if (!shader.isSupported)
+                errors.Add("Teaching Shader Graph is unsupported on this platform: " + TeachingGraphPath);
+
+            string source = File.ReadAllText(TeachingGraphPath);
+            if (source.Contains("CustomFunctionNode", StringComparison.Ordinal))
+                errors.Add("Teaching graph must expose its data flow and contain no Custom Function node.");
+            string[] requiredGroups =
             {
-                Shader shader = AssetDatabase.LoadAssetAtPath<Shader>(path);
-                if (!shader)
-                    errors.Add("Shader Graph did not import as a Shader: " + path);
-                else if (!shader.isSupported)
-                    errors.Add("Shader Graph is unsupported on this platform: " + path);
-            }
+                "01 Base Texture & Alpha", "02 Toon Diffuse & Ramp", "03 Rim / View Edge",
+                "04 Specular & RMO", "05 Hair Anisotropy", "06 Stocking Layer",
+                "07 Face SDF & Final Combine"
+            };
+            foreach (string group in requiredGroups)
+                if (!source.Contains("\"m_Title\": \"" + group + "\"", StringComparison.Ordinal))
+                    errors.Add("Teaching graph is missing group: " + group);
         }
 
         static void ValidateRendererFeature(List<string> errors)
