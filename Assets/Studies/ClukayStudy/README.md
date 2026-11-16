@@ -6,7 +6,7 @@
 
 打开场景并进入 Play，右侧面板提供部件切换、模型转台、主光旋转、枪械显隐、搭配保存与读取，以及十种渲染查看模式。[ClukayShowcase 场景](Scenes/ClukayShowcase.unity)
 
-![可露凯场景预览](../../../Tools/Clukay/ClukayPreview.png)
+![可露凯场景预览](../../../docs/images/clukay-showcase.png)
 
 ## 技术实现
 
@@ -46,7 +46,7 @@
 | `Repair Transparent Wardrobe Materials` | 恢复薄纱和蕾丝的透明状态 |
 | `Validate Study Contract` | 检查 Shader、Graph、材质、Renderer Feature 和目录约定 |
 
-截图菜单输出到项目根目录 `.tmp`。README 预览保存在 `Tools/Clukay`。教学 Graph 的生成脚本位于 `Tools/ShaderGraphs/build_clukay_teaching_graph.py`，执行会重新生成 Graph 内容。
+截图菜单输出到项目根目录 `.tmp`。README 预览保存在 `docs/images`。教学 Graph 可直接在 Unity 中打开编辑。
 
 ## 当前展示范围
 

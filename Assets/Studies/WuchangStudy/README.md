@@ -1,4 +1,4 @@
-# Wuchang · 角色材质与多 Pass 渲染
+# 无常 · 角色材质与多 Pass 渲染
 
 通过双角色对照研究 Toon / Ramp、面部 SDF、头发高光、丝袜视角响应，以及 Stencil、描边、深度和反射的协作。
 
@@ -8,7 +8,7 @@
 
 两组角色预制体分别为 `Wuchang_105401` 与 `Wuchang_614801`，便于在相同灯光下观察深浅袜材质与角色配色的差异。
 
-![Wuchang 双角色展示](../../../Tools/AetherGazer/WuchangPreview.png)
+![无常双角色展示](../../../docs/images/wuchang-showcase.png)
 
 ## 表面着色
 

@@ -11,7 +11,7 @@
 | 102003 | 浅蓝 T 恤、猫耳耳机、长袜 | [Brahma_Wujian_102003](Prefabs/Brahma_Wujian_102003.prefab) |
 | 605603 | 白色针织衫、眼镜与头饰、非对称袜 | [Brahma_Wujian_605603](Prefabs/Brahma_Wujian_605603.prefab) |
 
-![梵天双形态展示](../../../Tools/AetherGazerResearch/BrahmaWujianPreview.png)
+![梵天双形态展示](../../../docs/images/brahma-wujian-showcase.png)
 
 ## 技术实现
 
