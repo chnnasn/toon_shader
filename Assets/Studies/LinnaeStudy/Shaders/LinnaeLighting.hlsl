@@ -15,6 +15,10 @@ void LinnaeLighting_float(float4 Albedo,float3 PositionWS,float3 NormalWS,float3
  out float3 Color,out float Alpha)
 {
  float3 N=normalize(NormalWS),V=normalize(ViewWS),base=Albedo.rgb*Tint.rgb;
+#if defined(LINNAE_RAIN_LIGHTING) && defined(_SURFACE_TYPE_TRANSPARENT)
+ // Thin double-sided pieces (including the lemon charms) need the lit, visible side.
+ N = dot(N,V) < 0 ? -N : N;
+#endif
  float3 L=normalize(float3(-.5,.7,-.6)),radiance=1,ambient=.22;
  float shadow=1;
 #ifndef SHADERGRAPH_PREVIEW
@@ -66,6 +70,13 @@ void LinnaeLighting_float(float4 Albedo,float3 PositionWS,float3 NormalWS,float3
  float vis=lerp(shadow,1,Face*.85);
  float shade=band*lerp(.3,1,vis)*(1-hairOcclusion*HairShadowStrength*Face);
  float3 diffuse=base*lerp(ShadowTint.rgb*.72,1.0.xxx,shade)*(1-Metallic*.85);
+#ifdef LINNAE_RAIN_LIGHTING
+ float visibility=lerp(.42,1,vis)*(1-hairOcclusion*HairShadowStrength*Face);
+ // Preserve the painted blue, turquoise and gold as direct illumination increases.
+ float peak=max(max(base.r,base.g),max(base.b,.001));
+ float3 pigment=base*lerp(1,base/peak,.30);
+ diffuse=pigment*LinnaeDiffuseRamp(nl,band,visibility,ShadowTint.rgb,Skin,Face)*(1-Metallic*.77);
+#endif
  float3 H=normalize(L+V+1e-5);
  float rough=clamp(Roughness,.16,.95),a2=pow(rough,4);
  float nh=saturate(dot(N,H)),d=nh*nh*(a2-1)+1;
@@ -76,10 +87,22 @@ void LinnaeLighting_float(float4 Albedo,float3 PositionWS,float3 NormalWS,float3
  strand=normalize(strand+N*.00001+float3(0,.00001,0));
  float th=dot(normalize(strand+N*.13),H);
  float hairSpec=pow(sqrt(saturate(1-th*th)),60)*smoothstep(-.15,.5,nl);
+#ifdef LINNAE_RAIN_LIGHTING
+ float strandLobe=sqrt(saturate(1-th*th));
+ hairSpec=(.44*pow(strandLobe,14)+.86*pow(strandLobe,92))*smoothstep(-.24,.65,nl);
+#endif
  spec=lerp(spec,hairSpec*lerp(.5.xxx,base,.5)*SpecularStrength,Hair)*(1-Face)*vis;
  float3 rim=pow(1-nv,4)*RimStrength*smoothstep(-.3,.7,nl)*lerp(.8.xxx,base,.4);
  float scatter=Skin*max(saturate((nl+.45)/1.45)-saturate(nl),0);
  Color=diffuse*radiance+base*ambient*EnvironmentStrength+spec*radiance+rim+base*float3(.16,.045,.025)*scatter;
+#ifdef LINNAE_RAIN_LIGHTING
+ // Broad ground bounce carries the warm daylight through the shadow side of every material.
+ float groundFill = .13 * (.65 - .35*N.y) * EnvironmentStrength;
+ Color += base * float3(1,.81,.65) * groundFill;
+ // The wide sky reflection keeps the metal's painted gold or blue visible between glints.
+ float skyMetal = smoothstep(-.52,.82,reflect(-V,N).y);
+ Color += pigment * Metallic * lerp(float3(.23,.18,.14),float3(.60,.65,.72),skyMetal);
+#endif
  Color=lerp(Color,base*(.85+.15*radiance),Eye);
  // Additional lighting intentionally remains a gentle fill so the cel ramp stays legible.
 #ifndef SHADERGRAPH_PREVIEW
@@ -95,6 +118,12 @@ void LinnaeLighting_float(float4 Albedo,float3 PositionWS,float3 NormalWS,float3
  LIGHT_LOOP_END
 #endif
  Alpha=lerp(1,Albedo.a,UseAlpha)*Opacity;
+#ifdef LINNAE_RAIN_LIGHTING
+ float2 drops;
+ LinnaeRainFinish(PositionWS,N,V,L,radiance,vis,Skin,Hair,Face,Eye,Metallic,_WetTransmission,
+     Color,Alpha,spec,drops);
+ if(DebugMode>5.5)Color=float3(drops.x,drops.y,0);
+#endif
  if(DebugMode>.5 && DebugMode<1.5)Color=base;
  if(DebugMode>1.5 && DebugMode<2.5)Color=band.xxx;
  if(DebugMode>2.5 && DebugMode<3.5)Color=N*.5+.5;

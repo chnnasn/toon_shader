@@ -77,13 +77,12 @@ LiinoRainSample LiinoRainPlane(float2 p, float pixelWidth, float time,
     return result;
 }
 
-void LiinoRainSurface(float3 worldPos, float3 normal, float3 right, float rain, float hair, float silk,
+void LiinoRainSurfaceRelative(float3 rel, float3 normal, float3 right, float rain, float hair, float silk,
     out float bead, out float trail, out float3 slope)
 {
     float3 up = float3(0, 1, 0);
     right = normalize(float3(right.x + 1e-6, 0, right.z));
     float3 front = cross(right, up);
-    float3 rel = worldPos - _LiinoRainOriginWS;
     float3 p = float3(dot(rel, right), rel.y, dot(rel, front));
     float3 n = float3(dot(normal, right), normal.y, dot(normal, front));
     float3 weight = pow(abs(n), 6);
@@ -99,5 +98,11 @@ void LiinoRainSurface(float3 worldPos, float3 normal, float3 right, float rain, 
           + up * (side.slope.y * weight.x + face.slope.y * weight.z)
           + front * (side.slope.x * weight.x + top.slope.y * weight.y);
     slope -= normal * dot(normal, slope);
+}
+
+void LiinoRainSurface(float3 worldPos, float3 normal, float3 right, float rain, float hair, float silk,
+    out float bead, out float trail, out float3 slope)
+{
+    LiinoRainSurfaceRelative(worldPos - _LiinoRainOriginWS, normal, right, rain, hair, silk, bead, trail, slope);
 }
 #endif

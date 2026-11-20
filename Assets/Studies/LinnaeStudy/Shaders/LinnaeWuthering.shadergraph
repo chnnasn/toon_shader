@@ -43,6 +43,9 @@
             "m_Id": "9d523bfa85d04dca8aaddadd1df07949"
         },
         {
+            "m_Id": "33ddc170c6de4deba6db42d9b175cf98"
+        },
+        {
             "m_Id": "3ac6da00d16e4dcfb9dcdd3c3b09a536"
         },
         {
@@ -1855,7 +1858,7 @@
     },
     "m_SourceType": 0,
     "m_FunctionName": "LinnaeLighting",
-    "m_FunctionSource": "f3d7abf49258438bb6a6ea0616852b94",
+    "m_FunctionSource": "07af276b4ab74db5a7e3fb289430dbce",
     "m_FunctionSourceUsePragmas": false,
     "m_FunctionBody": ""
 }
@@ -3757,6 +3760,49 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "33ddc170c6de4deba6db42d9b175cf98",
+    "m_Guid": {
+        "m_GuidSerialized": "3f5266b0-d4dd-4e8a-8e63-2f70c32425f8"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "WetTransmission",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "WetTransmission",
+    "m_DefaultReferenceName": "_WetTransmission",
+    "m_OverrideReferenceName": "_WetTransmission",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": 0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "e84dfc9b08bb4cad9a4a76e78706953d",
@@ -5614,6 +5660,9 @@
         },
         {
             "m_Id": "9d523bfa85d04dca8aaddadd1df07949"
+        },
+        {
+            "m_Id": "33ddc170c6de4deba6db42d9b175cf98"
         },
         {
             "m_Id": "3ac6da00d16e4dcfb9dcdd3c3b09a536"
