@@ -93,7 +93,7 @@ Material:
     - _CastShadows: 1
     - _Cull: 0
     - _DebugMode: 0
-    - _DropletStrength: 0.22
+    - _DropletStrength: 0.9
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentStrength: 1
@@ -101,24 +101,24 @@ Material:
     - _Hair: 0
     - _HairShift: 0.12
     - _Metallic: 0
-    - _MetallicScale: 1
-    - _NPRWeight: 0.48
-    - _NormalStrength: 0.65
+    - _MetallicScale: 0.06
+    - _NPRWeight: 0.6
+    - _NormalStrength: 0.38
     - _OcclusionStrength: 0.3
     - _Opacity: 1
     - _QueueControl: 1
     - _QueueOffset: 0
     - _Rain: 0
     - _ReceiveShadows: 1
-    - _RimStrength: 0.04
+    - _RimStrength: 0.12
     - _Roughness: 0.659
     - _RoughnessScale: 1
-    - _Sheen: 0
+    - _Sheen: 0.17
     - _Silk: 1
     - _SkinScatter: 0
     - _Softness: 0.08
     - _SpecularAA: 0.5
-    - _SpecularStrength: 0.65
+    - _SpecularStrength: 0.74
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
@@ -126,10 +126,10 @@ Material:
     - _UseAlpha: 0
     - _UseFaceSDF: 0
     - _UseRMO: 1
-    - _UseRamp: 0
+    - _UseRamp: 0.18
     - _WaterHeight: -1
-    - _WetDarkening: 0.1
-    - _WetRoughness: 0.23
+    - _WetDarkening: 0.08
+    - _WetRoughness: 0.27
     - _Wetness: 0
     - _Wettable: 1
     - _WorkflowMode: 1
@@ -140,8 +140,8 @@ Material:
     - _HeadForward: {r: 0, g: 0, b: 0, a: 0}
     - _HeadRight: {r: 1, g: 0, b: 0, a: 0}
     - _ShadowTint: {r: 0.58, g: 0.47999996, b: 0.62, a: 1}
-    - _SilkDryColor: {r: 0.4573214, g: 0.5487856, b: 0.59099996, a: 1}
-    - _SilkWetColor: {r: 0.58052, g: 0.6253911, b: 0.6309999, a: 1}
+    - _SilkDryColor: {r: 0.19, g: 0.192, b: 0.204, a: 1}
+    - _SilkWetColor: {r: 0.175, g: 0.184, b: 0.199, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

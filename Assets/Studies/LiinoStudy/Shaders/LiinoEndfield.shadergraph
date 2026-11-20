@@ -146,6 +146,9 @@
         },
         {
             "m_Id": "cbf72b80fe4f431eaec79a6c5c1c1bce"
+        },
+        {
+            "m_Id": "69cd46cfea5f43da80c6079858c65cd6"
         }
     ],
     "m_Keywords": [],
@@ -377,6 +380,9 @@
         },
         {
             "m_Id": "09f0cdf224c94535997eb7acd0165fac"
+        },
+        {
+            "m_Id": "62e2ad26c9b24e5e9ce9e35e9f1447de"
         }
     ],
     "m_GroupDatas": [],
@@ -1248,6 +1254,20 @@
                     "m_Id": "a9dd7c719a5c4f68888a1de483854001"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "62e2ad26c9b24e5e9ce9e35e9f1447de"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "fe8552b6e4584c939e5a8f9a8148d915"
+                },
+                "m_SlotId": 52
             }
         }
     ],
@@ -2394,6 +2414,9 @@
         },
         {
             "m_Id": "ca6064995111407893d21b27bebda134"
+        },
+        {
+            "m_Id": "e02830373fe84904b792d94c44dec3f5"
         },
         {
             "m_Id": "cd019cfa444c43fd82bf46c8ad0e8b72"
@@ -9254,6 +9277,118 @@
         },
         {
             "m_Id": "cbf72b80fe4f431eaec79a6c5c1c1bce"
+        },
+        {
+            "m_Id": "69cd46cfea5f43da80c6079858c65cd6"
         }
     ]
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "69cd46cfea5f43da80c6079858c65cd6",
+    "m_Guid": {
+        "m_GuidSerialized": "5c4ce92c-1146-4d97-941b-5678d96b5781"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "Iris",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Iris",
+    "m_DefaultReferenceName": "_Iris",
+    "m_OverrideReferenceName": "_Iris",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": 0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    },
+    "m_SliderType": 0,
+    "m_SliderPower": 3.0,
+    "m_EnumType": 0,
+    "m_CSharpEnumString": "",
+    "m_EnumNames": [
+        "Default"
+    ],
+    "m_EnumValues": [
+        0
+    ]
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "62e2ad26c9b24e5e9ce9e35e9f1447de",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Iris",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -1050,
+            "y": 6930,
+            "width": 230,
+            "height": 160
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "7fc30ab73470467fb6752c1a9fb37fa3"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 1,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "69cd46cfea5f43da80c6079858c65cd6"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "7fc30ab73470467fb6752c1a9fb37fa3",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 2,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "e02830373fe84904b792d94c44dec3f5",
+    "m_Id": 52,
+    "m_DisplayName": "Iris",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Iris",
+    "m_StageCapability": 2,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
